@@ -32,7 +32,6 @@ update_folder () {
 }
 
 dwm () {
-git clone https://github.com/ryz3nn/dotfiles.git
 cd $HOME/dotfiles/suckless/dwm/
 sudo make clean install
 cd $HOME/dotfiles/suckless/dmenu/
@@ -83,7 +82,7 @@ sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 }
 
 
-ibus-bamboo () {
+ibus () {
 sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
 sudo apt-get update
 sudo apt-get install -y ibus ibus-bamboo --install-recommends
@@ -111,16 +110,23 @@ sudo apt update
 sudo apt install code # or code-insiders
 }
 
+VBoxManage () {
+cd $HOME/downloads
+wget https://download.virtualbox.org/virtualbox/7.1.8/virtualbox-7.1_7.1.8-168469~Ubuntu~noble_amd64.deb 
+sudo gdebi virtualbox-7.1_7.1.8-168469~Ubuntu~noble_amd64.deb
+}
+
 # App need to install
 
 normal_apps=(
-  dwm
+#  dwm
   thorium-browser
   firefox
   ibus
   stretchly
-  subl
+#  subl
   code
+  VBoxManage
 )
 
 extra_apps=(
