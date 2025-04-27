@@ -7,7 +7,7 @@ if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
 fi
 
 feh ~/dotfiles/wallpaper/vltk.jpg --bg-scale &
-VBoxClient-all &
+#VBoxClient-all &
 at-spi-bus-launcher --launch-immediately &
 sh -c 'IM_CONFIG_CHECK_ENV=1 im-launch true' &
 picom &
