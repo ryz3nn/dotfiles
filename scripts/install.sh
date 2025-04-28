@@ -4,12 +4,12 @@
 # Install dependencies
 dependencies () {
 sudo apt update
-sudo apt install -y gcc make apt-transport-https gpg
-sudo apt install -y libxft-dev libxinerama1 libxinerama-dev # Dwm
+sudo apt install -y sudo apt install -y libxft-dev libxinerama1 libxinerama-dev # Dwm
 }
 # Install apps
 misc () {
-sudo apt install -y stow picom zsh gdebi sxhkd
+sudo apt update
+sudo apt install -y gcc make apt-transport-https gpg  stow picom zsh gdebi sxhkd feh 
 }
 
 update_permission () {
@@ -79,6 +79,7 @@ sudo gdebi Stretchly_1.17.2_amd64.deb
 
 sudo sysctl kernel.unprivileged_userns_clone=1
 sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+sudo chmod 4755 /opt/Stretchly/chrome-sandbox
 }
 
 
@@ -116,10 +117,19 @@ wget https://download.virtualbox.org/virtualbox/7.1.8/virtualbox-7.1_7.1.8-16846
 sudo gdebi virtualbox-7.1_7.1.8-168469~Ubuntu~noble_amd64.deb
 }
 
+burp () {
+cd $HOME/downloads 
+if [ ! -e "$HOME/downloads/burp.sh" ]; then
+  wget "https://portswigger.net/burp/releases/download?product=community&version=2025.3.3&type=Linux" -O burp.sh
+fi
+chmod +x burp.sh
+./burp.sh
+}
+
 # App need to install
 
 normal_apps=(
-#  dwm
+  dwm
   thorium-browser
   firefox
   ibus
@@ -127,6 +137,7 @@ normal_apps=(
 #  subl
   code
   VBoxManage
+  burp
 )
 
 extra_apps=(
@@ -146,6 +157,8 @@ for app in ${normal_apps[@]}; do
   fi
 done
 }
+
+# Entrance
 
 case "$1" in 
   "-p")
