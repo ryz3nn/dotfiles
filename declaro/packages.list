@@ -1,0 +1,47 @@
+# Packages list generated on Mon Mar  2 09:00:56 AM +07 2026
+base
+base-devel
+declaro-git
+grub
+intel-ucode
+linux
+linux-firmware
+networkmanager
+os-prober
+yay
+yay-debug
+
+# Display manager
+xorg-server
+xorg-xinit
+
+# WM Ultilities
+i3-wm
+i3status
+dmenu
+feh
+pulseaudio
+pulseaudio-alsa
+pavucontrol
+pasystray # PulseAudio tray icon
+maim # Screenshot
+dunst # notification 
+xclip # clipboard
+
+# Tools
+gvim
+htop
+rxvt-unicode
+zsh
+stow
+fzf
+tree
+openssh
+
+# Programming
+git
+
+# GUI
+chromium
+wezterm
+

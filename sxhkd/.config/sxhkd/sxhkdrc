@@ -1,0 +1,10 @@
+alt + b 
+  thorium-browser
+alt + e ; n
+  thorium-browser --new-window "https://notion.so"
+super + e
+  pcmanfm-qt
+alt + w 
+  firefox & burp &
+ctrl + shift + t
+  $HOME/dotfiles/scripts/toggle_ibus.sh

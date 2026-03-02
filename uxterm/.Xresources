@@ -1,0 +1,23 @@
+! --- Appearance ---
+URxvt.font: xft:Monospace:size=11:antialias=true
+URxvt.boldFont: xft:Monospace:bold:size=11:antialias=true
+URxvt.letterSpace: -1
+URxvt.lineSpace: 0
+URxvt.geometry: 90x25
+URxvt.internalBorder: 0
+URxvt.cursorBlink: true
+URxvt.scrollBar: false
+
+! --- Functionality ---
+URxvt.saveLines: 10000
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! --- Perl Extensions (Clickable URLs, Clipboard) ---
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+! --- Keybindings (Ctrl+Shift+C / Ctrl+Shift+V) ---
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard

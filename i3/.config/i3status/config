@@ -1,0 +1,16 @@
+general {
+  colors = true
+  interval = 5
+}
+
+order += "memory"
+order += "tztime local"
+
+memory {
+  format = "RAM: %used/%total"
+}
+
+tztime local {
+  format = "%Y-%m-%d %H:%M:%S"
+}
+
