@@ -1,7 +1,11 @@
 # ======================
 # Minimal Zsh with Colors
 # ======================
+
+# Key Binding
+
 clear
+source ~/.env
 # History settings
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -15,8 +19,10 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Path
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH=$PATH:$(go env GOPATH)/bin
 export EDITOR='vim'  # or vim/nvim/code
 export VISUAL='vim'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 
 # Color codes
 autoload -U colors && colors
@@ -50,6 +56,16 @@ alias lap='sudo nixos-rebuild switch --flake /home/derek/minimal-nixos#lap'
 alias clean='sudo nix-env --delete-generations old && sudo nix-collect-garbage --delete-older-than 2d'
 alias phone='scrcpy --turn-screen-off --stay-awake --power-off-on-close'
 alias pmbootstrap='python ~/postmarketos/pmbootstrap/pmbootstrap.py'
-alias crush='nix run github:numtide/nix-ai-tools#crush'
-alias opencode='/nix/store/qz8ghqk7ikrl4i5lr68x41isqs7khxsh-opencode-1.2.14/bin/opencode'
 
+# Arch aliases
+alias search='pacman -Ss'
+alias oc='cd $HOME/project/jianghu && opencode'
+alias jh='cd $HOME/project/jianghu' 
+alias music='youtube-music-cli' 
+
+
+# opencode
+export PATH=/home/derek/.opencode/bin:$PATH
+
+# Created by `pipx` on 2026-03-19 11:20:30
+export PATH="$PATH:/home/derek/.local/bin"

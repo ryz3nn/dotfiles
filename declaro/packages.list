@@ -6,6 +6,7 @@ grub
 intel-ucode
 linux
 linux-firmware
+linux-headers
 networkmanager
 os-prober
 yay
@@ -20,28 +21,70 @@ i3-wm
 i3status
 dmenu
 feh
+xorg-xset
+
+# Driver
+bluez-utils
+blueman
+
+iwd # Network Backend
+iw
+broadcom-wl-dkms
+
 pulseaudio
 pulseaudio-alsa
 pavucontrol
 pasystray # PulseAudio tray icon
+
 maim # Screenshot
 dunst # notification 
 xclip # clipboard
+xsct # Color Temperature
+
+noto-fonts-cjk # Tofu font
+noto-fonts-emoji
+
 
 # Tools
 gvim
+ctags
 htop
+btop
 rxvt-unicode
 zsh
 stow
 fzf
 tree
+ripgrep
+fd # Alternative for find
+less
 openssh
+unzip
+warpd
+ncdu # Disk analyze
+tmux
+usbutils # List USB
+mpv
+yt-dlp
+jq # JSON Processor
+
 
 # Programming
 git
+nodejs
+npm
+tailscale # VPN
+python-pipx
 
 # GUI
 chromium
-wezterm
-
+thunar
+safeeyes
+snixembed # For safeeyes
+xprintidle # Safeeyes's dependencies
+arandr
+parsec-bin
+remmina # Remote desktop
+freerdp # remmina RDP
+game-devices-udev
+jstest-gtk-git

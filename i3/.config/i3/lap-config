@@ -6,17 +6,19 @@ font pango:monospace 12
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-
 exec --no-startup-id setxkbmap us 
-#exec --no-startup-id thunar --daemon 
+exec --no-startup-id thunar --daemon 
 #exec --no-startup-id nm-applet
-#exec --no-startup-id warpd
+exec --no-startup-id warpd
+exec --no-startup-id xsct 6000 0.7
 exec --no-startup-id dunst
 exec --no-startup-id pasystray
 exec --no-startup-id xrdb -merge ~/.Xresources
-exec --no-startup-id xmodmap ~/.Xmodmap
+exec --no-startup-id snixembed --fork
+exec --no-startup-id safeeyes
 
-exec feh --bg-scale "/home/derek/dotfiles/wallpapers/mononoke.jpg"
+exec feh --bg-scale "/home/derek/dotfiles/wallpapers/nixeu/ASHE SNOW A.jpg"
+exec --no-startup-id xmodmap ~/.Xmodmap
 
 #======Window===========
 # Gap
@@ -29,15 +31,16 @@ for_window [class="dropdown"] floating enable, resize set 800 600, move position
 for_window [title="derek - Thunar"] floating enable, resize set 800 600,  move position center
 for_window [title="Volume Control"] floating enable, resize set 800 600, move position center
 for_window [title="Save File"] floating enable, resize set 800 600, move position center
+for_window [instance="safeeyes"] fullscreen enable
 
 # Workspace
 
 #======My shortcut====
-bindsym $mod+Shift+b exec "i3-msg 'workspace 3; exec chromium'"
-bindsym $mod+Shift+p exec "i3-msg 'workspace 3; exec chromium --incognito'"
-bindsym $mod+e exec $term  thunar
+bindsym $mod+Shift+b exec "i3-msg 'workspace 2; exec chromium'"
+bindsym $mod+Shift+p exec "i3-msg 'workspace 2; exec chromium --incognito'"
+bindsym $mod+e exec thunar
 bindsym $mod+Shift+Return exec $term -class dropdown
-bindsym $mod+Tab workspace prev
+bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+minus move scratchpad
 bindsym $mod+plus scratchpad show
 bindsym $mod+Shift+s exec --no-startup-id "maim -s | xclip -selection clipboard -t image/png; xclip -selection clipboard -t image/png -o > ~/screenshot/snip-$(date +%F-%H:%M:%S).png"
@@ -191,6 +194,7 @@ bar {
         status_command i3status
         tray_output HDMI-1
         tray_output LVDS-1
+        tray_output DP-1
 }
 
 
