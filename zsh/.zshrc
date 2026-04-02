@@ -61,7 +61,7 @@ alias pmbootstrap='python ~/postmarketos/pmbootstrap/pmbootstrap.py'
 alias search='pacman -Ss'
 alias oc='cd $HOME/project/jianghu && opencode'
 alias jh='cd $HOME/project/jianghu' 
-alias music='youtube-music-cli' 
+alias tmux='systemd-run --scope --user tmux'
 
 
 # opencode
