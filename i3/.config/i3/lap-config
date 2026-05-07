@@ -1,5 +1,5 @@
 set $mod Mod1
-set $term urxvt
+set $term sakura
 font pango:monospace 12
 
 #=======Startup===========
@@ -12,10 +12,9 @@ exec --no-startup-id thunar --daemon
 exec --no-startup-id warpd
 exec --no-startup-id xsct 6000 0.7
 exec --no-startup-id dunst
-exec --no-startup-id pasystray
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id snixembed --fork
-exec --no-startup-id safeeyes
+#exec --no-startup-id safeeyes
 
 exec feh --bg-scale "/home/derek/dotfiles/wallpapers/nixeu/ASHE SNOW A.jpg"
 exec --no-startup-id xmodmap ~/.Xmodmap

@@ -62,6 +62,7 @@ alias search='pacman -Ss'
 alias oc='cd $HOME/project/jianghu && opencode'
 alias jh='cd $HOME/project/jianghu' 
 alias tmux='systemd-run --scope --user tmux'
+alias spy='source ./venv/bin/active && python'
 
 
 # opencode
