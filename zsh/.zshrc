@@ -59,8 +59,8 @@ alias pmbootstrap='python ~/postmarketos/pmbootstrap/pmbootstrap.py'
 
 # Arch aliases
 alias search='pacman -Ss'
-alias oc='cd $HOME/project/jianghu && opencode'
-alias jh='cd $HOME/project/jianghu' 
+alias oc='cd $HOME/projects/jianghu && opencode'
+alias jh='cd $HOME/projects/jianghu' 
 alias tmux='systemd-run --scope --user tmux'
 alias spy='source ./venv/bin/active && python'
 
