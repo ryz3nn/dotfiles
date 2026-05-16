@@ -23,8 +23,6 @@ dmenu
 feh
 xorg-xset
 7zip
-xdg-desktop-portal 
-xdg-desktop-portal-gtk
 
 # Driver
 bluez-utils
@@ -82,6 +80,8 @@ npm
 tailscale # VPN
 python-pipx
 cronie
+cloudflared
+postgresql
 
 # Android 
 android-tools
