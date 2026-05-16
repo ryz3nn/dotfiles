@@ -81,7 +81,8 @@ tailscale # VPN
 python-pipx
 cronie
 cloudflared
-postgresql
+docker
+docker-compose
 
 # Android 
 android-tools
