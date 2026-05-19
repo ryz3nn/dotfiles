@@ -7,6 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-commentary'
+Plug 'ojroques/vim-oscyank'
 
 " 3. Initialize plugin system
 call plug#end()
