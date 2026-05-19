@@ -23,6 +23,7 @@ dmenu
 feh
 xorg-xset
 7zip
+fastfetch
 
 # Driver
 bluez-utils
