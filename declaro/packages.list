@@ -84,6 +84,7 @@ cronie
 cloudflared
 docker
 docker-compose
+picoclaw
 
 # Android 
 android-tools
