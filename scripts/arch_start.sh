@@ -20,10 +20,11 @@ if [ $? -ne 0 ]; then
 
   tmux new-window -t $SESSION_NAME -n "picoclaw"
   tmux send-keys -t $SESSION_NAME:"picoclaw" "picoclaw-launcher -public" C-m
+
+  tmux new-window -t $SESSION_NAME -n "9router"
+  tmux send-keys -t $SESSION_NAME:"9router" "9router" C-m
   
   # Optional: Ensure it starts focused on the first window
   tmux select-window -t $SESSION_NAME:"jianghu"
 fi
 
-# 5. ATTACH TO THE SESSION (This was missing!)
-#tmux attach-session -t $SESSION_NAME
