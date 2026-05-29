@@ -84,7 +84,7 @@ cronie
 cloudflared
 docker
 docker-compose
-intel-sde-bin # AES emulator for agy
+intel-sde# AES emulator for agy
 antigravity-cli
 
 # Android 

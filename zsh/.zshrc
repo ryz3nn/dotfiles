@@ -64,7 +64,7 @@ alias oc='opencode'
 alias jh='cd $HOME/projects/jianghu' 
 alias bug='cd $HOME/projects/space/bug' 
 alias tmux='systemd-run --scope --user tmux'
-
+alias agy="intel-sde -wsm -- agy"
 
 # opencode
 export PATH=/home/derek/.opencode/bin:$PATH
