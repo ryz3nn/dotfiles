@@ -23,6 +23,7 @@ export PATH=$PATH:$(go env GOPATH)/bin
 export EDITOR='vim'  # or vim/nvim/code
 export VISUAL='vim'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+export GODEBUG=cpu.all=off
 
 # Color codes
 autoload -U colors && colors
@@ -63,7 +64,6 @@ alias oc='opencode'
 alias jh='cd $HOME/projects/jianghu' 
 alias bug='cd $HOME/projects/space/bug' 
 alias tmux='systemd-run --scope --user tmux'
-alias spy='source ./venv/bin/active && python'
 
 
 # opencode

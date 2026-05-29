@@ -84,7 +84,8 @@ cronie
 cloudflared
 docker
 docker-compose
-picoclaw
+intel-sde-bin # AES emulator for agy
+antigravity-cli
 
 # Android 
 android-tools
