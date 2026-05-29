@@ -51,6 +51,7 @@ noto-fonts-emoji
 
 # Tools
 gvim
+glow # MD render
 ctags
 htop
 btop
