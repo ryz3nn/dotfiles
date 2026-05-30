@@ -12,7 +12,7 @@ if [ $? -ne 0 ]; then
 
   # 2. Run a command in the first window
   # (Using 'C-m' at the end simulates pressing Enter)
-  tmux send-keys -t $SESSION_NAME:"jianghu" "cd \$HOME/projects/jianghu && docker compose up -d && air" C-m
+  tmux send-keys -t $SESSION_NAME:"jianghu" "cd \$HOME/projects/jianghu/docker && docker compose up -d && cd .. && air" C-m
 
   # 3. Create the second window (named "silver")
   tmux new-window -t $SESSION_NAME -n "silver"
