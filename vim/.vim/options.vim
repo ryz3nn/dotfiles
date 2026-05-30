@@ -14,6 +14,7 @@ set foldmethod=indent
 set nofoldenable
 set mouse=a
 set tabstop=2       " Number of spaces a tab counts for
+set softtabstop=2       " Tab with 2 space 
 set shiftwidth=2    " Number of spaces to use for autoindent
 set expandtab       " Convert tabs to spaces
 set smartindent
