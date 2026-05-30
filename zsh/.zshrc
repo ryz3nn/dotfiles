@@ -15,6 +15,15 @@ setopt share_history
 
 # Options
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# Bind Home and End keys
+bindkey '^[[H'  beginning-of-line
+bindkey '^[[F'  end-of-line
+
+# Fallbacks for tmux, screen, and alternative terminal profiles
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[4~' end-of-line
+bindkey '^[OH'  beginning-of-line
+bindkey '^[OF'  end-of-line
 
 
 # Path
