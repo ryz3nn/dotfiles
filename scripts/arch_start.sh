@@ -19,7 +19,7 @@ if [ $? -ne 0 ]; then
   tmux send-keys -t $SESSION_NAME:"silver" "cd \$HOME/projects/silverbullet && air" C-m
 
   tmux new-window -t $SESSION_NAME -n "goclaw"
-  tmux send-keys -t $SESSION_NAME:"goclaw" "goclaw" C-m
+  tmux send-keys -t $SESSION_NAME:"goclaw" "source .env.local && goclaw" C-m
 
   tmux new-window -t $SESSION_NAME -n "9router"
   tmux send-keys -t $SESSION_NAME:"9router" "9router" C-m
