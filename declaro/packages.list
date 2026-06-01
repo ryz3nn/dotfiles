@@ -11,8 +11,6 @@ networkmanager
 os-prober
 yay
 yay-debug
-libva-intel-driver 
-libva-utils mesa
 
 # Display manager
 xorg-server
