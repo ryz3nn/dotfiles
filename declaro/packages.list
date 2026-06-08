@@ -65,6 +65,7 @@ ripgrep
 fd # Alternative for find
 less
 openssh
+sshfs
 unzip
 warpd
 ncdu # Disk analyze
