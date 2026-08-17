@@ -112,6 +112,7 @@ remmina # Remote desktop
 moonlight-qt
 vlc
 cloudflare-warp-bin
+qemu-desktop
 
 # Testing, Utils
 libva-utils
