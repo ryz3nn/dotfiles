@@ -24,6 +24,7 @@ feh
 xorg-xset
 7zip
 fastfetch
+autorandr
 
 # Driver
 bluez-utils
@@ -102,15 +103,9 @@ firefox
 # GUI
 chromium
 thunar
-safeeyes
-snixembed # For safeeyes
-xprintidle # Safeeyes's dependencies
 arandr
 remmina # Remote desktop
-freerdp # remmina RDP
-game-devices-udev
-jstest-gtk-git
-xone-dkms
 moonlight-qt
 vlc
 cloudflare-warp-bin
+

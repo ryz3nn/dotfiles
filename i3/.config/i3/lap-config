@@ -10,7 +10,7 @@ exec --no-startup-id setxkbmap us
 exec --no-startup-id thunar --daemon 
 #exec --no-startup-id nm-applet
 exec --no-startup-id warpd
-exec --no-startup-id xsct 6000 0.7
+exec --no-startup-id xsct 8000 0.7
 exec --no-startup-id dunst
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id snixembed --fork
