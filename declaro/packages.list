@@ -4,6 +4,7 @@ base-devel
 declaro-git
 grub
 intel-ucode
+libva-intel-driver
 linux
 linux-firmware
 linux-headers
@@ -11,6 +12,8 @@ networkmanager
 os-prober
 yay
 yay-debug
+mesa
+mesa-utils
 
 # Display manager
 xorg-server
@@ -108,4 +111,7 @@ remmina # Remote desktop
 moonlight-qt
 vlc
 cloudflare-warp-bin
+
+# Testing
+libva-utils
 
