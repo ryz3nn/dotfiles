@@ -112,6 +112,7 @@ moonlight-qt
 vlc
 cloudflare-warp-bin
 
-# Testing
+# Testing, Utils
 libva-utils
+cpupower
 
