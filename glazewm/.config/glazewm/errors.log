@@ -1,0 +1,15 @@
+[2m2026-08-18T03:15:13.064777Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[25].commands: unrecognized subcommand
+ at line 266 column 15
+[2m2026-08-18T03:16:30.629777Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[25].commands: unrecognized subcommand
+ at line 266 column 15
+[2m2026-08-18T03:16:46.673589Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[25].commands: unrecognized subcommand
+ at line 266 column 15
+[2m2026-08-18T03:17:16.746950Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[25].commands: unrecognized subcommand
+ at line 266 column 15
+[2m2026-08-18T03:18:01.219844Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[25].commands: unrecognized subcommand
+ at line 266 column 15
+[2m2026-08-18T03:18:50.408281Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Shell exec failed for 'start msedge'. Make sure the program exists and is accessible from your shell. Error: The operation was canceled by the user. (0x800704C7)
+[2m2026-08-18T03:19:40.289491Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Shell exec failed for 'start msedge'. Make sure the program exists and is accessible from your shell. Error: The operation was canceled by the user. (0x800704C7)
+[2m2026-08-18T03:37:50.622588Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[2]: missing field `commands` at line 166 column 5
+[2m2026-08-18T04:24:51.276653Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Shell exec failed for 'start msedge'. Make sure the program exists and is accessible from your shell. Error: The operation was canceled by the user. (0x800704C7)
+[2m2026-08-21T21:59:40.380916Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m could not find expected ':' at line 170 column 23, while scanning a simple key at line 169 column 5
