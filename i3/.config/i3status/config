@@ -3,8 +3,13 @@ general {
   interval = 5
 }
 
+order += "load"
 order += "memory"
 order += "tztime local"
+
+load {
+  format = "CPU: %1min"
+}
 
 memory {
   format = "RAM: %used/%total"
@@ -13,4 +18,3 @@ memory {
 tztime local {
   format = "%Y-%m-%d %H:%M:%S"
 }
-

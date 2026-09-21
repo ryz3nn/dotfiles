@@ -8,5 +8,7 @@ return {
       timeout_ms = 500,
       lsp_format = "fallback",
     },
+    notify_on_error = true,
+    log_level = vim.log.levels.ERROR,
   },
 }

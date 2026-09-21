@@ -21,4 +21,5 @@ require('lazy').setup ({
   require('plugins.comment'),
   require('plugins.nvim-cmp'),
   require('plugins.conform'),
+  require('plugins.rust'),
 })

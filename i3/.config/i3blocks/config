@@ -1,0 +1,13 @@
+interval=5
+
+[cpu]
+command=~/.config/i3blocks/cpu
+interval=5
+
+[memory]
+command=free -h | awk '/^Mem:/ {print "RAM: " $3 "/" $2}'
+interval=5
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5

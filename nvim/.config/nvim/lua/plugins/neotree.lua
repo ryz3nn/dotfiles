@@ -8,6 +8,9 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     opts = {
+    window = {
+        width = 25,
+    },
     filesystem = {
       filtered_items = {
         visible = true,          -- When true, filtered items are dimmed instead of completely hidden
