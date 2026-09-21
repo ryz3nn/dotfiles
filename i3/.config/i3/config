@@ -18,7 +18,7 @@ exec --no-startup-id pasystray
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id fcitx5
 
-exec feh --bg-scale "/home/derek/dotfiles/wallpapers/goggins.webp"
+exec feh --bg-scale "/home/derek/dotfiles/wallpapers/goggins1.jpg"
 exec --no-startup-id xmodmap ~/.Xmodmap
 
 # exec --no-startup-id sh -c '/home/derek/dotfiles/scripts/wallpaper.sh'
