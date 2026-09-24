@@ -41,7 +41,8 @@ for_window [class="ryz"] floating enable, resize set 800 600, move position cent
 # Workspace
 
 #======My shortcut====
-bindsym $mod+Shift+b exec "i3-msg 'workspace 2; exec ungoogled-chromium --enable-speech-dispatcher --test-type'"
+# bindsym $mod+Shift+b exec "i3-msg 'workspace 2; exec ungoogled-chromium --enable-speech-dispatcher --test-type'"
+bindsym $mod+Shift+b exec "i3-msg 'workspace 2; exec firefox -p 'daily''"
 bindsym $mod+Shift+p exec "i3-msg 'workspace 2; exec ungoogled-chromium --incognito'"
 bindsym $mod+e exec thunar
 bindsym $mod+Shift+Return exec $term -class dropdown
