@@ -149,6 +149,7 @@ alias pmbootstrap='python ~/postmarketos/pmbootstrap/pmbootstrap.py'
 alias search='pacman -Ss'
 alias oc='opencode'
 alias bug='cd $HOME/projects/space/bug'
+alias space='cd $HOME/projects/space'
 alias tmux='systemd-run --scope --user tmux'
 
 # ======================
