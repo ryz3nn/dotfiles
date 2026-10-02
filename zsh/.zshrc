@@ -151,7 +151,7 @@ alias oc='opencode'
 alias bug='cd $HOME/projects/space/bug'
 alias space='cd $HOME/projects/space'
 alias tmux='systemd-run --scope --user tmux'
-
+alias config='nvim ~/dotfiles/nvim'
 # ======================
 # Debian aliases
 # ======================
