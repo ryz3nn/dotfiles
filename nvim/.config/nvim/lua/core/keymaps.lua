@@ -82,3 +82,11 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'WinEnter' }, {
     vim.cmd('startinsert')
   end,
 })
+
+vim.keymap.set("n", "<leader>ld", function()
+  local current = vim.diagnostic.config().virtual_lines
+  vim.diagnostic.config({
+    virtual_lines = not current,
+    virtual_text = false,
+  })
+end, { desc = "Toggle diagnostic lines" })
