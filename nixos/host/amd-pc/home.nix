@@ -28,6 +28,7 @@
 # Programs
     firefox
     thunar
+    gh
 
 	];
 	programs.git = {
