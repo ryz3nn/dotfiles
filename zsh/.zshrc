@@ -133,11 +133,11 @@ alias modupdate="vim $HOME/dotfiles/scripts/install.sh"
 # NixOS aliases
 # ======================
 
-alias vm='sudo nixos-rebuild switch --flake /home/derek/minimal-nixos#vm'
-alias pc='sudo nixos-rebuild switch --flake /home/derek/minimal-nixos#pc'
-alias lap='sudo nixos-rebuild switch --flake /home/derek/minimal-nixos#lap'
+alias pc='sudo nixos-rebuild switch --flake /home/derek/dotfiles/nixos#amd-pc'
 
 alias clean='sudo nix-env --delete-generations old && sudo nix-collect-garbage --delete-older-than 2d'
+alias home='nvim ~/dotfiles/nixos/host'
+alias nixs="nix-search"
 
 alias phone='scrcpy --tcpip=192.168.1.99:5555 -S -w --power-off-on-close --no-audio -m 1024 --max-fps 30'
 alias pmbootstrap='python ~/postmarketos/pmbootstrap/pmbootstrap.py'
