@@ -99,7 +99,7 @@ layout {
 }
 
 // ====== Startup ==========
-spawn-at-startup "yambar"
+spawn-at-startup "waybar"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -159,6 +159,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Alt+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
     Alt+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Alt+Shift+B hotkey-overlay-title="Run an Application: Firefox" { spawn "firefox"; }
 
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }

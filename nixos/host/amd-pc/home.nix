@@ -5,17 +5,17 @@
 	home.homeDirectory = "/home/derek";
 
 	home.packages = with pkgs; [
-# Wayland apps
+  # Wayland apps
     foot
     fuzzel
-    yambar
+    waybar
     mako
     swaybg
     grim
     slurp
     wl-clipboard
 
-# Daily
+  # Daily 
 		btop
 		fastfetch
 		ripgrep
@@ -25,7 +25,9 @@
 		stow
     tree
     jq
-# Programs
+
+  # Programs
+    pavucontrol
     firefox
     thunar
     gh

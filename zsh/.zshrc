@@ -139,9 +139,6 @@ alias clean='sudo nix-env --delete-generations old && sudo nix-collect-garbage -
 alias home='nvim ~/dotfiles/nixos/host'
 alias nixs="nix-search"
 
-alias phone='scrcpy --tcpip=192.168.1.99:5555 -S -w --power-off-on-close --no-audio -m 1024 --max-fps 30'
-alias pmbootstrap='python ~/postmarketos/pmbootstrap/pmbootstrap.py'
-
 # ======================
 # Arch aliases
 # ======================
@@ -151,7 +148,11 @@ alias oc='opencode'
 alias bug='cd $HOME/projects/space/bug'
 alias space='cd $HOME/projects/space'
 alias tmux='systemd-run --scope --user tmux'
-alias config='nvim ~/dotfiles/nvim'
+alias dot='nvim ~/dotfiles'
+
+alias phone='scrcpy --tcpip=192.168.1.99:5555 -S -w --power-off-on-close --no-audio -m 1024 --max-fps 30'
+alias pmbootstrap='python ~/postmarketos/pmbootstrap/pmbootstrap.py'
+
 # ======================
 # Debian aliases
 # ======================
