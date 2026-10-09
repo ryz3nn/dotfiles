@@ -2,7 +2,7 @@ input {
     keyboard {
         xkb {
         layout "us"
-        options "ctrl::nocaps"
+        options "ctrl:nocaps"
         }
     }
 

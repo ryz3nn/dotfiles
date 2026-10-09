@@ -55,6 +55,7 @@
   networking.networkmanager.enable = true;
   services.openssh.enable = true;
   nixpkgs.config.allowUnfree = true;
+  hardware.enableAllFirmware = true;
 
   nix.settings.experimental-features = [
     "nix-command"

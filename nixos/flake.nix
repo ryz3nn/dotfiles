@@ -19,7 +19,18 @@
 					home-manager.nixosModules.home-manager {
 						home-manager.useGlobalPkgs = true;	
 						home-manager.useUserPackages = true;	
-						home-manager.users.derek = import ./host/amd-pc/home.nix;	
+						home-manager.users.derek = import ./host/modules/home.nix;	
+					}
+				];			
+			};
+			laptop = nixpkgs.lib.nixosSystem {
+				system = "x86_64-linux";
+				modules = [
+					./host/laptop
+					home-manager.nixosModules.home-manager {
+						home-manager.useGlobalPkgs = true;	
+						home-manager.useUserPackages = true;	
+						home-manager.users.derek = import ./host/modules/home.nix;	
 					}
 				];			
 			};
