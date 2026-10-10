@@ -45,6 +45,32 @@ return {
 
     -- [[ Configure Telescope ]]
     -- See `:help telescope` and `:help telescope.setup()`
+    local ignore_patterns = {
+      'node_modules',
+      '%.git/',
+      '%.venv',
+      'target/',
+      -- Binary / compiled extensions (Lua regex patterns)
+      '%.bin$',
+      '%.so$',
+      '%.dylib$',
+      '%.dll$',
+      '%.exe$',
+      '%.o$',
+      '%.a$',
+      '%.out$',
+      '%.rlib$',
+      '%.png$',
+      '%.jpg$',
+      '%.jpeg$',
+      '%.webp$',
+      '%.pdf$',
+      '%.zip$',
+      '%.tar.*',
+      '%.sqlite3?$',
+      '%.db$',
+    }
+
     require('telescope').setup {
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
@@ -59,13 +85,13 @@ return {
       },
       pickers = {
         find_files = {
-          file_ignore_patterns = { 'node_modules', '%.git', '%.venv' },
+          file_ignore_patterns = ignore_patterns,
           hidden = true,
         },
         live_grep = {
-          file_ignore_patterns = { 'node_modules', '%.git', '%.venv' },
+          file_ignore_patterns = ignore_patterns,
           additional_args = function(_)
-            return { '--hidden' }
+            return { '--hidden' , '--no-binary'}
           end,
         },
       },
