@@ -22,7 +22,6 @@
 #    GTK_IM_MODULE = "fcitx";
     QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
-    LD_LIBRARY_PATH = "$NIX_LD_LIBRARY_PATH";
   };
 
   users.users.derek = {
