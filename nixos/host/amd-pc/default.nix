@@ -6,6 +6,7 @@
 		../../modules/gpt.nix	
 		../../modules/niri.nix	
 		../../modules/dm.nix	
+		../../modules/cron.nix	
 	];
 	
 	networking.hostName = "amd-pc";

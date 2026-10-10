@@ -25,6 +25,7 @@
 		stow
     tree
     jq
+    ncdu
 
   # Programs
     pavucontrol
@@ -37,6 +38,9 @@
 		enable = true;
 		settings.user.name = "ryz3nn";
 		settings.user.email = "cklove2211@gmail.com";
+    extraConfig = {
+        credential.helper = "store";
+      };
 	};
 	programs.home-manager.enable = true;
 	home.stateVersion = "26.05";
