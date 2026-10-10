@@ -84,4 +84,23 @@
     powerOnBoot = true;
   };
   security.rtkit.enable = true;
+
+# Nix-ld
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Wayland dependencies
+    wayland
+    wayland-protocols
+    libxkbcommon
+
+    # Graphics & Rendering (required by wgpu / winit / opengl / vulkan)
+    libGL
+    vulkan-loader
+
+    # X11 fallback (if winit falls back to XWayland)
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXi
+    xorg.libXrandr
+  ];
 }
