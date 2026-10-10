@@ -73,14 +73,26 @@ export GODEBUG='cpu.all=off'
 # ======================
 # Colors
 # ======================
-
 autoload -U colors && colors
 
-# ======================
-# Prompt
-# ======================
+# Load vcs_info
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
 
-PS1="%{$fg[cyan]%}%n@%m %{$fg[green]%}%~ %{$fg[green]%}❯ %{$reset_color%}"
+# Format branch display: shows (branch) in yellow
+zstyle ':vcs_info:git:*' formats ' %F{yellow}(%b)%f'
+zstyle ':vcs_info:git:*' actionformats ' %F{yellow}(%b|%a)%f'
+
+# Run vcs_info before displaying each prompt
+precmd() {
+    vcs_info
+}
+
+# Allow prompt string substitution
+setopt PROMPT_SUBST
+
+# Customize your prompt (shows user, path, and branch)
+PROMPT='%F{green}%n@%m%f %F{blue}%~%f${vcs_info_msg_0_} %# '
 
 # ======================
 # Plugins
