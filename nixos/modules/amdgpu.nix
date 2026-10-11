@@ -7,6 +7,7 @@
   boot.kernelParams = [
     "radeon.si_support=0"
     "amdgpu.si_support=1"
+    "amdgpu.dc=0"
   ];
-  boot.kernelModules = ["amdgpu"];
+  boot.initrd.kernelModules = ["amdgpu"];
   }
