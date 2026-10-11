@@ -1,13 +1,15 @@
 { config, pkgs, ... }:
 {
-  hardware.graphics = {
-    enable  = true;
-    enable32Bit = true;
-  };
-  boot.kernelParams = [
-    "radeon.si_support=0"
-    "amdgpu.si_support=1"
-    "amdgpu.dc=0"
-  ];
-  boot.initrd.kernelModules = ["amdgpu"];
-  }
+  # hardware.graphics = {
+  #   enable  = true;
+  #   enable32Bit = true;
+  # };
+  # boot.kernelParams = [
+  #   "radeon.si_support=0"
+  #   "amdgpu.si_support=1"
+  # ];
+  # boot.initrd.kernelModules = ["amdgpu"];
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  hardware.amdgpu.legacySupport.enable = true;
+}
