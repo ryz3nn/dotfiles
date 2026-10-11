@@ -138,6 +138,10 @@ window-rule {
 window-rule {
     match title="ryz"
     open-floating true
+    // default-column-width { fixed 800;}
+    // default-window-height { fixed 600;}
+    default-column-width { proportion 0.25; }
+    default-window-height { proportion 0.40; }
 }
 
 // Example: block out two password managers from screen capture.
