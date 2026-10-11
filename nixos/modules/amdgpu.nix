@@ -8,5 +8,5 @@
     enable  = true;
     enable32Bit = true;
   };
-  boot.initrd.kernelModules = ["amdgpu"];
+  boot.kernelModules = ["amdgpu"];
   }
