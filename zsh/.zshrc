@@ -146,6 +146,7 @@ alias modupdate="vim $HOME/dotfiles/scripts/install.sh"
 # ======================
 
 alias pc='git -C ~/dotfiles add -A && sudo nixos-rebuild switch --flake /home/derek/dotfiles/nixos#amd-pc'
+alias pc-test='git -C ~/dotfiles add -A && sudo nixos-rebuild test --flake /home/derek/dotfiles/nixos#amd-pc'
 alias lap='git -C ~/dotfiles add -A && sudo nixos-rebuild switch --flake /home/derek/dotfiles/nixos#laptop'
 
 alias clean='sudo nix-env --delete-generations old && sudo nix-collect-garbage --delete-older-than 2d'
