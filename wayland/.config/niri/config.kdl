@@ -142,6 +142,7 @@ window-rule {
     // default-window-height { fixed 600;}
     default-column-width { proportion 0.4; }
     default-window-height { proportion 0.5; }
+    default-floating-position x=0 y=100 relative-to="top"
 }
 
 // Example: block out two password managers from screen capture.
