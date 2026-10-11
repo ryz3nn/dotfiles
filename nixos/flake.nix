@@ -8,7 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    inputs.bluevein.url = "github:meowrch/BlueVein";
+    bluevein.url = "github:meowrch/BlueVein";
   };
 
   outputs = {self, nixpkgs, home-manager, bluevein, ...} : {
@@ -26,7 +26,7 @@
           {
             services.bluevein.enable = true;
             # Optional: pin the EFI device with a stable path
-         #   services.bluevein.efiDevice = "/dev/disk/by-uuid/A1B2-C3D4";
+            services.bluevein.efiDevice = "/dev/disk/by-uuid/38E5-B4C3";
           }
         ];			
       };
