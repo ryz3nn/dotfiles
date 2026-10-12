@@ -28,6 +28,8 @@
     ncdu
 
   # Programs
+    vlc
+    mpv
     pavucontrol
     firefox
     thunar
