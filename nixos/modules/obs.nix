@@ -15,6 +15,7 @@
       obs-vaapi                   # VA-API hardware encoding for Intel/AMD GPUs
       obs-gstreamer               # GStreamer pipelines support
       obs-backgroundremoval       # AI-based background removal
+      droidcam-obs
     ];
   };
 }

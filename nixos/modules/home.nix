@@ -32,6 +32,7 @@
     firefox
     thunar
     gh
+    droidcam
 
 	];
 	programs.git = {
