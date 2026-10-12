@@ -27,7 +27,7 @@
             services.bluevein.enable = true;
 
             # Optional: pin the EFI device with a stable path
-            services.bluevein.efiDevice = "/dev/disk/by-uuid/38E5-B4C3";
+            services.bluevein.efiDevice = "/dev/disk/by-uuid/5204-DADB";
           }
         ];			
       };
