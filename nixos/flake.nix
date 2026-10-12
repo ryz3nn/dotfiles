@@ -8,9 +8,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    bluevein.url = "github:meowrch/BlueVein";
   };
 
-  outputs = {self, nixpkgs, home-manager, ...} : {
+  outputs = {self, nixpkgs, home-manager, bluevein, ...} : {
     nixosConfigurations = {
       amd-pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -20,6 +21,13 @@
             home-manager.useGlobalPkgs = true;	
             home-manager.useUserPackages = true;	
             home-manager.users.derek = import ./modules/home.nix;	
+          }
+          bluevein.nixosModules.default
+          {
+            services.bluevein.enable = true;
+
+            # Optional: pin the EFI device with a stable path
+            services.bluevein.efiDevice = "/dev/disk/by-uuid/38E5-B4C3";
           }
         ];			
       };

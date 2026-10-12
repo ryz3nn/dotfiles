@@ -1,5 +1,23 @@
 {
   "nodes": {
+    "bluevein": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1790942498,
+        "narHash": "sha256-YTjYZimw6nZqWD7b6YF92Q338qA44G4+wOeQ9sIzFOE=",
+        "owner": "meowrch",
+        "repo": "BlueVein",
+        "rev": "8a243b7a2124cfbb8ce3bd480f76cac67b979cb1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "meowrch",
+        "repo": "BlueVein",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -22,6 +40,22 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1777954456,
+        "narHash": "sha256-hGdgeU2Nk87RAuZyYjyDjFL6LK7dAZN5RE9+hrDTkDU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "549bd84d6279f9852cae6225e372cc67fb91a4c1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1791179034,
         "narHash": "sha256-Ni0LBydzaCi8oek12r4mVreuFHqYlM1eTD6SfiENKfw=",
         "owner": "NixOS",
@@ -38,8 +72,9 @@
     },
     "root": {
       "inputs": {
+        "bluevein": "bluevein",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },
