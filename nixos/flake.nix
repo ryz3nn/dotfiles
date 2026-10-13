@@ -8,43 +8,51 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     bluevein.url = "github:meowrch/BlueVein";
+
     wshowkeys = {
-        url = "github:DreamMaoMao/wshowkeys";
-        inputs.nixpkgs.follows = "nixpkgs"; # optional
+      url = "github:DreamMaoMao/wshowkeys";
+      inputs.nixpkgs.follows = "nixpkgs"; # optional
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, bluevein, ...} : {
+  # 1. Capture inputs here using `@inputs`
+  outputs = { self, nixpkgs, home-manager, bluevein, ... }@inputs: {
     nixosConfigurations = {
       amd-pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./host/amd-pc
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;	
-            home-manager.useUserPackages = true;	
-            home-manager.users.derek = import ./modules/home.nix;	
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            # 2. Pass inputs into Home Manager modules
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.derek = import ./modules/home.nix;
           }
           bluevein.nixosModules.default
           {
             services.bluevein.enable = true;
-
-            # Optional: pin the EFI device with a stable path
             services.bluevein.efiDevice = "/dev/disk/by-uuid/5204-DADB";
           }
-        ];			
+        ];
       };
+
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./host/laptop
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;	
-              home-manager.useUserPackages = true;	
-              home-manager.users.derek = import ./modules/home.nix;	
-            }
-        ];			
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            # 2. Pass inputs here as well
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.users.derek = import ./modules/home.nix;
+          }
+        ];
       };
     };
   };
