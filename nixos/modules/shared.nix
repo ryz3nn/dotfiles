@@ -111,4 +111,18 @@
     enable = true;
     package = inputs.wshowkeys.packages.${pkgs.system}.default;
   };
+
+# SSD
+fileSystems."/mnt/data" = {
+  device = "/dev/disk/by-uuid/YOUR-SSD-UUID-HERE";
+  fsType = "ntfs3"; # or "exfat"
+  options = [
+    "defaults"
+    "nofail"
+    "uid=1000"     # ID of your normal user (check with `id -u`)
+    "gid=100"      # ID of your group (check with `id -g`, typically 100 for 'users')
+    "dmask=0022"   # Folder permissions: 755
+    "fmask=0133"   # File permissions: 644
+  ];
+};
 }
