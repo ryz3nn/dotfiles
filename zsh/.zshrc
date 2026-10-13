@@ -154,6 +154,10 @@ alias home='nvim ~/dotfiles/nixos/modules/home.nix'
 alias nixs="nix-search"
 alias dev="nix develop -c zsh"
 
+# OBS shortcut
+alias keys="wshowkeys -a bottom -m 60 -F 'JetBrains Mono Bold 26' -b '#1a1b26cc' -f '#c0caf5ff' -l 500 -t 800"
+alias veado="steam-run ~/.local/opt/veadotube-mini-linux-x64/veadotube-mini"
+
 # ======================
 # Arch aliases
 # ======================
