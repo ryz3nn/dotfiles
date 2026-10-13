@@ -114,7 +114,7 @@
 
 # SSD
 fileSystems."/mnt/data" = {
-  device = "/dev/disk/by-uuid/YOUR-SSD-UUID-HERE";
+  device = "/dev/disk/by-uuid/60F6DEF8F6DECD82";
   fsType = "ntfs3"; # or "exfat"
   options = [
     "defaults"
