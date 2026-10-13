@@ -26,6 +26,7 @@
     tree
     jq
     ncdu
+    _7zz
 
   # Programs
     vlc
