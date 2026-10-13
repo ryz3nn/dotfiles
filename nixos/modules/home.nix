@@ -27,6 +27,7 @@
     jq
     ncdu
     _7zz
+    yazi
 
   # Programs
     vlc
