@@ -144,6 +144,17 @@ window-rule {
     default-window-height { proportion 0.5; }
     default-floating-position x=0 y=100 relative-to="top"
 }
+// Route OBS Studio
+window-rule {
+    match app-id=r#"^com\.obsproject\.Studio$"#
+    open-on-workspace "2"
+}
+
+// Route veadotube mini
+window-rule {
+    match app-id=r#"veadotube-mini"#
+    open-on-workspace "2"
+}
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
