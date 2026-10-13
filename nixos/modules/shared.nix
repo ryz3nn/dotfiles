@@ -106,5 +106,9 @@
     xorg.libXi
     xorg.libXrandr
   ];
-
+# wshowkeys
+  programs.wshowkeys = {
+    enable = true;
+    package = inputs.wshowkeys.packages.${pkgs.system}.default;
+  };
 }

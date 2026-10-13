@@ -22,6 +22,7 @@
     nixosConfigurations = {
       amd-pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {inherit inputs; };
         modules = [
           ./host/amd-pc
           home-manager.nixosModules.home-manager
@@ -42,6 +43,7 @@
 
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {inherit inputs; };
         modules = [
           ./host/laptop
           home-manager.nixosModules.home-manager
