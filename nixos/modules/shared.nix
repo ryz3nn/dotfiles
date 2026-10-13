@@ -37,6 +37,7 @@
 
   programs.git.enable = true;
   programs.zsh.enable = true;
+  services.cloudflare-warp.enable = true;
   environment.systemPackages = with pkgs; [
     git
       curl
@@ -45,6 +46,7 @@
       nix-search-cli
       papirus-icon-theme
       adwaita-icon-theme
+      cloudflare-warp
   ];
 
   fonts.packages = with pkgs; [
@@ -53,7 +55,6 @@
   ];
 
   networking.networkmanager.enable = true;
-  networking.nameservers = [ "1.1.1.1" "1.0.0.1" "8.8.8.8" ];
   services.openssh.enable = true;
   nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
