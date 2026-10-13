@@ -36,7 +36,6 @@
     firefox
     thunar
     gh
-    inputs.wshowkeys.packages.${pkgs.system}.default
 
 	];
 	programs.git = {

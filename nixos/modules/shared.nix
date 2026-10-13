@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   virtualisation.vmware.guest.enable = true;
 
@@ -30,7 +30,6 @@
     extraGroups = [
       "wheel"
         "networkmanager"
-        "input"
     ];	
     shell = pkgs.zsh;
   };
@@ -107,4 +106,5 @@
     xorg.libXi
     xorg.libXrandr
   ];
+
 }
