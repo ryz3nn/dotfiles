@@ -18,8 +18,9 @@ require('lazy').setup ({
   require('plugins.treesitter'),
   require('plugins.telescope'),
   require('plugins.indent-blankline'),
-  require('plugins.comment'),
+  -- require('plugins.comment'),
   require('plugins.nvim-cmp'),
   require('plugins.conform'),
   require('plugins.rust'),
+  require('plugins.nvim-autopairs'),
 })
