@@ -37,6 +37,7 @@
     thunar
     gh
     droidcam
+    cloudflare-warp
 
 	];
 	programs.git = {
