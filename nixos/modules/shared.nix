@@ -113,7 +113,7 @@
   };
 
 # SSD
-fileSystems."/mnt/data" = {
+fileSystems."/home/derek/SSD" = {
   device = "/dev/disk/by-uuid/60F6DEF8F6DECD82";
   fsType = "ntfs3"; # or "exfat"
   options = [
