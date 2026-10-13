@@ -9,6 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     bluevein.url = "github:meowrch/BlueVein";
+    wshowkeys = {
+        url = "github:DreamMaoMao/wshowkeys";
+        inputs.nixpkgs.follows = "nixpkgs"; # optional
+    };
   };
 
   outputs = {self, nixpkgs, home-manager, bluevein, ...} : {

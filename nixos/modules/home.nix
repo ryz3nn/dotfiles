@@ -36,7 +36,7 @@
     firefox
     thunar
     gh
-    droidcam
+    inputs.wshowkeys.packages.${pkgs.system}.default
 
 	];
 	programs.git = {
