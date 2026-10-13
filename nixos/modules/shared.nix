@@ -53,6 +53,7 @@
   ];
 
   networking.networkmanager.enable = true;
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1" "8.8.8.8" ];
   services.openssh.enable = true;
   nixpkgs.config.allowUnfree = true;
   hardware.enableAllFirmware = true;
