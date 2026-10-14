@@ -10,6 +10,8 @@ in
 {
   home.username = "derek";
   home.homeDirectory = "/home/derek";
+  programs.home-manager.enable = true;
+  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     # Custom scripts
@@ -52,15 +54,6 @@ in
     gh
   ];
 
-  # Registers "Stream Setup" into Fuzzel / application launchers
-  xdg.desktopEntries.stream = {
-    name = "Stream Setup";
-    comment = "Launch wshowkeys, veadotube, and OBS";
-    exec = "stream";
-    terminal = false;
-    categories = [ "AudioVideo" "Recorder" ];
-  };
-
   programs.git = {
     enable = true;
     settings.user.name = "ryz3nn";
@@ -70,6 +63,12 @@ in
     };
   };
 
-  programs.home-manager.enable = true;
-  home.stateVersion = "26.05";
+  # Registers "Stream Setup" into Fuzzel / application launchers
+  xdg.desktopEntries.stream = {
+    name = "Stream Setup";
+    comment = "Launch wshowkeys, veadotube, and OBS";
+    exec = "stream";
+    terminal = false;
+    categories = [ "AudioVideo" "Recorder" ];
+  };
 }
