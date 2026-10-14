@@ -19,7 +19,7 @@ in
 
     # Tools required by the stream script
     obs-studio
-    steam-run
+    # steam-run
 
     # Wayland apps
     foot
