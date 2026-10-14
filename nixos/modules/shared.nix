@@ -47,7 +47,7 @@
       papirus-icon-theme
       adwaita-icon-theme
       cloudflare-warp
-      # steam-run
+      steam-run
   ];
 
   fonts.packages = with pkgs; [
