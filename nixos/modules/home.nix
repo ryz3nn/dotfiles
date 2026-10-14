@@ -14,12 +14,9 @@ in
   home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
-    # Custom scripts
-    stream-session
-
     # Tools required by the stream script
+    stream-session
     obs-studio
-    # steam-run
 
     # Wayland apps
     foot
