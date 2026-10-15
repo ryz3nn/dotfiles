@@ -180,6 +180,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Alt+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
     Alt+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Alt+E hotkey-overlay-title="Run an Application: thunar" { spawn "thunar"; }
     Alt+Shift+B hotkey-overlay-title="Run an Application: Firefox" { spawn "firefox"; }
 
 
