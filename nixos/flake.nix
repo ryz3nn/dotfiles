@@ -15,6 +15,10 @@
       url = "github:DreamMaoMao/wshowkeys";
       inputs.nixpkgs.follows = "nixpkgs"; # optional
     };
+    antigravity-nix = {
+      url = "github:jacopone/antigravity-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # 1. Capture inputs here using `@inputs`

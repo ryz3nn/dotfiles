@@ -49,6 +49,7 @@ in
     firefox
     thunar
     gh
+    antigravity-nix.packages.x86_64-linux.google-antigravity-cli # CLI
   ];
 
   programs.git = {
