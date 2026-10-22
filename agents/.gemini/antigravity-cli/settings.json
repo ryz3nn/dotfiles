@@ -1,5 +1,8 @@
 {
+  "agentMode": "auto",
   "allowNonWorkspaceAccess": true,
+  "artifactReviewPolicy": "agent-decides",
+  "colorScheme": "light",
   "permissions": {
     "allow": [
       "command(pwd)",
@@ -41,7 +44,9 @@
       "command(git clean)",
       "command(git checkout)",
       "command(git restore)"
+    ]
   },
+  "toolPermission": "always-proceed",
   "trustedWorkspaces": [
     "/home/derek/projects/ryz",
     "/home/derek/projects/game-dev"

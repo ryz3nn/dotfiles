@@ -19,3 +19,6 @@
 {"display":"/exit","timestamp":1792668615764,"workspace":"/home/derek/projects/ryz","type":"slash_command"}
 {"display":"/teach give me roadmap to learn game dev in rust from zero","timestamp":1792668681667,"workspace":"/home/derek/projects/game-dev"}
 {"display":"/config","timestamp":1792669029819,"workspace":"/home/derek/projects/game-dev","conversationId":"99ede857-2b67-4a63-b995-20a566830cc5","type":"slash_command"}
+{"display":"/context","timestamp":1792669242268,"workspace":"/home/derek/projects/game-dev","conversationId":"99ede857-2b67-4a63-b995-20a566830cc5","type":"slash_command"}
+{"display":"/config","timestamp":1792669278012,"workspace":"/home/derek/projects/game-dev","conversationId":"99ede857-2b67-4a63-b995-20a566830cc5","type":"slash_command"}
+{"display":"/config","timestamp":1792669375835,"workspace":"/home/derek/projects/game-dev","type":"slash_command"}
