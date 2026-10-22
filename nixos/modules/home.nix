@@ -45,6 +45,7 @@ in
     yt-dlp
     ffmpeg
     fd
+    seahorse
 
     # Programs
     vlc
