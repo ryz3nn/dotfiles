@@ -94,6 +94,35 @@ setopt PROMPT_SUBST
 # Customize your prompt (shows user, path, and branch)
 PROMPT='%F{green}%n@%m%f %F{blue}%~%f${vcs_info_msg_0_} %# '
 
+# # ======================
+# # Plugins
+# # ======================
+#
+# [[ -f "$HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] &&
+#     source "$HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+#
+# [[ -f "$HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] &&
+#     source "$HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+#
+# # ======================
+# # fzf
+# # ======================
+#
+# if command -v fzf >/dev/null 2>&1; then
+#     if [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then
+#         source /usr/share/doc/fzf/examples/key-bindings.zsh
+#     elif [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
+#         source /usr/share/fzf/key-bindings.zsh
+#     fi
+#
+#     if [[ -f /usr/share/doc/fzf/examples/completion.zsh ]]; then
+#         source /usr/share/doc/fzf/examples/completion.zsh
+#     elif [[ -f /usr/share/fzf/completion.zsh ]]; then
+#         source /usr/share/fzf/completion.zsh
+#     fi
+# fi
+
+# fzf new version
 # ======================
 # Plugins
 # ======================
@@ -101,26 +130,17 @@ PROMPT='%F{green}%n@%m%f %F{blue}%~%f${vcs_info_msg_0_} %# '
 [[ -f "$HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] &&
     source "$HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-[[ -f "$HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] &&
-    source "$HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
 # ======================
 # fzf
 # ======================
 
 if command -v fzf >/dev/null 2>&1; then
-    if [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then
-        source /usr/share/doc/fzf/examples/key-bindings.zsh
-    elif [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
-        source /usr/share/fzf/key-bindings.zsh
-    fi
-
-    if [[ -f /usr/share/doc/fzf/examples/completion.zsh ]]; then
-        source /usr/share/doc/fzf/examples/completion.zsh
-    elif [[ -f /usr/share/fzf/completion.zsh ]]; then
-        source /usr/share/fzf/completion.zsh
-    fi
+    source <(fzf --zsh)
 fi
+
+# Keep syntax highlighting last
+[[ -f "$HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] &&
+    source "$HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # ======================
 # Aliases
@@ -135,7 +155,7 @@ alias ...='cd ../..'
 alias grep='grep --color=auto'
 alias reboot='systemctl reboot'
 alias shutdown='sudo shutdown now'
-alias vim='nvim'
+alias mini='NVIM_APPNAME=nvim-minimax nvim'
 
 alias toggle_ibus='$HOME/dotfiles/scripts/toggle_ibus.sh'
 alias autoupdate="$HOME/dotfiles/scripts/install.sh"

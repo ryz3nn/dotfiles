@@ -1,0 +1,16 @@
+
+The command exited with code 0.
+Output:
+total 16
+drwxr-xr-x  3 derek users 4096 Oct 16 15:13 .
+drwxr-xr-x 11 derek users 4096 Oct 16 15:13 ..
+drwxr-xr-x  2 derek users 4096 Oct 16 15:13 references
+-rw-r--r--  1 derek users 3023 Oct 16 15:13 SKILL.md
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/sdk.md:31:defaults — behind a single async context manager.
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/sdk.md:49:    # Spawn the agent using the async context manager
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/app.md:28:-   **@ Mentions**: Type `@` to open the mention menu and attach context
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/app.md:32:    canvas to share them with the agent. Uploaded media is included as context
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/ide.md:22:-   **Context-Aware Suggestions**: Proposes insertions, deletions, edits,
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/ide.md:67:    accept/reject changes in-context.
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/SKILL.md:47:-   **Model Context Protocol (MCP)**: `https://antigravity.google/docs/mcp`
+

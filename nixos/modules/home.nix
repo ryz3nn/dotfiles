@@ -27,6 +27,7 @@ in
     grim
     slurp
     wl-clipboard
+    wlsunset
 
     # Daily 
     btop
@@ -41,6 +42,9 @@ in
     ncdu
     _7zz
     yazi
+    yt-dlp
+    ffmpeg
+    fd
 
     # Programs
     vlc
@@ -59,6 +63,15 @@ in
     extraConfig = {
       credential.helper = "store";
     };
+  };
+  services.wlsunset = {
+    enable = true;
+    temperature = {
+      day = 6500;
+      night = 6000;
+    };
+    sunrise = "07:00";
+    sunset = "18:00";
   };
 
   # Registers "Stream Setup" into Fuzzel / application launchers

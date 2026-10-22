@@ -1,0 +1,25 @@
+
+The command exited with code 0.
+Output:
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/sdk.md:defaults — behind a single async context manager.
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/sdk.md:    # Spawn the agent using the async context manager
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/app.md:-   **@ Mentions**: Type `@` to open the mention menu and attach context
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/app.md:    canvas to share them with the agent. Uploaded media is included as context
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/ide.md:-   **Context-Aware Suggestions**: Proposes insertions, deletions, edits,
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/references/ide.md:    accept/reject changes in-context.
+/home/derek/.gemini/antigravity-cli/builtin/skills/antigravity_guide/SKILL.md:-   **Model Context Protocol (MCP)**: `https://antigravity.google/docs/mcp`
+/home/derek/.gemini/antigravity-cli/builtin/skills/agy-customizations/docs/hooks.md:Hook commands receive context as a JSON object on **stdin** and must output
+/home/derek/.gemini/antigravity-cli/builtin/skills/agy-customizations/docs/hooks.md:Use to inject welcome messages, initial instructions, or startup context once at
+/home/derek/.gemini/antigravity-cli/builtin/skills/agy-customizations/docs/hooks.md:Use to inject context or instructions before the model runs.
+/home/derek/.gemini/antigravity-cli/builtin/skills/agy-customizations/docs/mcp_servers.md:The Model Context Protocol (MCP) is an open standard that enables developers to
+/home/derek/.gemini/antigravity-cli/builtin/skills/agy-customizations/docs/mcp_servers.md:[Streamable HTTP](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http)
+/home/derek/.gemini/antigravity-cli/builtin/skills/agy-customizations/docs/skills.md:    saving token context.
+/home/derek/.gemini/antigravity-cli/builtin/skills/agy-customizations/docs/rules.md:## Size Limits and Context Budget
+/home/derek/.gemini/antigravity-cli/builtin/skills/agy-customizations/SKILL.md:**Rules**       | `GEMINI.md`, `AGENTS.md`     | Contextual / Hierarchical | Enforcing coding styles, API restrictions, and local guidelines.                        | [Rules Guide](./docs/rules.md)
+/home/derek/.gemini/antigravity-cli/builtin/skills/agy-customizations/SKILL.md:To prevent overwhelming the model's context window, Antigravity uses
+/home/derek/.gemini/antigravity-cli/builtin/skills/agy-customizations/SKILL.md:*   **Skills** are not loaded into the context window by default. Only their
+/home/derek/.gemini/antigravity-cli/builtin/skills/run-workflow/SKILL.md:## Agents that keep their context
+/home/derek/.gemini/antigravity-cli/builtin/skills/run-workflow/SKILL.md:-   Agents do not see the script or each other. Put all the context an agent
+/home/derek/.gemini/antigravity-cli/builtin/skills/ui-plugin-navigation/SKILL.md:1.  **Contextual relevance.** Read the enabled UI plugins' `description` /
+/home/derek/.gemini/antigravity-cli/builtin/skills/plugin/SKILL.md:> populated config will flood your context. Always pipe it through `jq`.
+

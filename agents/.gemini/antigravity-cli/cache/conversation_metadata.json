@@ -1,0 +1,79 @@
+{
+  "conversations": {
+    "10be221e-e569-4451-9d94-b2afc55a09ec": {
+      "summary": {
+        "ID": "10be221e-e569-4451-9d94-b2afc55a09ec",
+        "Title": "Showing Context Usage In Agy",
+        "Preview": "/agy-customizations how to show context usage in agy",
+        "NumSteps": 11,
+        "Loaded": true,
+        "UpdatedAt": "2026-10-19T01:32:51.461701576Z",
+        "WorkspaceURIs": [
+          "file:///home/derek/projects/ryz"
+        ],
+        "AppDataDir": "antigravity-cli",
+        "ProjectID": "default-cli-project",
+        "AgentName": "",
+        "GroupID": "",
+        "Internal": false,
+        "Cloud": false,
+        "CloudProject": {
+          "ID": "",
+          "Name": ""
+        }
+      },
+      "is_internal": false,
+      "last_modified_time": "2026-10-19T08:34:29.658331998+07:00"
+    },
+    "e6c87ffe-3003-4e66-8f77-b0ff82817405": {
+      "summary": {
+        "ID": "e6c87ffe-3003-4e66-8f77-b0ff82817405",
+        "Title": "",
+        "Preview": "",
+        "NumSteps": 0,
+        "Loaded": true,
+        "UpdatedAt": "0001-01-01T00:00:00Z",
+        "WorkspaceURIs": [
+          "file:///home/derek/projects/ryz"
+        ],
+        "AppDataDir": "antigravity-cli",
+        "ProjectID": "default-cli-project",
+        "AgentName": "",
+        "GroupID": "",
+        "Internal": false,
+        "Cloud": false,
+        "CloudProject": {
+          "ID": "",
+          "Name": ""
+        }
+      },
+      "is_internal": false,
+      "last_modified_time": "2026-10-19T08:26:06.642708352+07:00"
+    },
+    "f4d1e2fd-8e03-4792-9fb0-3f19107e5553": {
+      "summary": {
+        "ID": "f4d1e2fd-8e03-4792-9fb0-3f19107e5553",
+        "Title": "Simple Rust File Template",
+        "Preview": "write simple rust file",
+        "NumSteps": 36,
+        "Loaded": true,
+        "UpdatedAt": "2026-10-19T01:03:46.041377863Z",
+        "WorkspaceURIs": [
+          "file:///home/derek/projects/ryz"
+        ],
+        "AppDataDir": "antigravity-cli",
+        "ProjectID": "default-cli-project",
+        "AgentName": "",
+        "GroupID": "",
+        "Internal": false,
+        "Cloud": false,
+        "CloudProject": {
+          "ID": "",
+          "Name": ""
+        }
+      },
+      "is_internal": false,
+      "last_modified_time": "2026-10-19T08:03:49.337494905+07:00"
+    }
+  }
+}

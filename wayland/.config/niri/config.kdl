@@ -354,7 +354,7 @@ binds {
     Alt+Period { expel-window-from-column; }
 
     // Cycle through widths set in preset-column-widths.
-    Alt+R { switch-preset-column-width; }
+    // Alt+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
     Alt+Shift+R { switch-preset-column-width-back; }
 

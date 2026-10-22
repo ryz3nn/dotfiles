@@ -1,0 +1,18 @@
+
+The command exited with code 0.
+Output:
+total 20
+drwxr-xr-x  3 derek users 4096 Oct 16 15:13 .
+drwxr-xr-x 11 derek users 4096 Oct 16 15:13 ..
+drwxr-xr-x  2 derek users 4096 Oct 16 15:13 docs
+-rw-r--r--  1 derek users 5465 Oct 16 15:13 SKILL.md
+total 52
+drwxr-xr-x 2 derek users  4096 Oct 16 15:13 .
+drwxr-xr-x 3 derek users  4096 Oct 16 15:13 ..
+-rw-r--r-- 1 derek users 13129 Oct 16 15:13 hooks.md
+-rw-r--r-- 1 derek users  4904 Oct 16 15:13 json_configs.md
+-rw-r--r-- 1 derek users  3378 Oct 16 15:13 mcp_servers.md
+-rw-r--r-- 1 derek users  4347 Oct 16 15:13 plugins.md
+-rw-r--r-- 1 derek users  1757 Oct 16 15:13 rules.md
+-rw-r--r-- 1 derek users  2650 Oct 16 15:13 skills.md
+

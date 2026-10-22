@@ -1,0 +1,54 @@
+{
+  "allowNonWorkspaceAccess": true,
+  "permissions": {
+    "allow": [
+      "command(pwd)",
+      "command(ls)",
+      "command(cat)",
+      "command(head)",
+      "command(tail)",
+      "command(file)",
+      "command(find)",
+      "command(rg)",
+      "command(grep)",
+      "command(which)",
+      "command(type)",
+      "command(git status)",
+      "command(git diff)",
+      "command(git log)",
+      "command(git show)",
+      "command(git branch)",
+      "command(git remote)",
+      "command(git rev-parse)",
+      "command(git ls-files)",
+      "command(agy)",
+      "command(strings)"
+    ],
+    "deny": [
+      "command(sudo)",
+      "command(rm -rf)",
+      "command(chmod)",
+      "command(chown)",
+      "write_file(.git/)",
+      "write_file(src/)",
+      "write_file(tests/)",
+      "write_file(examples/)"
+    ],
+    "ask": [
+      "command(git commit)",
+      "command(git push)",
+      "command(git reset)",
+      "command(git clean)",
+      "command(git checkout)",
+      "command(git restore)",
+      "command(cargo)",
+      "command(go)",
+      "command(nix)",
+      "command(curl)",
+      "command(wget)"
+    ]
+  },
+  "trustedWorkspaces": [
+    "/home/derek/projects/ryz"
+  ]
+}

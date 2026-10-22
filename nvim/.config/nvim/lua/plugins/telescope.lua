@@ -45,6 +45,12 @@ return {
 
     -- [[ Configure Telescope ]]
     -- See `:help telescope` and `:help telescope.setup()`
+    -- Use the directory passed to `nvim` as the working directory.
+    local arg = vim.fn.argv(0)
+    if arg ~= '' and vim.fn.isdirectory(arg) == 1 then
+      vim.cmd.cd(vim.fn.fnameescape(arg))
+    end
+
     local ignore_patterns = {
       'node_modules',
       '%.git/',

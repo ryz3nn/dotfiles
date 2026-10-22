@@ -1,0 +1,16 @@
+
+The command exited with code 0.
+Output:
+total 16
+drwxr-xr-x  3 derek users 4096 Oct 16 15:13 .
+drwxr-xr-x 11 derek users 4096 Oct 16 15:13 ..
+drwxr-xr-x  2 derek users 4096 Oct 16 15:13 references
+-rw-r--r--  1 derek users 3023 Oct 16 15:13 SKILL.md
+total 24
+drwxr-xr-x 2 derek users 4096 Oct 16 15:13 .
+drwxr-xr-x 3 derek users 4096 Oct 16 15:13 ..
+-rw-r--r-- 1 derek users 3852 Oct 16 15:13 app.md
+-rw-r--r-- 1 derek users 1686 Oct 16 15:13 cli.md
+-rw-r--r-- 1 derek users 3399 Oct 16 15:13 ide.md
+-rw-r--r-- 1 derek users 3130 Oct 16 15:13 sdk.md
+

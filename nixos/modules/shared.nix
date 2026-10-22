@@ -52,7 +52,9 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-      font-awesome
+    nerd-fonts.departure-mono
+    cozette
+    font-awesome
   ];
 
   networking.networkmanager.enable = true;

@@ -23,4 +23,5 @@ require('lazy').setup ({
   require('plugins.conform'),
   require('plugins.rust'),
   require('plugins.nvim-autopairs'),
+  require('plugins.theme'),
 })
