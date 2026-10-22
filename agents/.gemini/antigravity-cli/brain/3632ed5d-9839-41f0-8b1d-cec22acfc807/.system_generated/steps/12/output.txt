@@ -1,5 +1,0 @@
-
-The command exited with code 0.
-Output:
-  2790601      0 lrwxrwxrwx   1 derek    users          23 Oct 16 15:13 /home/derek/.gemini -> dotfiles/agents/.gemini
-

@@ -25,6 +25,81 @@
       "is_internal": false,
       "last_modified_time": "2026-10-19T08:34:29.658331998+07:00"
     },
+    "3632ed5d-9839-41f0-8b1d-cec22acfc807": {
+      "summary": {
+        "ID": "3632ed5d-9839-41f0-8b1d-cec22acfc807",
+        "Title": "Context Usage in Bottom Bar",
+        "Preview": "/agy-customizations show context usage in bottom",
+        "NumSteps": 23,
+        "Loaded": true,
+        "UpdatedAt": "2026-10-19T01:42:41.514123457Z",
+        "WorkspaceURIs": [
+          "file:///home/derek/projects/ryz"
+        ],
+        "AppDataDir": "antigravity-cli",
+        "ProjectID": "default-cli-project",
+        "AgentName": "",
+        "GroupID": "",
+        "Internal": false,
+        "Cloud": false,
+        "CloudProject": {
+          "ID": "",
+          "Name": ""
+        }
+      },
+      "is_internal": false,
+      "last_modified_time": "2026-10-19T08:42:48.500783824+07:00"
+    },
+    "8ff0e35b-4871-4699-99f3-d842675ff369": {
+      "summary": {
+        "ID": "8ff0e35b-4871-4699-99f3-d842675ff369",
+        "Title": "Context Usage in Agy Panel",
+        "Preview": "/agy-customizations show context usage in agy panel",
+        "NumSteps": 7,
+        "Loaded": true,
+        "UpdatedAt": "2026-10-19T01:36:17.919896544Z",
+        "WorkspaceURIs": [
+          "file:///home/derek/projects/ryz"
+        ],
+        "AppDataDir": "antigravity-cli",
+        "ProjectID": "default-cli-project",
+        "AgentName": "",
+        "GroupID": "",
+        "Internal": false,
+        "Cloud": false,
+        "CloudProject": {
+          "ID": "",
+          "Name": ""
+        }
+      },
+      "is_internal": false,
+      "last_modified_time": "2026-10-19T08:41:24.675767659+07:00"
+    },
+    "99ede857-2b67-4a63-b995-20a566830cc5": {
+      "summary": {
+        "ID": "99ede857-2b67-4a63-b995-20a566830cc5",
+        "Title": "Rust Game Development Roadmap",
+        "Preview": "/teach give me roadmap to learn game dev in rust from zero",
+        "NumSteps": 78,
+        "Loaded": true,
+        "UpdatedAt": "2026-10-22T11:40:36.623125014Z",
+        "WorkspaceURIs": [
+          "file:///home/derek/projects/game-dev"
+        ],
+        "AppDataDir": "antigravity-cli",
+        "ProjectID": "default-cli-project",
+        "AgentName": "",
+        "GroupID": "",
+        "Internal": false,
+        "Cloud": false,
+        "CloudProject": {
+          "ID": "",
+          "Name": ""
+        }
+      },
+      "is_internal": false,
+      "last_modified_time": "2026-10-22T18:41:39.74612522+07:00"
+    },
     "e6c87ffe-3003-4e66-8f77-b0ff82817405": {
       "summary": {
         "ID": "e6c87ffe-3003-4e66-8f77-b0ff82817405",

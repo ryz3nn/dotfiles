@@ -1,5 +1,0 @@
-
-The command exited with code 0.
-Output:
-/etc/profiles/per-user/derek/bin/agy
-

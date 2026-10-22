@@ -1,5 +1,0 @@
-
-The command exited with code 0.
-Output:
-bash: line 1: strings: command not found
-

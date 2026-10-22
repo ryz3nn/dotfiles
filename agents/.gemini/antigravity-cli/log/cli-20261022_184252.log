@@ -158,3 +158,9 @@ I1022 18:42:57.715496     204 experiment_manager.go:70] Experiments refreshed af
 I1022 18:42:57.715548     733 manager.go:1424] Reloading system slash commands
 I1022 18:42:57.718728     733 manager.go:1428] Slash commands unchanged, skipping update
 I1022 18:42:58.078745     735 manager.go:1495] SetCycleMode called: auto
+I1022 18:45:52.163001     218 common.go:422] Terminal gone, shutting down
+I1022 18:45:52.167406       1 common.go:488] CLI program exited, shutting down
+I1022 18:45:52.168414    1122 server.go:3035] Language server shutting down
+I1022 18:45:52.168447    1122 server.go:3040] Waiting for migrations to complete to prevent partial migration state...
+E1022 18:45:52.168833     118 file_watcher.go:194] skipping empty or temp file: 
+I1022 18:45:52.838821       1 manager.go:843] CLI store manager shutting down
