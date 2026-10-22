@@ -40,13 +40,7 @@
       "command(git reset)",
       "command(git clean)",
       "command(git checkout)",
-      "command(git restore)",
-      "command(cargo)",
-      "command(go)",
-      "command(nix)",
-      "command(curl)",
-      "command(wget)"
-    ]
+      "command(git restore)"
   },
   "trustedWorkspaces": [
     "/home/derek/projects/ryz",

@@ -1,0 +1,19 @@
+The search for ""renet" rust networking bevy github" returned the following summary:
+The primary GitHub repository for integrating **Renet** (a client/server networking library for Rust[1]) with the **Bevy** game engine is:
+
+👉 **[GitHub - lucaspoffo/renet](https://github.com/lucaspoffo/renet)**[1]
+
+### Key crates inside the repository:
+* **`renet`**: The core transport-agnostic client/server networking library[1].
+* **`bevy_renet`**: A thin layer providing Bevy plugins, systems, and resources (`RenetClient`, `RenetServer`, etc.) to easily hook Renet into Bevy's ECS loop[2][3].
+* **`renetcode`**: The secure client/server connection and authentication protocol layer[4].
+* **`demo_bevy`**: A full working example/demo showcasing how to structure a multiplayer game using Bevy and Renet[5].
+
+Sources:
+[1] [github.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNT5q3_cEkyz8e6Seo7l1Xcax2hPRZ2xu2FIlMIsnc5bx4RGZ4eIwoTLoPCpY_l0UVwrluKSgwHoTfu00ka8nbBu2gAM-kSOqOtDSyDK7_EwibM95ghRbB_g==)
+[2] [github.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd2RVAVpwLao27tAZF5hEnJ0LuMXSXw2KS9_LRpO0evQ8UF0IzUi1HH8rBlTlV7i92YnO1YUOY6fAMJLWHS8vFr-z1Ol9XRBkt5mM6xWca2g_uYgV8SXv9vJmyM03bMBs7jJ9Kyjb4Q1j168AD4DrXu-inE5BJj9GfQw==)
+[3] [github.io](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_MEVKF5fnXX8KdDEs3--o6XTXMwieW7P2cba56V_hLRUqN3_HZOc2SWQo65VPVLTnliJ0Cv9Rdw5TUi3I_C39eSPlCx3BBOKXXfoNHG1OAONRElgqWoNqyQM8sjrtkdGFyEwhtBWqpa36vAbJdrwXxGe3O0IIXst0zCRYIAGG6GzyuLoVmpan0xHNU4DPSSO9J9eeVHKFdEEY5diSf7vQWR0=)
+[4] [lib.rs](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1TPtAWgJIPNH2CYbG_BNEDGKeWGytNqRh7cr1D4N8YQzK3CSYUbpa_rNETVQd5U9n0S7mKDdEBKq_LlXjWTxd5Tux1Xv2YZJbedBpVf_ggDWhsLM=)
+[5] [github.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaQ6TfRGm442Zvrzmu8Tl3FQ0r23IRj972q0Z6QlVuyJwKW2RKUV70a8TjiXN57OxxkazL2wyR9M66jdguQt196DSQRsTl_pO1OnPvnT09S7WW_GlMj9hkeoWGpWzxjg==)
+
+Note: Source URLs are HTTP redirects; check where they resolve if you need the direct link.
