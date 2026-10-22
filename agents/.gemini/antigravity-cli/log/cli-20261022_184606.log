@@ -212,3 +212,5 @@ I1022 19:51:08.951867    6991 http_helpers.go:349] URL: https://daily-cloudcode-
 I1022 19:51:09.768712    7061 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:loadCodeAssist Trace: 0x9ecd4f61b54fd131
 I1022 19:57:07.764894    7474 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:loadCodeAssist Trace: 0x6fbe02dd7907f0ea
 I1022 19:57:08.426231    7507 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0xf2f910ec81bbd791
+I1022 20:03:07.895471    7847 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0xf93b3b365beffc22
+I1022 20:03:08.017166    7928 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:loadCodeAssist Trace: 0x4f1c9fa22a786888
