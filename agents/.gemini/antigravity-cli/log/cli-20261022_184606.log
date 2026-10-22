@@ -187,3 +187,5 @@ W1022 18:46:56.508749    1029 declarative_config_loader.go:280] skipping compone
 W1022 18:46:56.508752    1029 declarative_config_loader.go:280] skipping component during resolution: empty component: post-tool hook "command_assessor" is empty
 I1022 18:47:05.134033    1358 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0xa7ad72bac6345092 ResponseID: sffZavr-E9-b1e8Prt7muQ4
 I1022 18:47:26.961223     168 quota_manager.go:45] doRefreshQuota: starting reload (force=false)
+I1022 18:52:07.930896    2786 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:loadCodeAssist Trace: 0x3f2d310496a86a7d
+I1022 18:52:08.341468    2774 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0x42be1f37e42883f2
