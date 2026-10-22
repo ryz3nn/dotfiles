@@ -1,0 +1,4 @@
+Command exited with code 127.
+
+Command output:
+bash: line 1: rustc: command not found

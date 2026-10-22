@@ -1,0 +1,9 @@
+Command exited with code 0.
+
+Command output:
+/home/derek/dotfiles/agents/.agents/teach/GLOSSARY-FORMAT.md
+/home/derek/dotfiles/agents/.agents/teach/LEARNING-RECORD-FORMAT.md
+/home/derek/dotfiles/agents/.agents/teach/RESOURCES-FORMAT.md
+/home/derek/dotfiles/agents/.agents/teach/agents/openai.yaml
+/home/derek/dotfiles/agents/.agents/teach/SKILL.md
+/home/derek/dotfiles/agents/.agents/teach/MISSION-FORMAT.md

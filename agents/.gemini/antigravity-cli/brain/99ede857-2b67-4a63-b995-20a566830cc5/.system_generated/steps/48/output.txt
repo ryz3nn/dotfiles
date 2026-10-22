@@ -1,0 +1,31 @@
+The search for ""Hands-on Rust" Herbert Wolverson pragmatic bookshelf" returned the following summary:
+***Hands-on Rust: Effective Learning through 2D Game Development and Play*** is a programming book written by **Herbert Wolverson** and published by **The Pragmatic Bookshelf**[1][2]. 
+
+### Overview
+The book is designed to teach the Rust programming language through a practical, project-based approach rather than traditional abstract syntax tutorials[1][2]. By focusing on game development, it introduces core language concepts—such as ownership, borrowing, lifetimes, structs, enums, and pattern matching—while building playable 2D games from scratch[1][2].
+
+### Key Projects Covered
+1. **Flappy Lizard (A Flappy Bird Clone):** Used early in the book to help readers get comfortable with basic syntax, control flow, functions, and setting up a development environment[2].
+2. **Dungeon Crawler:** A full rogue-like game built over the majority of the book. This project introduces more advanced topics like:
+   * Random procedural dungeon generation[2]
+   * Managing game state and entities
+   * Implementing component-based architectures 
+   * Handling user input and rendering with `bracket-lib` (a minimalist ASCII/console game engine created by the author)[3]
+   * Managing concurrency and performance optimization[2]
+
+### What You Learn
+* **Core Rust Philosophy:** Understanding memory safety[2] without a garbage collector through Rust's unique ownership model.
+* **Idiomatic Code:** How to structure medium-sized Rust applications cleanly.
+* **Minimalist Game Design:** Creating engaging mechanics using constraints (such as ASCII graphics) before getting bogged down in complex asset pipelines[3].
+
+***
+
+*(Note: Herbert Wolverson also authored a follow-up book with The Pragmatic Bookshelf titled **Advanced Hands-on Rust: Level Up Your Coding Skills**, which targets higher-level concepts like macros, traits, asynchronous programming, and working with the Bevy game engine[4].)*
+
+Sources:
+[1] [pragprog.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmZh1LIszopg_VvJoYZdrn_IILL7hBp_r3S3sN_uZOKbFQ9rjP9v-sm3ai46gELpcYKGDO0Jn27bLGUWNg7BZKUCIc03BO4SE59UvYrvZG5bU1hkAqxrQUw9DYVu9eCfPbd6tN--0f)
+[2] [goodreads.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoNdyxmDhmG6rnsaARg8Nrq67WE0Fie4h3wrbSl3xzqQMEy4yv2jf7xcGeVdx__ZuGFNL-Pg_SMh-95HajnD4ewOyQ1FUiM8i8y4V8S7bXNJWI9wHVOOtBiQy9ujORt5AKrZhls1FUymkgMHaLzTZ5FWLd)
+[3] [pageplace.de](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDw30jVvC11bl4VbUTyrjlgF7uFE7qfDbj1TP3RyYFbEIXjumyP1Ul_i5hQmFbOHhcGRkC_bHchvqqLuEAWaWv1iMrVqINxiN8uS-LwKzDo5GIEICfUIuVT468Yisg4vCCac88pvIAAvm2yQ8iLDgltpo6XLdMeqQiAcf1aFNBFvdfv8R-_AopqME32IGvsLcGbJsRkQWWjvc=)
+[4] [pragprog.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgsdanSXTUT7ZWi-RTqwZh4uLnkP_RPas_MJToUoC016SuSNkUHeGKMIztvDeXgyGirANSdokAqtP2dNHtLAltLzMJZJLw27ZQv_3ekSm0BBo94R9tNheSbjn6D5PmYWaepJgigI1qxFWL01TYqLoWQA==)
+
+Note: Source URLs are HTTP redirects; check where they resolve if you need the direct link.
