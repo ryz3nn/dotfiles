@@ -11,6 +11,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
 require('lazy').setup ({
   require('plugins.neotree'),
   require('plugins.bufferline'),
@@ -24,5 +25,6 @@ require('lazy').setup ({
   -- require('plugins.rust'),
   require('plugins.nvim-autopairs'),
   require('plugins.theme'),
-  require('lsp.rust-glancer'),
+
 })
+vim.lsp.enable("rust_glancer")
