@@ -261,3 +261,47 @@ I1023 13:40:02.142917    3509 runner.go:529] Monitor agy_tool_safety FINISHED: t
 I1023 13:40:02.142953    3513 llm_monitor.go:276] LLM Monitor sir_flash_lite: Starting evaluation
 I1023 13:40:02.143641    3513 llm_monitor.go:321] LLM Monitor sir_flash_lite: Trajectory formatted, length: 936
 I1023 13:40:02.144292    3513 llm_monitor.go:414] LLM Monitor sir_flash_lite: Calling LLM (model: MODEL_TIER_FLASH_LITE)
+I1023 13:40:02.881350    3515 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0x705e1d41ec7da92c ResponseID: QgHbaoW0Hv25694PuI-R6AY
+I1023 13:40:03.476762    3513 llm_monitor.go:433] LLM Monitor sir_flash_lite: LLM response received, length: 211
+I1023 13:40:03.476837    3513 llm_monitor.go:471] LLM Monitor sir_flash_lite: LLM response parsed successfully
+I1023 13:40:03.476849    3513 llm_monitor.go:486] LLM Monitor sir_flash_lite: Evaluation complete. Triggered: false, Severity: 0, Confidence: 10
+I1023 13:40:03.476883    3512 runner.go:529] Monitor sir_flash_lite FINISHED: triggered=false, reason="The agent is invoking a subagent to perform a routine code review on a local project file, which is a standard read-only/research task with no safety risks.", duration=1.33392593s
+I1023 13:40:03.476913    3512 runner.go:309] Monitor severe_internal_risks_agy SKIPPED
+I1023 13:40:03.505382    3505 runner.go:529] Monitor agy_tool_safety FINISHED: triggered=true, reason="unsupported_tool: invoke_subagent", duration=12.363µs
+I1023 13:40:03.505430    3573 llm_monitor.go:276] LLM Monitor sir_flash_lite: Starting evaluation
+I1023 13:40:03.506152    3573 llm_monitor.go:321] LLM Monitor sir_flash_lite: Trajectory formatted, length: 936
+I1023 13:40:03.506922    3573 llm_monitor.go:414] LLM Monitor sir_flash_lite: Calling LLM (model: MODEL_TIER_FLASH_LITE)
+W1023 13:40:03.511664    3389 declarative_config_loader.go:280] skipping component during resolution: empty component: prompt section "mcp_servers"
+W1023 13:40:03.511691    3389 declarative_config_loader.go:280] skipping component during resolution: empty component: prompt section "skills"
+I1023 13:40:05.011115    3575 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0x86aa1807ed6ec272 ResponseID: RAHbau71Isr7694PxZe2wA8
+I1023 13:40:05.906319    3573 llm_monitor.go:433] LLM Monitor sir_flash_lite: LLM response received, length: 178
+I1023 13:40:05.906388    3573 llm_monitor.go:471] LLM Monitor sir_flash_lite: LLM response parsed successfully
+I1023 13:40:05.906397    3573 llm_monitor.go:486] LLM Monitor sir_flash_lite: Evaluation complete. Triggered: false, Severity: 0, Confidence: 10
+I1023 13:40:05.906419    3572 runner.go:529] Monitor sir_flash_lite FINISHED: triggered=false, reason="The agent is invoking a subagent to perform a routine code review of a local source file against the project specification.", duration=2.400983951s
+I1023 13:40:05.906444    3572 runner.go:309] Monitor severe_internal_risks_agy SKIPPED
+W1023 13:40:05.932028    3465 declarative_config_loader.go:280] skipping component during resolution: empty component: prompt section "mcp_servers"
+W1023 13:40:05.932096    3465 declarative_config_loader.go:280] skipping component during resolution: empty component: prompt section "skills"
+I1023 13:40:08.701917    3822 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0xcd160e55580bd21c ResponseID: RAHbarmWJMK12roP1uz7sA4
+I1023 13:40:11.398512    4179 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0xca92cea89f688ef5 ResponseID: RgHbapudLpWN1e8P0fOC4Ao
+I1023 13:40:15.547394    4321 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0xecf3c6f2f17e5f02 ResponseID: SgHbaobYPKfgrfcPh_XA8QQ
+I1023 13:40:19.027120    3932 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0xd01e2e405e39d830 ResponseID: RwHbasz3DqWM694P7v6vmAY
+I1023 13:40:19.110470     223 quota_manager.go:45] doRefreshQuota: starting reload (force=false)
+I1023 13:40:30.906577    4498 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0xfcee2c9ec1a0073e ResponseID: TQHbapj6M5mX9tMPytyg-Q4
+I1023 13:40:31.116276    4609 monitoring.go:401] [Sonar] Resolved active tags: [policy_guardian sonar_skip_tags] (detected surface: "")
+I1023 13:40:31.116337    4609 monitoring.go:401] [Sonar] Resolved active tags: [policy_guardian sonar_skip_tags] (detected surface: "")
+W1023 13:40:31.116348    4609 declarative_config_loader.go:280] skipping component during resolution: empty component: prompt section "terminal_sandbox"
+W1023 13:40:31.116356    4609 declarative_config_loader.go:280] skipping component during resolution: empty component: prompt section "mcp_servers"
+W1023 13:40:31.116376    4609 declarative_config_loader.go:280] skipping component during resolution: empty component: prompt section "subagent_reminder"
+W1023 13:40:31.116385    4609 declarative_config_loader.go:280] skipping component during resolution: empty component: pre-tool hook "auto_run_safety_gate" is empty
+W1023 13:40:31.116391    4609 declarative_config_loader.go:280] skipping component during resolution: empty component: post-tool hook "command_assessor" is empty
+I1023 13:40:32.748688    4616 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0x6d4e3fea2623e40 ResponseID: UAHbatPkJq_MrfcPzPPP8Ag
+I1023 13:40:34.592129    4768 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0xd3bc1eb9c4109814 ResponseID: XwHbao76JIfKv_gP7MnMuAc
+I1023 13:40:37.254657    4995 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0xf48b055d4c8a7c15 ResponseID: YAHbatvZAqnE694P99r34Ag
+I1023 13:40:37.260452    5184 runner.go:529] Monitor agy_tool_safety FINISHED: triggered=false, reason="allowed_tool_action", duration=27.572µs
+I1023 13:40:37.260485    5184 runner.go:309] Monitor sir_flash_lite SKIPPED
+I1023 13:40:37.260495    5184 runner.go:309] Monitor severe_internal_risks_agy SKIPPED
+I1023 13:40:44.627152    5206 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0x91f74d97c519c26d ResponseID: ZgHbasfkIsLr694P_s-uqQg
+I1023 13:41:09.709440    5048 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0xc47e4b2f8ea9f6df ResponseID: YQHbaqjSIbe50-kPpc3B4A8
+I1023 13:41:12.203451     223 quota_manager.go:41] doRefreshQuota: skipped (throttled)
+I1023 13:43:14.350446    6675 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0xf6d3548e4778445c
+I1023 13:43:14.421324    6673 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:loadCodeAssist Trace: 0x2a83d13bb7da8f7c
