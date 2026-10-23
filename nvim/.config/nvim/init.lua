@@ -21,7 +21,8 @@ require('lazy').setup ({
   -- require('plugins.comment'),
   require('plugins.nvim-cmp'),
   require('plugins.conform'),
-  require('plugins.rust'),
+  -- require('plugins.rust'),
   require('plugins.nvim-autopairs'),
   require('plugins.theme'),
+  require('lsp.rust-glancer'),
 })
