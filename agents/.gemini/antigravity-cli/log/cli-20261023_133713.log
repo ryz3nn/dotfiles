@@ -366,3 +366,5 @@ I1023 14:38:48.305988   11828 http_helpers.go:349] URL: https://daily-cloudcode-
 I1023 14:38:51.901049     223 quota_manager.go:45] doRefreshQuota: starting reload (force=false)
 I1023 14:40:15.252539   12328 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:loadCodeAssist Trace: 0xeb72ff539059b041
 I1023 14:40:16.269485   12356 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0x7cc8c8d4342b21f6
+I1023 14:45:16.203947   12722 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:loadCodeAssist Trace: 0x45bc1121814c875c
+I1023 14:46:14.568998   12780 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0x62deee51fcaf8b7b
