@@ -25,6 +25,7 @@ require('lazy').setup ({
   -- require('plugins.rust'),
   require('plugins.nvim-autopairs'),
   require('plugins.theme'),
+  require('plugins.rust-glancer'),
 
 })
 vim.lsp.enable("rust_glancer")
