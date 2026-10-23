@@ -194,3 +194,41 @@ I1023 13:34:13.743413    1637 runner.go:309] Monitor sir_flash_lite SKIPPED
 I1023 13:34:13.743422    1637 runner.go:309] Monitor severe_internal_risks_agy SKIPPED
 I1023 13:34:25.951382    1682 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0xdb6427c86e707d69 ResponseID: 6v_aaqOhG8Kq9tMPrfu1yQg
 I1023 13:34:33.400466     222 quota_manager.go:45] doRefreshQuota: starting reload (force=false)
+I1023 13:37:06.436053    2363 search_ripgrep.go:108] reusing extracted ripgrep at /home/derek/.cache/antigravity/bin/rg_embedded-9f226d6643ce59f2 (8366936 bytes)
+I1023 13:37:06.436102    2363 search_ripgrep.go:459] ripgrep resolved to /home/derek/.cache/antigravity/bin/rg_embedded-9f226d6643ce59f2 (embedded copy)
+I1023 13:37:06.436114    2363 path_ripgrep.go:146] Executing ripgrep (/home/derek/.cache/antigravity/bin/rg_embedded-9f226d6643ce59f2) to list files for query "" in /home/derek/projects/ryz
+I1023 13:37:06.436543    2363 path_ripgrep.go:167] ripgrep /home/derek/.cache/antigravity/bin/rg_embedded-9f226d6643ce59f2 failed to start: fork/exec /home/derek/.cache/antigravity/bin/rg_embedded-9f226d6643ce59f2: no such file or directory
+I1023 13:37:06.436560    2363 path_ripgrep.go:102] ripgrep at /home/derek/.cache/antigravity/bin/rg_embedded-9f226d6643ce59f2 could not be executed (failed to start ripgrep /home/derek/.cache/antigravity/bin/rg_embedded-9f226d6643ce59f2: fork/exec /home/derek/.cache/antigravity/bin/rg_embedded-9f226d6643ce59f2: no such file or directory: ripgrep: binary could not be executed), falling back to in-process walk
+I1023 13:37:07.847809    2367 search_ripgrep.go:459] ripgrep resolved to /etc/profiles/per-user/derek/bin/rg ($PATH)
+I1023 13:37:07.847859    2367 path_ripgrep.go:146] Executing ripgrep (/etc/profiles/per-user/derek/bin/rg) to list files for query "a" in /home/derek/projects/ryz
+I1023 13:37:08.444286    2011 path_ripgrep.go:146] Executing ripgrep (/etc/profiles/per-user/derek/bin/rg) to list files for query "ai" in /home/derek/projects/ryz
+I1023 13:37:08.654182    2432 path_ripgrep.go:146] Executing ripgrep (/etc/profiles/per-user/derek/bin/rg) to list files for query "ai." in /home/derek/projects/ryz
+I1023 13:37:10.905383       1 common.go:488] CLI program exited, shutting down
+I1023 13:37:10.908366    2385 server.go:3035] Language server shutting down
+I1023 13:37:10.908401    2385 server.go:3040] Waiting for migrations to complete to prevent partial migration state...
+I1023 13:37:10.908396     906 server.go:1278] Stream goroutine exited for c0853c0a-c7ea-4297-9e8b-b5c24f3453ea, sending completion signal
+I1023 13:37:10.908422     906 conversation_manager.go:1101] Stream completed for c0853c0a-c7ea-4297-9e8b-b5c24f3453ea, clearing ResponsePending
+E1023 13:37:10.909353     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909372     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909380     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909386     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909392     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909398     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909409     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909414     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909419     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909425     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909430     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909437     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909442     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909448     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909453     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909459     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909469     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909476     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909490     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909495     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909499     145 file_watcher.go:194] skipping empty or temp file: 
+E1023 13:37:10.909504     145 file_watcher.go:194] skipping empty or temp file: 
+I1023 13:37:11.074558       1 manager.go:843] CLI store manager shutting down
+I1023 13:37:11.075050       1 conversation_manager.go:928] Stopping conversation stream

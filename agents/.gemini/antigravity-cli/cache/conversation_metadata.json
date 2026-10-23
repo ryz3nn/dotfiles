@@ -105,9 +105,9 @@
         "ID": "c0853c0a-c7ea-4297-9e8b-b5c24f3453ea",
         "Title": "Fixing AI Unit Test Move Error",
         "Preview": "@[src/core/ai.rs] fix unit test, it show error response is moved and still used",
-        "NumSteps": 32,
+        "NumSteps": 37,
         "Loaded": true,
-        "UpdatedAt": "2026-10-23T06:28:18.079332004Z",
+        "UpdatedAt": "2026-10-23T06:34:13.757175147Z",
         "WorkspaceURIs": [
           "file:///home/derek/projects/ryz"
         ],
@@ -123,7 +123,7 @@
         }
       },
       "is_internal": false,
-      "last_modified_time": "2026-10-23T13:29:05.35125228+07:00"
+      "last_modified_time": "2026-10-23T13:35:03.386389609+07:00"
     },
     "e6c87ffe-3003-4e66-8f77-b0ff82817405": {
       "summary": {
