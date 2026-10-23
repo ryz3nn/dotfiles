@@ -1,0 +1,4 @@
+Command exited with code 0.
+
+Command output:
+/home/derek/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-openai-0.42.2/Cargo.toml
