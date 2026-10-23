@@ -364,3 +364,5 @@ I1023 14:38:31.320153   11746 runner.go:529] Monitor sir_flash_lite FINISHED: tr
 I1023 14:38:31.320174   11746 runner.go:309] Monitor severe_internal_risks_agy SKIPPED
 I1023 14:38:48.305988   11828 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0xb1ab7f138fcb6d6a ResponseID: -A7baujADf_qrfcPmfiw6Q0
 I1023 14:38:51.901049     223 quota_manager.go:45] doRefreshQuota: starting reload (force=false)
+I1023 14:40:15.252539   12328 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:loadCodeAssist Trace: 0xeb72ff539059b041
+I1023 14:40:16.269485   12356 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0x7cc8c8d4342b21f6
