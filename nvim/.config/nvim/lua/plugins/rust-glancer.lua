@@ -1,13 +1,42 @@
-vim.lsp.enable("rust_glancer")
-return {
-local rust_glancer_config =
-  vim.api.nvim_get_runtime_file("after/lsp/rust_glancer.lua", false)[1]
+vim.lsp.config("rust_glancer", {
+  cmd = { "rust-glancer", "lsp" },
+  filetypes = { "rust" },
 
-if rust_glancer_config then
-  local config = dofile(rust_glancer_config)
-  vim.lsp.config("rust_glancer", config)
-  vim.lsp.enable("rust_glancer")
-else
-  vim.notify("rust_glancer.lua config not found", vim.log.levels.ERROR)
-end
-}
+  root_dir = function(bufnr, on_dir)
+    local fname = vim.api.nvim_buf_get_name(bufnr)
+    local start_dir = vim.fs.dirname(fname)
+
+    local manifests = vim.fs.find("Cargo.toml", {
+      path = start_dir,
+      upward = true,
+      limit = math.huge,
+    })
+
+    local workspace_root
+
+    for _, manifest in ipairs(manifests) do
+      local content = table.concat(
+        vim.fn.readfile(manifest),
+        "\n"
+      )
+
+      if content:match("%[workspace%]") then
+        workspace_root = vim.fs.dirname(manifest)
+      end
+    end
+
+    on_dir(
+      workspace_root
+        or (manifests[1] and vim.fs.dirname(manifests[1]))
+        or start_dir
+    )
+  end,
+
+  init_options = {
+    diagnostics = {
+      onSave = true,
+    },
+  },
+})
+
+vim.lsp.enable("rust_glancer")
