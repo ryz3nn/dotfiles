@@ -322,3 +322,17 @@ I1023 14:23:15.000217    9586 http_helpers.go:349] URL: https://daily-cloudcode-
 I1023 14:23:15.114675    7861 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0xe13f97871865bb18
 I1023 14:29:14.862553    8689 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:loadCodeAssist Trace: 0xfaff60850194cc3b
 I1023 14:29:15.007523   10042 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0x74c6dd5c5a48a07e
+I1023 14:34:54.364389   10467 input_loop.go:106] HandleUserInput called with text: "suggest name instead of text()"
+I1023 14:34:54.365601   10400 conversation_manager.go:783] Forwarding user message to conversation c0853c0a-c7ea-4297-9e8b-b5c24f3453ea (items=1, media=0)
+I1023 14:34:54.365617   10400 server.go:1795] Sending user message to conversation c0853c0a-c7ea-4297-9e8b-b5c24f3453ea (items=1, media=0)
+I1023 14:34:54.368269   10400 latency_breakdown.go:170] SEND_USER_CASCADE_MESSAGE_LATENCY latency breakdown: map[active_user_state_latency_ms:0 blocking:false cascade_id:c0853c0a-c7ea-4297-9e8b-b5c24f3453ea cascade_send_latency_ms:0 hydrate_slash_commands_latency_ms:0 load_trajectory_latency_ms:0 media_count:0 media_summaries_latency_ms:0 message_origin:AGENT_MESSAGE_ORIGIN_UNSPECIFIED resolve_agent_config_latency_ms:0 save_media_latency_ms:0 saved_media_count:0 status:OK total_latency_ms:1 trajectory_id:1968eb9e-c6c7-4da9-84ae-47c3f1cafd47]
+I1023 14:34:54.380559   10486 monitoring.go:401] [Sonar] Resolved active tags: [policy_guardian sonar_skip_tags] (detected surface: "")
+I1023 14:34:54.380606   10486 monitoring.go:401] [Sonar] Resolved active tags: [policy_guardian sonar_skip_tags] (detected surface: "")
+W1023 14:34:54.380616   10486 declarative_config_loader.go:280] skipping component during resolution: empty component: prompt section "terminal_sandbox"
+W1023 14:34:54.380624   10486 declarative_config_loader.go:280] skipping component during resolution: empty component: prompt section "mcp_servers"
+W1023 14:34:54.380629   10486 declarative_config_loader.go:280] skipping component during resolution: empty component: prompt section "subagent_reminder"
+W1023 14:34:54.380639   10486 declarative_config_loader.go:280] skipping component during resolution: empty component: pre-tool hook "auto_run_safety_gate" is empty
+W1023 14:34:54.380644   10486 declarative_config_loader.go:280] skipping component during resolution: empty component: post-tool hook "command_assessor" is empty
+I1023 14:34:56.266411   10438 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:loadCodeAssist Trace: 0x8f93a33897e238e0
+I1023 14:34:56.282303   10401 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0xb3e81b2e111b18d8
+I1023 14:35:00.976955   10792 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:streamGenerateContent?alt=sse Trace: 0x450b8b628f3661bc ResponseID: Hw7batPgJIie4t4P6vK7oAk
