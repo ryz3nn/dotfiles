@@ -370,3 +370,15 @@ I1023 14:45:16.203947   12722 http_helpers.go:349] URL: https://daily-cloudcode-
 I1023 14:46:14.568998   12780 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0x62deee51fcaf8b7b
 I1023 14:51:14.844257   13147 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:loadCodeAssist Trace: 0xe8e41bd0fefe6673
 I1023 14:52:14.507662   13198 http_helpers.go:349] URL: https://daily-cloudcode-pa.googleapis.com/v1internal:fetchAvailableModels Trace: 0x8b0a484e7eb49ad7
+I1023 14:55:29.409213     204 common.go:422] Terminal gone, shutting down
+I1023 14:55:29.410961       1 common.go:488] CLI program exited, shutting down
+I1023 14:55:29.412649   13422 server.go:3035] Language server shutting down
+I1023 14:55:29.412668   13422 server.go:3040] Waiting for migrations to complete to prevent partial migration state...
+I1023 14:55:29.412690    1271 server.go:1278] Stream goroutine exited for c0853c0a-c7ea-4297-9e8b-b5c24f3453ea, sending completion signal
+I1023 14:55:29.412708    1271 conversation_manager.go:1101] Stream completed for c0853c0a-c7ea-4297-9e8b-b5c24f3453ea, clearing ResponsePending
+E1023 14:55:29.417904      32 file_watcher.go:194] skipping empty or temp file: 
+E1023 14:55:29.417964      32 file_watcher.go:194] skipping empty or temp file: 
+I1023 14:55:29.426341      61 server.go:2993] Got signal terminated, shutting down
+E1023 14:55:34.413650      82 server.go:3028] Language server shutdown timed out
+I1023 14:55:34.413786       1 manager.go:843] CLI store manager shutting down
+I1023 14:55:34.414239       1 conversation_manager.go:928] Stopping conversation stream
