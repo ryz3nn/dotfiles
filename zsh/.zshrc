@@ -212,3 +212,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # This for nix-ld
 export LD_LIBRARY_PATH="$NIX_LD_LIBRARY_PATH${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export PATH="/usr/bin:$PATH"
