@@ -1,2 +1,0 @@
-A1: I have written some Rust before, but I have never built games.
-A2: 2.5D MMORPG game, i have c++ source and want to port into rust

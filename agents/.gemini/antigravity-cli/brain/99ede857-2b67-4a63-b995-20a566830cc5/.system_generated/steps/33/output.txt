@@ -1,4 +1,0 @@
-Command exited with code 2.
-
-Command output:
-/home/derek/.cargo

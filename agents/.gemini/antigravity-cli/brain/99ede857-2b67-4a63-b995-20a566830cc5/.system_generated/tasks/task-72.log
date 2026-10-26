@@ -1,5 +1,0 @@
-these 3 paths will be fetched (322.3 MiB download, 1.0 GiB unpacked):
-  /nix/store/gmgfpzc0w2pgby0lmq9r88m39albiyfw-cargo-1.98.1
-  /nix/store/53lvgpxsb3b9ghkgb4v0jra6zzlnyw8n-rustc-1.98.1
-  /nix/store/hr3npzrq9l029s5hf948by203m6qz3lw-rustc-wrapper-1.98.1
-copying path '/nix/store/53lvgpxsb3b9ghkgb4v0jra6zzlnyw8n-rustc-1.98.1' from 'https://cache.nixos.org'...

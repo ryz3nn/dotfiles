@@ -1,7 +1,0 @@
-Command exited with code 0.
-
-Command output:
-/home/derek/projects/game-dev
-total 8
-drwxr-xr-x 2 derek users 4096 Oct 22 18:30 .
-drwxr-xr-x 4 derek users 4096 Oct 22 18:30 ..

@@ -1,2 +1,0 @@
-#!/bin/sh
-exec "/nix/store/6mrq5b3brccyhflmaafw236gldg0b6c9-google-antigravity-cli-1.4.0-5281842794987520/bin/agy" agentapi "$@"
