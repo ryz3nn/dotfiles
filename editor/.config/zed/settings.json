@@ -109,31 +109,16 @@
 	// Agent servers configuration (MCP servers)
 	// https://zed.dev/docs/remote-development#mcp
 	"agent_servers": {
-		"pi-acp": {
-			"type": "registry",
-		},
-		"kilo": {
-			"type": "registry",
-		},
-		"github-copilot-cli": {
-			"type": "registry",
-		},
-		"gemini": {
-			"type": "registry",
-		},
-		"cursor": {
+		"antigravity-acp": {
+   "type": "registry"
+  },
+  "github-copilot-cli": {
 			"type": "registry",
 		},
 		"codex-acp": {
 			"type": "registry",
 		},
 		"claude-acp": {
-			"type": "registry",
-		},
-		"amp-acp": {
-			"type": "registry",
-		},
-		"factory-droid": {
 			"type": "registry",
 		},
 		"github-copilot": {
