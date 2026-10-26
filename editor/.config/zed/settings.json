@@ -23,12 +23,12 @@
     "use_system_clipboard": "always"
   },
   "buffer_line_height": { "custom": 1.45 },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "cursor_blink": false,
   "terminal": { "blinking": "off" },
   "ensure_final_newline_on_save": false,
   "format_on_save": "off",
-  "chat_panel": { "button": false },
+  "chat_panel": { "button": "never" },
   "notification_panel": { "button": false },
   "collaboration_panel": { "button": false }
 }
