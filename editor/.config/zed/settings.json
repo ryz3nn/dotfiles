@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "VScode Dark Plus - Nico",
+  "theme": "light",
   "buffer_font_family": "MesloLGM Nerd Font Mono",
   "tabs": { "git_status": true },
   "vim_mode": true,
