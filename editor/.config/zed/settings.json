@@ -171,6 +171,7 @@
 	"status_bar": {
 		"show_active_file": false,
 		"experimental.show": false,
+		"active_encoding_button": "enabled",
 	},
 
   "title_bar": {
