@@ -182,7 +182,7 @@ binds {
     Alt+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Alt+E hotkey-overlay-title="Run an Application: thunar" { spawn "thunar"; }
     Alt+Shift+B hotkey-overlay-title="Run an Application: Firefox" { spawn "firefox"; }
-    Alt+Z hotkey-overlay-title="Run an Application: zed" { spawn "steam-run ~/.local/opt/zed.app/bin/zed"; }
+    Alt+Z hotkey-overlay-title="Run an Application: zed" { spawn-sh "steam-run ~/.local/opt/zed.app/bin/zed"; }
 
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
