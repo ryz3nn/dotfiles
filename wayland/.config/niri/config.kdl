@@ -136,7 +136,7 @@ window-rule {
 }
 
 window-rule {
-    match title="ryz"
+    match app-id="^ryz$"
     open-floating true
     // default-column-width { fixed 800;}
     // default-window-height { fixed 600;}
@@ -157,7 +157,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"dev.zed.Zed"#
+    match app-id=r#"dev\.zed\.Zed"#
     open-floating false
 }
 
