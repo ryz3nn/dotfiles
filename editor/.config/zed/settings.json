@@ -166,7 +166,7 @@
   "title_bar": {
       "show_menus": false,
       "show_sign_in": false,
-      "open_menus_on_hover": true,
+      "open_menus_on_hover": false,
   },
 
 	// Gutter settings
@@ -236,7 +236,7 @@
 	// https://zed.dev/docs/themes
 	"theme": {
 		"mode": "system",
-		"light": "One Light",
+		"light": "Zen Light",
 		"dark": "One Dark",
 	},
 
