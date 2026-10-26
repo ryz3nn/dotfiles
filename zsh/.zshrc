@@ -173,6 +173,7 @@ alias clean='sudo nix-env --delete-generations old && sudo nix-collect-garbage -
 alias home='nvim ~/dotfiles/nixos/modules/home.nix'
 alias nixs="nix-search"
 alias dev="nix develop -c zsh"
+alias zed="steam-run ~/.local/opt/zed.app/bin/zed"
 
 # OBS shortcut
 alias stream="wshowkeys -a bottom -m 60 -F 'JetBrains Mono Bold 26' -b '#1a1b26cc' -f '#c0caf5ff' -l 500 -t 800 && steam-run ~/.local/opt/veadotube-mini-linux-x64/veadotube-mini && obs"
