@@ -650,7 +650,7 @@
 	"terminal": {
 		"shell": {
 			// Edit this path to match your local codemux binary location
-			"program": "foot",
+			"program": "zsh",
 		},
 		"show_count_badge": true,
 		"font_size": 17.0,
