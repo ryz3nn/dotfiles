@@ -650,11 +650,11 @@
 	"terminal": {
 		"shell": {
 			// Edit this path to match your local codemux binary location
-			"program": "/Users/huynhdung/.cargo/bin/codemux",
+			"program": "foot",
 		},
 		"show_count_badge": true,
 		"font_size": 17.0,
-		"font_family": "Maple Mono NF",
+		"font_family": "CozetteVector",
 		"env": {
 			"EDITOR": "zed --wait",
 		},
