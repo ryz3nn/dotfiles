@@ -610,10 +610,10 @@
 			"hard_tabs": false,
 			"formatter": {
 				"language_server": {
-					"name": "rust-analyzer",
+					"name": "rust-glancer",
 				},
 			},
-			"language_servers": ["rust-analyzer", "!rustc"],
+			"language_servers": ["rust-glancer", "!rustc"],
 		},
 
 		// Go — gopls formatter
