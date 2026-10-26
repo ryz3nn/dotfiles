@@ -175,6 +175,7 @@
 
   "title_bar": {
     "show_menus": false,
+    "show_sign_in": false,
   },
 
 	// Gutter settings

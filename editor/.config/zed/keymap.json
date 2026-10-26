@@ -391,7 +391,7 @@
 		"context": "Workspace",
 		"bindings": {
 			// Map VSCode like keybindings
-			"cmd-b": "workspace::ToggleRightDock",
+			"alt-b": "workspace::ToggleRightDock",
 		},
 	},
 	// Run nearest task
