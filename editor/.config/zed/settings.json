@@ -68,7 +68,7 @@
 
 	// UI font family (for menus, panels, etc.)
 	// https://zed.dev/docs/reference/all-settings#ui-font-family
-	"ui_font_family": "Maple UI",
+	"ui_font_family": "CozetteVector",
 
 	// Whether to colorize matching brackets (rainbow brackets)
 	// https://zed.dev/docs/reference/all-settings#colorize-brackets
@@ -239,9 +239,9 @@
 	// Theme settings
 	// https://zed.dev/docs/themes
 	"theme": {
-		"mode": "dark",
-		"light": "Kanagawa Lotus",
-		"dark": "Kanagawa Wave",
+		"mode": "system",
+		"light": "One Light",
+		"dark": "One Dark",
 	},
 
 	// UI font size (for menus, panels, etc.)
@@ -260,7 +260,7 @@
 
 	// Buffer font family (editor font)
 	// https://zed.dev/docs/reference/all-settings#buffer-font-family
-	"buffer_font_family": "Maple Mono NF",
+	"buffer_font_family": "CozetteVector",
 
 	// Vim mode settings
 	// https://zed.dev/docs/reference/all-settings#vim
