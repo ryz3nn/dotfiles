@@ -110,7 +110,10 @@
 	// https://zed.dev/docs/remote-development#mcp
 	"agent_servers": {
 		"antigravity-acp": {
-   		"type": "registry",
+   		"default_config_options": {
+      "model": "gemini-4-argon"
+     },
+     "type": "registry",
   },
   "github-copilot-cli": {
 			"type": "registry",
@@ -161,12 +164,8 @@
 
   "title_bar": {
       "show_menus": false,
-      "show_branch_name": true,
-      "show_project_items": true,
-      "show_worktree_name": true,
-      "show_user_picture": false,
-      "show_user_menu": false,
       "show_sign_in": false,
+      "open_menus_on_hover": false,
   },
 
 	// Gutter settings
