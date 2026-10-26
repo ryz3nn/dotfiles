@@ -451,4 +451,11 @@
 	//     "g e": "vim::PreviousSubwordEnd"
 	//   }
 	// }
+
+ {
+  "context": "Workspace",
+  "bindings": {
+   "space a b": "multi_workspace::ToggleWorkspaceSidebar"
+  }
+ }
 ]
