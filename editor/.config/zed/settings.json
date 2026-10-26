@@ -110,7 +110,7 @@
 	// https://zed.dev/docs/remote-development#mcp
 	"agent_servers": {
 		"antigravity-acp": {
-   "type": "registry"
+   		"type": "registry",
   },
   "github-copilot-cli": {
 			"type": "registry",
