@@ -25,9 +25,10 @@ return {
       end
 
       -- CodeLLDB adapter (Rust, C, C++)
-      dap.adapters.codelldb = {
+      dap.adapters.lldb = {
         type = "executable",
-        command = "codelldb",
+        command = "lldb-dap",
+        name = "lldb",
       }
 
       -- Rust
@@ -53,7 +54,7 @@ return {
       local cpp_config = {
         {
           name = "Launch C/C++ executable",
-          type = "codelldb",
+          type = "lldb",
           request = "launch",
           program = function()
             return vim.fn.input(
