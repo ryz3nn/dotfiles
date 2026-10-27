@@ -13,18 +13,20 @@ vim.opt.rtp:prepend(lazypath)
 
 
 require('lazy').setup ({
+  -- General
+  require('plugins.theme'),
   require('plugins.neotree'),
   require('plugins.bufferline'),
   require('plugins.lualine'),
   require('plugins.treesitter'),
   require('plugins.telescope'),
   require('plugins.indent-blankline'),
-  -- require('plugins.comment'),
   require('plugins.nvim-cmp'),
   require('plugins.conform'),
-  require('plugins.rustaceanvim'),
-  -- require('plugins.nvim-dap'),
   require('plugins.nvim-autopairs'),
-  require('plugins.theme'),
+
+  -- Coding
+  require('plugins.nvim-dap'),
+  -- require('plugins.rustaceanvim'),
 })
-  require('plugins.rust-glancer')
+  -- require('plugins.rust-glancer')
