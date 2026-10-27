@@ -14,7 +14,7 @@ return {
         winbar = {
           controls = {
             enabled = true,
-            position = "left",
+            position = "right",
             buttons = {
               "play",
               "step_into",
