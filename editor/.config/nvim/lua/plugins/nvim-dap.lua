@@ -11,6 +11,11 @@ return {
 
       dap_view.setup({
         auto_toggle = true,
+         
+        windows = {
+          size = 50,
+          position = "right",
+        },
       })
 
       -- CodeLLDB adapter (Rust, C, C++)
@@ -66,12 +71,19 @@ return {
       vim.keymap.set("n", "<F11>", dap.step_into)
       vim.keymap.set("n", "<F12>", dap.step_out)
       vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint)
-      vim.keymap.set("n", "<leader>du", dapui.toggle)
 
-      -- Evaluate expression under cursor or selected expression
-      vim.keymap.set({ "n", "v" }, "<leader>de", function()
-        dapui.eval()
-      end, { desc = "Evaluate expression" })
+      -- DAP View
+      vim.keymap.set("n", "<leader>du", function()
+        dap_view.toggle()
+      end, {
+        desc = "Debug: Toggle view",
+      })
+
+      vim.keymap.set("n", "<leader>de", function()
+        dap_view.add_expr()
+      end, {
+        desc = "Debug: Add watch expression",
+      })
     end,
   },
 }
