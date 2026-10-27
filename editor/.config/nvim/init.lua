@@ -26,7 +26,8 @@ require('lazy').setup ({
   require('plugins.nvim-autopairs'),
 
   -- Coding
-  require('plugins.nvim-dap'),
   -- require('plugins.rustaceanvim'),
+  require('plugins.nvim-dap'),
+  require('plugins.clangd'),
 })
   -- require('plugins.rust-glancer')
