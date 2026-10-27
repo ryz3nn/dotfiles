@@ -11,6 +11,20 @@ return {
 
       dap_view.setup({
         auto_toggle = true,
+        winbar = {
+          controls = {
+            enabled = true,
+            position = "left",
+            buttons = {
+              "play",
+              "step_into",
+              "step_over",
+              "step_out",
+              "terminate",
+              "disconnect",
+            },
+          },
+  },
       })
 
       -- CodeLLDB adapter (Rust, C, C++)
