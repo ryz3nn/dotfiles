@@ -11,11 +11,6 @@ return {
 
       dap_view.setup({
         auto_toggle = true,
-         
-        windows = {
-          size = 50,
-          position = "right",
-        },
       })
 
       -- CodeLLDB adapter (Rust, C, C++)
