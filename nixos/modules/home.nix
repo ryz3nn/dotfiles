@@ -40,7 +40,10 @@ in
     tree
     jq
     ncdu
-    _7zz
+    kdePackages.ark
+    unrar
+    unzip
+    p7zip
     yazi
     yt-dlp
     ffmpeg
