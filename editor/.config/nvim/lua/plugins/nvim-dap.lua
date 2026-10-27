@@ -3,47 +3,15 @@ return {
     "mfussenegger/nvim-dap",
     dependencies = {
       "nvim-neotest/nvim-nio",
-      "rcarriga/nvim-dap-ui",
+      "igorlfs/nvim-dap-view",
     },
     config = function()
       local dap = require("dap")
-      local dapui = require("dapui")
-      dapui.setup({
-        layouts = {
-          {
-            elements = {
-              -- Move "scopes" to the top of the list
-              { id = "scopes", size = 0.25 },
-              { id = "breakpoints", size = 0.25 },
-              { id = "stacks", size = 0.25 },
-              { id = "watches", size = 0.25 }, -- or remove "watches" here if you don't want it at all
-            },
-            size = 40, -- 40 columns wide (adjust as needed)
-            position = "left",
-          },
-          {
-            elements = {
-              { id = "repl", size = 0.5 },
-              { id = "console", size = 0.5 },
-            },
-            size = 10, -- 10 lines tall
-            position = "bottom",
-          },
-        },
+      local dap_view = require("dap-view")
+
+      dap_view.setup({
+        auto_toggle = true,
       })
-
-      -- DAP UI listeners
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
 
       -- CodeLLDB adapter (Rust, C, C++)
       dap.adapters.lldb = {
