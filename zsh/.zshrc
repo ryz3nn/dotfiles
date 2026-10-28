@@ -201,8 +201,7 @@ alias s='apt search'
 # Folder shortcut
 # ======================
 alias jh='cd $HOME/projects/jianghu'
-alias ryzc='cd $HOME/projects/ryzc'
-
+alias ryzc='cd "$HOME/projects/ryzc" && [[ -n "$IN_NIX_SHELL" ]] || nix develop -c zsh'
 
 # Added by Antigravity CLI installer
 export PATH="/home/derek/.local/bin:$PATH"
