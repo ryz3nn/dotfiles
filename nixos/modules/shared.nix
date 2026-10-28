@@ -51,6 +51,7 @@
       bibata-cursors
       cloudflare-warp
       steam-run
+      mesa-demos
   ];
 
   fonts.packages = with pkgs; [
