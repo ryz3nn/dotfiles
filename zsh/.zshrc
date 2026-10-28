@@ -201,7 +201,7 @@ alias s='apt search'
 # Folder shortcut
 # ======================
 alias jh='cd $HOME/projects/jianghu'
-alias ryz='cd $HOME/projects/ryzc'
+alias ryzc='cd $HOME/projects/ryzc'
 
 
 # Added by Antigravity CLI installer

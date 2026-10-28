@@ -9,7 +9,7 @@ environment {
 
 cursor {
     xcursor-theme "Bibata-Original-Ice"
-    xcursor-size 28
+    xcursor-size 24
 }
 
 input {
