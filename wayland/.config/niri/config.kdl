@@ -141,13 +141,13 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^ryz$"
+    match app-id="^ryzc$"
     open-floating true
     // default-column-width { fixed 800;}
     // default-window-height { fixed 600;}
-    default-column-width { proportion 0.4; }
-    default-window-height { proportion 0.5; }
-    default-floating-position x=0 y=100 relative-to="top"
+    default-column-width { proportion 0.6; }
+    default-window-height { proportion 0.8; }
+    default-floating-position x=0 y=50 relative-to="top"
 }
 // Route OBS Studio
 window-rule {
