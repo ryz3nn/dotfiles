@@ -48,6 +48,7 @@
       nix-search-cli
       papirus-icon-theme
       adwaita-icon-theme
+      bibata-cursors
       cloudflare-warp
       steam-run
   ];
