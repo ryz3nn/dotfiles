@@ -201,7 +201,15 @@ alias s='apt search'
 # Folder shortcut
 # ======================
 alias jh='cd $HOME/projects/jianghu'
-alias ryzc='cd "$HOME/projects/ryzc" && [[ -n "$IN_NIX_SHELL" ]] || nix develop -c zsh'
+ryzc() {
+    cd "$HOME/projects/ryzc" || return
+
+    if [[ -n "$IN_NIX_SHELL" ]]; then
+        echo "Already inside a Nix development shell"
+    else
+        nix develop -c zsh
+    fi
+}
 
 # Added by Antigravity CLI installer
 export PATH="/home/derek/.local/bin:$PATH"
