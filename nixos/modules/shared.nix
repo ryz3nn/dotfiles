@@ -52,6 +52,7 @@
       cloudflare-warp
       steam-run
       mesa-demos
+      busybox
   ];
 
   fonts.packages = with pkgs; [
