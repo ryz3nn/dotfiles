@@ -3,13 +3,13 @@ environment {
   "NIX_SSL_CERT_FILE" "/etc/ssl/certs/ca-bundle.crt"
   "REQUESTS_CA_BUNDLE" "/etc/ssl/certs/ca-bundle.crt"
 
-  "XCURSOR_THEME" "Bibata-Modern-Classic"
-  "XCURSOR_SIZE" "24"
+  // "XCURSOR_THEME" "Bibata-Original-Ice"
+  // "XCURSOR_SIZE" "28"
 }
 
 cursor {
-    xcursor-theme "Bibata-Modern-Classic"
-    xcursor-size 24
+    xcursor-theme "Bibata-Original-Ice"
+    xcursor-size 28
 }
 
 input {
