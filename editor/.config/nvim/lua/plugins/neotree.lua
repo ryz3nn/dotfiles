@@ -9,7 +9,7 @@ return {
     },
     opts = {
     window = {
-        width = 40,
+        width = 30,
     },
     filesystem = {
       filtered_items = {
