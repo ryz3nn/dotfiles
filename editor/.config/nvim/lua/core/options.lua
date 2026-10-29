@@ -4,6 +4,10 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.belloff = "all"
 
+-- Disable new buffer at startup
+vim.opt.hidden = true
+vim.opt.switchbuf = "useopen"
+
 -- Line Numbers & Display
 vim.opt.number = true
 vim.opt.relativenumber = true
