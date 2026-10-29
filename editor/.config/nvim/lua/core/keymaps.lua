@@ -15,7 +15,7 @@ vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
 vim.keymap.set('n', '<leader>sn', '<cmd>noautocmd w <CR>', opts)
 
 -- quit file
-vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', opts)
+vim.keymap.set('n', '<C-q>', '<cmd> q! <CR>', opts)
 
 -- delete single character without copying into register
 vim.keymap.set('n', 'd', '"_d', opts)
@@ -90,3 +90,7 @@ vim.keymap.set("n", "<leader>ld", function()
     virtual_text = false,
   })
 end, { desc = "Toggle diagnostic lines" })
+
+vim.keymap.set("n", "<leader>r", function()
+  vim.cmd("!./run.sh")
+end, { desc = "Run project" })
