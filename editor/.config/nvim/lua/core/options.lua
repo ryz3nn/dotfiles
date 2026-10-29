@@ -6,6 +6,7 @@ vim.opt.belloff = "all"
 
 -- Disable new buffer at startup
 vim.opt.hidden = true
+vim.opt.buflisted = true
 vim.opt.switchbuf = "useopen"
 
 -- Line Numbers & Display

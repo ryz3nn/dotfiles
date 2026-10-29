@@ -83,6 +83,17 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'WinEnter' }, {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufEnter", {
+    callback = function()
+        local buf = vim.api.nvim_get_current_buf()
+        local name = vim.api.nvim_buf_get_name(buf)
+
+        if name == "" and vim.bo[buf].buftype == "" then
+            vim.bo[buf].buflisted = false
+        end
+    end,
+})
+
 vim.keymap.set("n", "<leader>ld", function()
   local current = vim.diagnostic.config().virtual_lines
   vim.diagnostic.config({
