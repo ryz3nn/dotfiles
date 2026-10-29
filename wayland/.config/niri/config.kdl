@@ -7,10 +7,10 @@ environment {
   // "XCURSOR_SIZE" "28"
 }
 
-cursor {
-    xcursor-theme "Bibata-Modern-Ice"
-    xcursor-size 24
-}
+// cursor {
+//     xcursor-theme "Bibata-Modern-Ice"
+//     xcursor-size 24
+// }
 
 input {
   keyboard {
