@@ -92,5 +92,18 @@ vim.keymap.set("n", "<leader>ld", function()
 end, { desc = "Toggle diagnostic lines" })
 
 vim.keymap.set("n", "<leader>r", function()
-  vim.cmd("!./run.sh")
+  local root = vim.fs.root(0, { ".git" })
+
+  if not root then
+    vim.notify("Git root not found", vim.log.levels.ERROR)
+    return
+  end
+
+  local script = root .. "/run.sh"
+
+  if vim.fn.filereadable(script) == 1 then
+    vim.cmd("!" .. vim.fn.shellescape(script))
+  else
+    vim.notify("run.sh not found: " .. script, vim.log.levels.ERROR)
+  end
 end, { desc = "Run project" })
