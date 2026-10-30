@@ -6,7 +6,7 @@
   "permission": {
     "edit": {
       "*": "allow",
-      "*.{rs,go}": "deny"
+      "src/**": "deny"
     },
     "read": {
       "*": "allow",
