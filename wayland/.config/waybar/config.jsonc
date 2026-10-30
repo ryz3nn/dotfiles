@@ -12,11 +12,11 @@
   ],
 
   "modules-right": [
+    "custom/tomat",
     "tray",
     "cpu",
     "memory",
-    "pulseaudio",
-    "custom/tomat"
+    "pulseaudio"
   ],
 
   "niri/workspaces": {
@@ -53,7 +53,8 @@
       "default": ["󰕿", "󰖀", "󰕾"]
     },
     "tooltip": false
-  }
+  },
+
   "custom/tomat": {
     "exec": "tomat status",
     "interval": 1,
