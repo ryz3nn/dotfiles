@@ -49,6 +49,7 @@ in
     ffmpeg
     fd
     seahorse
+    timer
 
     # Programs
     vlc
@@ -58,7 +59,6 @@ in
     thunar
     gh
     inputs.antigravity-nix.packages.x86_64-linux.google-antigravity-cli # CLI
-    tomat
   ];
 
   programs.git = {
@@ -78,16 +78,6 @@ in
     sunrise = "07:00";
     sunset = "18:00";
   };
-  # services.tomat = {
-  #   enable = true;
-  #
-  #   settings = {
-  #     timer = {
-  #       work = 60;
-  #       break = 10;
-  #     };
-  #   };
-  # };
 
   # Registers "Stream Setup" into Fuzzel / application launchers
   xdg.desktopEntries.stream = {
