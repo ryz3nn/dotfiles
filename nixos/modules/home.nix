@@ -78,18 +78,16 @@ in
     sunrise = "07:00";
     sunset = "18:00";
   };
-{
-  services.tomat = {
-    enable = true;
-
-    settings = {
-      timer = {
-        work = 60;
-        break = 10;
-      };
-    };
-  };
-}
+  # services.tomat = {
+  #   enable = true;
+  #
+  #   settings = {
+  #     timer = {
+  #       work = 60;
+  #       break = 10;
+  #     };
+  #   };
+  # };
 
   # Registers "Stream Setup" into Fuzzel / application launchers
   xdg.desktopEntries.stream = {
