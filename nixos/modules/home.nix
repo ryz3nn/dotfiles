@@ -50,6 +50,7 @@ in
     fd
     seahorse
     timer
+    glow
 
     # Programs
     vlc
@@ -59,7 +60,6 @@ in
     thunar
     gh
     inputs.antigravity-nix.packages.x86_64-linux.google-antigravity-cli # CLI
-    chawan  # TUI Browser
   ];
 
   programs.git = {
