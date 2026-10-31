@@ -59,7 +59,7 @@ in
     thunar
     gh
     inputs.antigravity-nix.packages.x86_64-linux.google-antigravity-cli # CLI
-    chawan // TUI Browser
+    chawan  # TUI Browser
   ];
 
   programs.git = {
