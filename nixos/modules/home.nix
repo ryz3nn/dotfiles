@@ -60,6 +60,8 @@ in
     thunar
     gh
     inputs.antigravity-nix.packages.x86_64-linux.google-antigravity-cli # CLI
+    gpu-screen-recorder
+    v4l-utils
   ];
 
   programs.git = {
