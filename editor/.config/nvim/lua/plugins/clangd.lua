@@ -10,6 +10,8 @@ return {
           "--clang-tidy",
           "--completion-style=detailed",
           "--header-insertion=iwyu",
+          "--compile-commands-dir=build",
+          "--query-driver=**/*",
         },
 
         on_attach = function(_, bufnr)
