@@ -60,7 +60,7 @@ in
     thunar
     gh
     inputs.antigravity-nix.packages.x86_64-linux.google-antigravity-cli # CLI
-    v4l-utils
+    wf-recorder
   ];
 
   programs.git = {
