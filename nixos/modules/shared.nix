@@ -53,6 +53,7 @@
       steam-run
       mesa-demos
       busybox
+      nix-index
   ];
 
   fonts.packages = with pkgs; [
