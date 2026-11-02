@@ -154,7 +154,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias grep='grep --color=auto'
 alias reboot='systemctl reboot'
-alias shutdown='sudo shutdown now'
+alias sd='shutdown now'
 alias mini='NVIM_APPNAME=nvim-minimax nvim'
 
 alias toggle_ibus='$HOME/dotfiles/scripts/toggle_ibus.sh'
