@@ -76,10 +76,11 @@ return {
 
       -- Debug keymaps
       vim.keymap.set("n", "<F5>", dap.continue)
+      vim.keymap.set("n", "<S-F5>", dap.terminate)
+      vim.keymap.set("n", "<F9>", dap.toggle_breakpoint)
       vim.keymap.set("n", "<F10>", dap.step_over)
       vim.keymap.set("n", "<F11>", dap.step_into)
       vim.keymap.set("n", "<F12>", dap.step_out)
-      vim.keymap.set("n", "<F4>", dap.toggle_breakpoint)
 
       -- DAP View
       vim.keymap.set("n", "<leader>du", function()
