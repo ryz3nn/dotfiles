@@ -201,6 +201,7 @@ alias s='apt search'
 # Folder shortcut
 # ======================
 alias jh='cd $HOME/projects/jianghu'
+alias down='cd $HOME/Downloads'
 ryzc() {
     cd "$HOME/projects/ryzc" || return
 
