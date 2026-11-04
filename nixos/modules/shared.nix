@@ -107,6 +107,7 @@
     # Graphics & Rendering (required by wgpu / winit / opengl / vulkan)
     libGL
     vulkan-loader
+    SDL2
 
     # X11 fallback (if winit falls back to XWayland)
     xorg.libX11
