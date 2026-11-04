@@ -108,6 +108,7 @@
     libGL
     vulkan-loader
     SDL2
+    SDL2_image
 
     # X11 fallback (if winit falls back to XWayland)
     xorg.libX11
