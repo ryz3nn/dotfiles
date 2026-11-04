@@ -63,6 +63,8 @@ in
     wf-recorder
     pulseaudio
     xchm
+    devilutionx
+
   ];
 
   programs.git = {
