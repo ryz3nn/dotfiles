@@ -8,17 +8,17 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     opts = {
-    window = {
+      window = {
         width = 30,
-    },
-    filesystem = {
-      filtered_items = {
-        visible = true,          -- When true, filtered items are dimmed instead of completely hidden
-        hide_dotfiles = false,   -- Set to false to show dotfiles/folders like .config/
-        hide_gitignored = false, -- Set to false if you also want to see files listed in .gitignore
-        hide_hidden = false,     -- Windows-specific hidden files
       },
-    },
+      filesystem = {
+        filtered_items = {
+          visible = true,          -- When true, filtered items are dimmed instead of completely hidden
+          hide_dotfiles = false,   -- Set to false to show dotfiles/folders like .config/
+          hide_gitignored = false, -- Set to false if you also want to see files listed in .gitignore
+          hide_hidden = false,     -- Windows-specific hidden files
+        },
+      },
     },
   },
   {
