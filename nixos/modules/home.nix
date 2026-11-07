@@ -64,6 +64,7 @@ in
     pulseaudio
     xchm
     zenity # RAD Debugger
+    geany
 
   ];
 
