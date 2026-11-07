@@ -106,6 +106,7 @@
 
     # Graphics & Rendering (required by wgpu / winit / opengl / vulkan)
     libGL
+    libegl
     vulkan-loader
     SDL2
     SDL2_image

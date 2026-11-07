@@ -63,6 +63,7 @@ in
     wf-recorder
     pulseaudio
     xchm
+    zenity # RAD Debugger
 
   ];
 
