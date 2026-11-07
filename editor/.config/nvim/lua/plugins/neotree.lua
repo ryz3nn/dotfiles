@@ -51,5 +51,5 @@ return {
     end,
   },
 
-  vim.keymap.set('n', '<leader>e', ':Neotree toggle position=right<CR>', { noremap = true, silent = true }) -- focus file explorer
+  vim.keymap.set('n', '<leader>e', ':Neotree toggle position=right<CR> <C-s>', { noremap = true, silent = true }) -- focus file explorer
 }
