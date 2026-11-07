@@ -109,7 +109,9 @@
     vulkan-loader
     SDL2
     SDL2_image
+    # 4coder
     libxfixes
+    libfreetype
 
     # X11 fallback (if winit falls back to XWayland)
     xorg.libX11
