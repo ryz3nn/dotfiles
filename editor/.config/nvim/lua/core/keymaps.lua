@@ -10,7 +10,16 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<C-q>', '<cmd> q! <CR>', opts)
 
 -- delete single character without copying into register
-vim.keymap.set('n', 'd', '"_d', opts)
+-- vim.keymap.set('n', 'd', '"_d', opts)
+--
+vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+
+-- Move line in Visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Vertical scroll and center
 vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
