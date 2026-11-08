@@ -101,3 +101,13 @@ vim.keymap.set("n", "<leader>r", function()
     vim.notify("run.sh not found: " .. script, vim.log.levels.ERROR)
   end
 end, { desc = "Run project" })
+
+-- Fold shortcut
+vim.keymap.set("n", "zo", function()
+  local line = vim.fn.line(".")
+  if vim.fn.foldclosed(line) ~= -1 then
+    vim.cmd("normal! zO")
+  else
+    vim.cmd("normal! zC")
+  end
+end, { desc = "Toggle toàn bộ cấp độ fold lồng nhau" })
