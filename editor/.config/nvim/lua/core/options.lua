@@ -18,7 +18,7 @@ vim.opt.foldenable = false
 
 -- Mouse & Clipboard
 vim.opt.mouse = "a"
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
 vim.opt.backspace = { "indent", "eol", "start" }
 
 -- Tabs & Indentation
@@ -38,5 +38,3 @@ vim.opt.hlsearch = true -- Highlight matches
 
 -- Split
 vim.opt.splitright = true
-
-
