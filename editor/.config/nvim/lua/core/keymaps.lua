@@ -4,15 +4,7 @@ vim.g.maplocalleader = ' '
 
 -- Disable the spacebar key's default behavior in Normal and Visual modes
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- For conciseness
 local opts = { noremap = true, silent = true }
-
--- save file
-vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
-
--- save file without auto-formatting
-vim.keymap.set('n', '<leader>sn', '<cmd>noautocmd w <CR>', opts)
 
 -- quit file
 vim.keymap.set('n', '<C-q>', '<cmd> q! <CR>', opts)
@@ -23,8 +15,6 @@ vim.keymap.set('n', 'd', '"_d', opts)
 -- Vertical scroll and center
 vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
 vim.keymap.set('n', '<C-u>', '<C-u>zz', opts)
-
--- Find and center
 vim.keymap.set('n', 'n', 'nzzzv', opts)
 vim.keymap.set('n', 'N', 'Nzzzv', opts)
 
@@ -76,12 +66,6 @@ vim.keymap.set('n', '<leader>t', ':vsplit | term<CR>:startinsert<CR>', { desc = 
 vim.keymap.set('t', '<C-h>', [[<C-\><C-n><C-w>h]])
 vim.keymap.set('t', '<C-x>', [[<C-\><C-n>:bd!<CR>]], { silent = true })
 
-vim.api.nvim_create_autocmd({ 'BufEnter', 'WinEnter' }, {
-  pattern = 'term://*',
-  callback = function()
-    vim.cmd('startinsert')
-  end,
-})
 
 vim.keymap.set("n", "<leader>ld", function()
   local current = vim.diagnostic.config().virtual_lines
