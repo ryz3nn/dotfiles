@@ -24,7 +24,10 @@ return {
               "disconnect",
             },
           },
-  },
+        },
+        windows = {
+          size = 0.5,
+        },
       })
 
       -- CodeLLDB adapter (Rust, C, C++)
