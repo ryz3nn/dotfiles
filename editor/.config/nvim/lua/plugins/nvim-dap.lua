@@ -87,16 +87,41 @@ return {
 
       -- DAP View
       vim.keymap.set("n", "<leader>du", function()
-        dap_view.toggle()
-      end, {
-        desc = "Debug: Toggle view",
-      })
+        local dap_view_wins = {}
 
-      vim.keymap.set("n", "<leader>de", function()
-        dap_view.add_expr()
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+          local buf = vim.api.nvim_win_get_buf(win)
+
+          if vim.bo[buf].filetype == "dap-view" then
+            table.insert(dap_view_wins, win)
+          end
+        end
+
+        if #dap_view_wins > 0 then
+          dap_view.close()
+        else
+          dap_view.open()
+
+          vim.schedule(function()
+            for _, win in ipairs(vim.api.nvim_list_wins()) do
+              local buf = vim.api.nvim_win_get_buf(win)
+
+              if vim.bo[buf].filetype == "dap-view" then
+                vim.api.nvim_set_current_win(win)
+                break
+              end
+            end
+          end)
+        end
       end, {
-        desc = "Debug: Add watch expression",
-      })
-    end,
+      desc = "Debug: Toggle and focus DAP view",
+    })
+
+    vim.keymap.set("n", "<leader>de", function()
+      dap_view.add_expr()
+    end, {
+    desc = "Debug: Add watch expression",
+  })
+end,
   },
 }
