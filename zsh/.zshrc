@@ -208,7 +208,7 @@ ryzc() {
     if [[ -n "$IN_NIX_SHELL" ]]; then
         echo "Already inside a Nix development shell"
     else
-        nix develop -c zsh
+      nix develop --profile ./dev-profile -c zsh
     fi
 }
 
