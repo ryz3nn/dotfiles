@@ -8,6 +8,15 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     opts = {
+      event_handlers = {
+        {
+          event = "neo_tree_buffer_enter",
+          handler = function()
+            vim.wo.relativenumber = true
+            vim.wo.number = true
+          end,
+        },
+      },
       window = {
         width = 30,
       },

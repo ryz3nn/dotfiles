@@ -64,7 +64,6 @@ in
     pulseaudio
     xchm
     zenity # RAD Debugger
-    helix
   ];
 
   programs.git = {
