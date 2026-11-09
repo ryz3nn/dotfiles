@@ -3,6 +3,7 @@ vim.opt.history = 10000
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.belloff = "all"
+vim.opt.shell = "zsh"
 
 -- Line Numbers & Display
 vim.opt.number = true
