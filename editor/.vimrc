@@ -46,7 +46,7 @@ nnoremap <leader>p "+p
 vnoremap <leader>p "+p
 xnoremap <leader>p "_d"+P
 
-nnoremap <leader>tw :set wrap!<CR>
+nnoremap <leader>wt :set wrap!<CR>
 function! ToggleNetrw()
     for w in getwininfo()
         if getbufvar(w.bufnr, '&filetype') ==# 'netrw'
@@ -58,7 +58,8 @@ function! ToggleNetrw()
     Vexplore
 endfunction
 nnoremap <leader>e :call ToggleNetrw()<CR>
-nnoremap <C-q> :q<CR>
+nnoremap <C-q> :q!<CR>
+nnoremap <leader>t :ter<CR>
 
 " Plugins
 " Netrw
