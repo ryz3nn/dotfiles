@@ -30,7 +30,6 @@ set laststatus=2
 set statusline=%f\ %h%m%r%=%b\ %l,%c%V\ %P 
 set splitright
 set splitbelow
-set cursorline
 
 " Keymaps
 let mapleader = " "
