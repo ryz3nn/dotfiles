@@ -35,7 +35,9 @@ set laststatus=2
 set statusline=%f\ %h%m%r%=%b\ %l,%c%V\ %P 
 set splitright
 set splitbelow
-set grepprg=rg\ --vimgrep\ --no-hidden\ --no-heading\
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+set grepformat=%f:%l:%c:%m
+autocmd QuickFixCmdPost [^l]* cwindow
 
 " Keymaps
 let mapleader = " "
