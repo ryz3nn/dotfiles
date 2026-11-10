@@ -35,6 +35,7 @@ set laststatus=2
 set statusline=%f\ %h%m%r%=%b\ %l,%c%V\ %P 
 set splitright
 set splitbelow
+set grepprg=rg\ --vimgrep\ --no-hidden\ --no-heading\
 
 " Keymaps
 let mapleader = " "
