@@ -42,13 +42,24 @@ vnoremap <leader>p "+p
 xnoremap <leader>p "_d"+P
 
 nnoremap <leader>tw :set wrap!<CR>
-nnoremap <leader>e :Vex<CR>
+function! ToggleNetrw()
+    for w in getwininfo()
+        if getbufvar(w.bufnr, '&filetype') ==# 'netrw'
+            execute w.winnr . 'close'
+            return
+        endif
+    endfor
+
+    Vexplore
+endfunction
+
+nnoremap <leader>e :call ToggleNetrw()<CR>
 
 " Plugins
 " Netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
-let g:netrw_browse_split = 0
+let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
 let g:netrw_keepdir = 0
