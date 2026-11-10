@@ -43,3 +43,23 @@ xnoremap <leader>p "_d"+P
 
 nnoremap <leader>tw :set wrap!<CR>
 nnoremap <leader>e :Ex<CR>
+
+" Plugins
+" Netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 0
+let g:netrw_browse_split = 0
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+let g:netrw_keepdir = 0
+
+" Show hidden files
+let g:netrw_list_hide = '^\.\.\=/\=$'
+
+" Line numbers
+augroup netrw_config
+    autocmd!
+    autocmd FileType netrw setlocal number relativenumber
+    autocmd FileType netrw setlocal cursorline
+    autocmd FileType netrw setlocal nowrap
+augroup END
