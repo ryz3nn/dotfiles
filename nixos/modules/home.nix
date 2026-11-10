@@ -65,6 +65,7 @@ in
     pulseaudio
     xchm
     zenity # RAD Debugger
+    nnd
   ];
 
   programs.git = {
