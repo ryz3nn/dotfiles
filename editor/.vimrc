@@ -87,7 +87,7 @@ if executable('clangd')
         autocmd!
         autocmd User lsp_setup call lsp#register_server({
             \ 'name': 'clangd',
-            \ 'cmd': {server_info->['clangd', '--background-index', '--compile-commands-dir=build']},
+            \ 'cmd': {server_info->['clangd', '--background-index', '--compile-commands-dir=./build']},
             \ 'allowlist': ['c'],
             \ })
     augroup END
