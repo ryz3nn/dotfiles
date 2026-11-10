@@ -7,7 +7,7 @@ filetype plugin indent on
 syntax on
 set number
 set relativenumber
-set wrap
+set nowrap
 set hidden
 set foldmethod=syntax
 set mouse=a
@@ -37,3 +37,6 @@ nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
+xnoremap <leader>p "_d"+P
+
+nnoremap <leader>tw :set wrap!<CR>
