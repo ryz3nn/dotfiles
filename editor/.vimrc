@@ -81,37 +81,3 @@ augroup netrw_config
     autocmd FileType netrw setlocal nowrap
 augroup END
 
-" LSP - clangd
-if executable('clangd')
-    augroup clangd_config
-        autocmd!
-        autocmd User lsp_setup call lsp#register_server({
-            \ 'name': 'clangd',
-            \ 'cmd': {server_info->['clangd', '--background-index', '--compile-commands-dir=./build']},
-            \ 'allowlist': ['c'],
-            \ })
-    augroup END
-endif
-
-" LSP buffer settings
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
-
-    " Navigation
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gr <plug>(lsp-references)
-    nmap <buffer> K <plug>(lsp-hover)
-
-    " Rename
-    nmap <buffer> <leader>rn <plug>(lsp-rename)
-
-    " Diagnostics
-    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-endfunction
-
-augroup lsp_config
-    autocmd!
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
