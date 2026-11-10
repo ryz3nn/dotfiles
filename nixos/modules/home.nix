@@ -66,7 +66,7 @@ in
     xchm
     zenity # RAD Debugger
     nnd
-    cgdb
+    seer
   ];
 
   programs.git = {
