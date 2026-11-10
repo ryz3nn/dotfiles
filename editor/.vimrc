@@ -42,3 +42,4 @@ vnoremap <leader>p "+p
 xnoremap <leader>p "_d"+P
 
 nnoremap <leader>tw :set wrap!<CR>
+nnoremap <leader>e :Ex<CR>
