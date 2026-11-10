@@ -42,12 +42,12 @@ vnoremap <leader>p "+p
 xnoremap <leader>p "_d"+P
 
 nnoremap <leader>tw :set wrap!<CR>
-nnoremap <leader>e :Ex<CR>
+nnoremap <leader>e :Vex<CR>
 
 " Plugins
 " Netrw
 let g:netrw_banner = 0
-let g:netrw_liststyle = 0
+let g:netrw_liststyle = 3
 let g:netrw_browse_split = 0
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
