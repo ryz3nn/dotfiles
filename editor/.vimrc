@@ -27,7 +27,9 @@ set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+set path+=**
 set wildmenu
+set wildmode=longest:full,full
 set showcmd
 set laststatus=2
 set statusline=%f\ %h%m%r%=%b\ %l,%c%V\ %P 
@@ -55,8 +57,8 @@ function! ToggleNetrw()
 
     Vexplore
 endfunction
-
 nnoremap <leader>e :call ToggleNetrw()<CR>
+nnoremap <C-q> :q<CR>
 
 " Plugins
 " Netrw
