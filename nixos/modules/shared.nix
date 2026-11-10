@@ -113,6 +113,8 @@
     xorg.libXcursor
     xorg.libXi
     xorg.libXrandr
+
+    libgcc
   ];
 # wshowkeys
   programs.wshowkeys = {
