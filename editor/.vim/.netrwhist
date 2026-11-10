@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/derek/.cgdb/logs'
 let g:netrw_dirhist_1='/home/derek/dotfiles/editor'
 let g:netrw_dirhist_0='/home/derek/dotfiles/editor/.vim'
 let g:netrw_dirhist_9='/home/derek/dotfiles/editor'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_6='/home/derek/projects/ryzc'
 let g:netrw_dirhist_5='/home/derek/projects/ryzc/src'
 let g:netrw_dirhist_4='/home/derek/projects/ryzc'
 let g:netrw_dirhist_3='/home/derek/projects/ryzc/src'
-let g:netrw_dirhist_2='/home/derek/projects/ryzc'
