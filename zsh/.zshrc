@@ -156,6 +156,7 @@ alias grep='grep --color=auto'
 alias reboot='systemctl reboot'
 alias sd='shutdown now'
 alias mini='NVIM_APPNAME=nvim-minimax nvim'
+alias e='vim'
 
 alias toggle_ibus='$HOME/dotfiles/scripts/toggle_ibus.sh'
 alias autoupdate="$HOME/dotfiles/scripts/install.sh"

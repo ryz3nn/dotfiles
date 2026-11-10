@@ -9,7 +9,10 @@ set number
 set relativenumber
 set nowrap
 set hidden
-set foldmethod=syntax
+set foldmethod=indent
+set foldlevel=99
+set foldnestmax=1
+set foldminlines=3
 set mouse=a
 set tabstop=2
 set softtabstop=2
