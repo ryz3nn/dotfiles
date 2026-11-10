@@ -29,3 +29,11 @@ set showcmd
 set laststatus=2
 set statusline=%f\ %h%m%r%=%b\ %l,%c%V\ %P 
 
+" Keymaps
+let mapleader = " "
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
