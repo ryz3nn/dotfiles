@@ -41,19 +41,17 @@
   programs.zsh.enable = true;
   services.cloudflare-warp.enable = true;
   environment.systemPackages = with pkgs; [
-    git
+      git
       curl
       wget
       htop	
       nix-search-cli
       papirus-icon-theme
       adwaita-icon-theme
-      bibata-cursors
       cloudflare-warp
       steam-run
       mesa-demos
       busybox
-      nix-index
   ];
 
   fonts.packages = with pkgs; [
