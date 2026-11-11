@@ -65,7 +65,6 @@ in
     pulseaudio
     xchm
     zenity # RAD Debugger
-    nnd
     seer
   ];
 
