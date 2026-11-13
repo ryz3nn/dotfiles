@@ -4,6 +4,10 @@ return {
     ft = { "c", "cpp", "objc", "objcpp" },
     config = function()
       vim.lsp.config("clangd", {
+        init_options = {
+          clangdFileStatus = true,
+          fallbackFlags = { "-std=c99" },
+        },
         cmd = {
           "clangd",
           "--background-index",
