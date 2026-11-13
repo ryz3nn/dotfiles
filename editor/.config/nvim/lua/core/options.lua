@@ -16,7 +16,7 @@ vim.opt.breakindent = true
 vim.opt.hidden = true -- Change buffer without saving
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 0
-vim.opt.foldlevelstart = 0
+vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 1
 
 -- Mouse & Clipboard
