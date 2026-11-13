@@ -5,6 +5,7 @@ vim.g.maplocalleader = ' '
 -- Disable the spacebar key's default behavior in Normal and Visual modes
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 local opts = { noremap = true, silent = true }
+vim.keymap.set({"n", "v"}, 'zo', 'za')
 
 -- quit file
 vim.keymap.set('n', '<C-q>', '<cmd> q! <CR>', opts)
@@ -101,4 +102,5 @@ vim.keymap.set("n", "<leader>r", function()
     vim.notify("run.sh not found: " .. script, vim.log.levels.ERROR)
   end
 end, { desc = "Run project" })
+
 
