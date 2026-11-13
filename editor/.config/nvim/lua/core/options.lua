@@ -14,10 +14,10 @@ vim.opt.breakindent = true
 
 -- Buffers & Folds
 vim.opt.hidden = true -- Change buffer without saving
-vim.opt.foldmethod = "expr"                     
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" 
-vim.opt.foldlevel = 1                           
-vim.opt.foldnestmax = 1                        
+vim.opt.foldmethod = "indent" 
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
 
 -- Mouse & Clipboard
 vim.opt.mouse = "a"
