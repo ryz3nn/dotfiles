@@ -52,6 +52,7 @@ in
     seahorse
     timer
     glow
+    scrcpy
 
     # Programs
     vlc
