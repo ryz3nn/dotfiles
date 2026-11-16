@@ -53,6 +53,7 @@ in
     timer
     glow
     scrcpy
+    android-tools
 
     # Programs
     vlc
