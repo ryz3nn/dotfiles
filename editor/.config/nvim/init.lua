@@ -23,6 +23,7 @@ require('lazy').setup ({
   require('plugins.nvim-cmp'),
   require('plugins.conform'),
   require('plugins.nvim-autopairs'),
+  require('plugins.outline'),
 
   -- Coding
   require('plugins.nvim-dap'),
