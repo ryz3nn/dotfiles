@@ -30,7 +30,7 @@ vim.opt.tabstop = 2
 vim.opt.smartindent = true
 
 -- Search
-vim.opt.hlsearch = true
+vim.opt.hlsearch = true          
 vim.opt.incsearch = true
 
 -- UI
