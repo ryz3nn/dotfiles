@@ -1,47 +1,30 @@
+require 'core.options'
+require 'core.keymaps'
+require 'core.autocmds'
 
--- ==========================================
--- Neovim Minimal Configuration
--- ~/.config/nvim/init.lua
--- ==========================================
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+  if vim.v.shell_error ~= 0 then
+    error('Error cloning lazy.nvim:\n' .. out)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
 
--- Leader
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
--- General
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.mouse = "a"
-vim.opt.clipboard = "unnamedplus"
-vim.opt.undofile = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.termguicolors = true
-vim.opt.signcolumn = "yes"
-vim.opt.updatetime = 300
-vim.opt.timeoutlen = 500
+require('lazy').setup ({
+  -- General
+  require('plugins.theme'),
+  require('plugins.neotree'),
+  require('plugins.treesitter'),
+  require('plugins.telescope'),
+  require('plugins.indent-blankline'),
+  require('plugins.nvim-cmp'),
+  require('plugins.conform'),
+  require('plugins.nvim-autopairs'),
 
--- Indentation
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.smartindent = true
-
--- Search
-vim.opt.hlsearch = true          
-vim.opt.incsearch = true
-
--- UI
-vim.opt.cursorline = true
-vim.opt.wrap = false
-vim.opt.scrolloff = 5
-vim.opt.sidescrolloff = 5
-vim.opt.showmode = true
-vim.opt.laststatus = 2
-vim.opt.cmdheight = 1
-vim.opt.winborder = "rounded"
-
--- Completion
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
+  -- Coding
+  require('plugins.nvim-dap'),
+  require('plugins.clangd'),
+})
