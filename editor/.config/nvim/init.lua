@@ -44,8 +44,8 @@ vim.opt.ignorecase = true -- Case-insensitive search
 vim.opt.smartcase = true -- Case-sensitive if capital letters are used
 vim.opt.incsearch = true -- Show matches while typing
 vim.opt.hlsearch = true -- Highlight matches
-vim.opt.path:append("**")
-
+vim.opt.path = { ".", "**" }
+vim.opt.wildignore:append({ "*/.git/*", "*/node_modules/*" })
 -- Split
 vim.opt.splitright = true
 
