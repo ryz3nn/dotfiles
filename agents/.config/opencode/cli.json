@@ -4,6 +4,13 @@
     "name": "opencode"
   },
   "session": {
-    "permissions": "prompt"
+    "permissions": "prompt",
+    "new_location": "inherit"
+  },
+  "tabs": {
+    "mode": "auto"
+  },
+  "terminal": {
+    "copy": "select"
   }
 }
