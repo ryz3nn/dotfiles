@@ -35,6 +35,7 @@ in
     ripgrep
     fzf
     neovim
+    vim-full
     sublime4
     tmux
     stow
