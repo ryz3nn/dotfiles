@@ -184,7 +184,7 @@ alias stream="wshowkeys -a bottom -m 60 -F 'JetBrains Mono Bold 26' -b '#1a1b26c
 # ======================
 
 alias search='pacman -Ss'
-alias oc='opencode'
+alias oc='opencode -c'
 alias bug='cd $HOME/projects/space/bug'
 alias space='cd $HOME/projects/space'
 alias tmux='systemd-run --scope --user tmux'
@@ -202,16 +202,17 @@ alias s='apt search'
 # Folder shortcut
 # ======================
 alias jh='cd $HOME/projects/jianghu'
+alias ryzc='cd $HOME/projects/ryzc'
 alias down='cd $HOME/Downloads'
-ryzc() {
-    cd "$HOME/projects/ryzc" || return
-
-    if [[ -n "$IN_NIX_SHELL" ]]; then
-        echo "Already inside a Nix development shell"
-    else
-      nix develop --profile ./dev-profile -c zsh
-    fi
-}
+# ryzc() {
+#     cd "$HOME/projects/ryzc" || return
+#
+#     if [[ -n "$IN_NIX_SHELL" ]]; then
+#         echo "Already inside a Nix development shell"
+#     else
+#       nix develop --profile ./dev-profile -c zsh
+#     fi
+# }
 
 # Added by Antigravity CLI installer
 export PATH="/home/derek/.local/bin:$PATH"
