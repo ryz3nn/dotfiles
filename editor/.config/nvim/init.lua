@@ -117,6 +117,23 @@ vim.keymap.set("n", "<leader>rd", function()
   end
 end, { desc = "Run project" })
 
+------------------------------------------------
+-------- Autocmds -------------------------------
+------------------------------------------------
+
+vim.api.nvim_create_autocmd("WinEnter", {
+    callback = function()
+        local current = vim.api.nvim_get_current_win()
+        local wins = vim.api.nvim_tabpage_list_wins(0)
+
+        if #wins < 2 then return end
+
+        vim.cmd("wincmd =")
+
+        local target = math.floor(vim.o.columns * 0.5)
+        vim.api.nvim_win_set_width(current, target)
+    end,
+})
 
 ------------------------------------------------
 -------- Plugins -------------------------------
