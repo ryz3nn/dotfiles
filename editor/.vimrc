@@ -63,6 +63,7 @@ endfunction
 nnoremap <leader>e :call ToggleNetrw()<CR>
 nnoremap <C-q> :q!<CR>
 nnoremap <leader>t :ter<CR>
+nnoremap zo za
 
 " Plugins
 " Netrw
