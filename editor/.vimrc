@@ -7,4 +7,5 @@ set number
 set hlsearch
 set mouse=a
 set ruler
+set nowrap
 highlight Comment ctermfg=green
