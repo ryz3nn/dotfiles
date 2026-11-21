@@ -34,10 +34,8 @@ in
     fastfetch
     ripgrep
     fzf
-    neovim
     vim-full
     sublime4
-    lite-xl
     tmux
     stow
     tree
