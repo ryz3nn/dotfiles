@@ -10,7 +10,7 @@ local style = require "core.style"
 ------------------------------ Themes ----------------------------------------
 
 -- light theme:
--- core.reload_module("colors.summer")
+core.reload_module("colors.summer")
 
 -- Cấu hình buộc FreeType render grayscale và bật hinting rõ nét
 local font_opts = {
