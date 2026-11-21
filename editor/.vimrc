@@ -5,5 +5,6 @@ set expandtab
 set ai
 set number
 set hlsearch
+set mouse=a
 set ruler
 highlight Comment ctermfg=green
