@@ -1,1 +1,1 @@
-return {recents={[1]="/home/derek/projects/ryzc",[2]="/home/derek/dotfiles"}, window={[1]=1334,[2]=683,[3]=0,[4]=0,["n"]=4}, window_mode="normal", previous_find={[1]="font"}, previous_replace={}}
+return {recents={[1]="/home/derek/dotfiles",[2]="/home/derek/projects/ryzc"}, window={[1]=1334,[2]=683,[3]=0,[4]=0,["n"]=4}, window_mode="normal", previous_find={[1]="rlgui_create_rect",[2]="color",[3]="rlgui_create_rect ",[4]="rlgui_create_color",[5]="C-c",[6]="esc",[7]="Ctrl",[8]="ctrl+[",[9]="normal",[10]="font"}, previous_replace={[1]="rlgui_rect",[2]="rlgui_color"}}
