@@ -65,8 +65,8 @@ export PATH="/opt/scrcpy-linux-x86_64-v4.1:$PATH"
 # Environment
 # ======================
 
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='vim'
+export VISUAL='vim'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
 export GODEBUG='cpu.all=off'
 
@@ -156,7 +156,7 @@ alias grep='grep --color=auto'
 alias reboot='systemctl reboot'
 alias sd='shutdown now'
 alias mini='NVIM_APPNAME=nvim-minimax nvim'
-alias e='nvim'
+alias e='vim'
 
 alias toggle_ibus='$HOME/dotfiles/scripts/toggle_ibus.sh'
 alias autoupdate="$HOME/dotfiles/scripts/install.sh"
