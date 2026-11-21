@@ -37,6 +37,7 @@ in
     neovim
     vim-full
     sublime4
+    lite-xl
     tmux
     stow
     tree
