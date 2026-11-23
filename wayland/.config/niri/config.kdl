@@ -149,6 +149,7 @@ window-rule {
   open-floating true
 }
 
+/* 
 window-rule {
   match app-id="^ryzc$"
   open-floating true
@@ -158,6 +159,7 @@ window-rule {
   default-window-height { proportion 0.8; }
   default-floating-position x=0 y=50 relative-to="top"
 }
+*/
 // Route OBS Studio
 window-rule {
   match app-id=r#"^com\.obsproject\.Studio$"#
