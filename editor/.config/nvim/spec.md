@@ -9,4 +9,10 @@ lua/ryzc/: my config lives here
         init.lua: installs every plugin in one vim.pack.add call, then requires each group file
         Each plugin group gets its own file next to it (e.g. ui.lua), which configures its plugins with require("<plugin>").setup({ ... }).
         keymaps.lua: every keymap that uses a plugin, required last so all plugins are set up first. Group files hold no keymaps.
-
+## 1.2 Basic options
+- Leader is Space
+- Mouse on
+- Clipboard unnamedplus, delete to blackhole
+- Indent is 2 space
+- foo-bar count as one word
+-
