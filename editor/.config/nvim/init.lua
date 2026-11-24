@@ -109,6 +109,13 @@ local map = vim.keymap.set
 -- Clear search highlight
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
+-- Force quit
+map("n", "<C-q>", "<cmd>q!<CR>", { desc = "Force quit" })
+
+-- Delete to blackhole register (keep clipboard intact)
+map({ "n", "v" }, "d", '"_d', { desc = "Delete without yanking" })
+map({ "n", "v" }, "D", '"_D', { desc = "Delete to EOL without yanking" })
+
 -- Built-in file explorer (Netrw)
 map("n", "<leader>e", "<cmd>Explore<CR>", { desc = "Open file explorer" })
 
