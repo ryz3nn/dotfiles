@@ -361,6 +361,7 @@ require("lazy").setup({
       winopts = {
         border = "single", -- Sharp outer border
         preview = {
+          hidden = true, -- Preview off by default (toggle with <F4>)
           border = "single", -- Sharp preview border
           layout = "horizontal",
         },
