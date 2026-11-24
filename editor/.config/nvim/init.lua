@@ -240,24 +240,26 @@ require("lazy").setup({
 -- UI
 -- --------------------------------------------------------------------------
   {
-    "folke/tokyonight.nvim",
+    "projekt0n/github-nvim-theme",
+    name = "github-theme",
     lazy = false,
     priority = 1000,
-    opts = {
-      style = "night",
-      styles = {
-        sidebars = "dark",
-        floats = "dark",
-      },
-      on_highlights = function(hl, c)
-        -- Crisp border contrast for floating windows
-        hl.FloatBorder = { fg = c.blue, bg = c.bg_float }
-        hl.WinSeparator = { fg = c.border_highlight }
-      end,
-    },
-    config = function(_, opts)
-      require("tokyonight").setup(opts)
-      vim.cmd.colorscheme("tokyonight")
+    config = function()
+      require("github-theme").setup({
+        options = {
+          styles = {
+            comments = "italic",
+          },
+          darken = {
+            floats = true,
+            sidebars = {
+              enable = true,
+              list = { "qf", "neo-tree" },
+            },
+          },
+        },
+      })
+      vim.cmd.colorscheme("github_dark_default")
     end,
   },
 
@@ -266,7 +268,7 @@ require("lazy").setup({
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       options = {
-        theme = "tokyonight",
+        theme = "auto",
         globalstatus = true,
         -- Sharp separators (no rounded/slant pills)
         section_separators = { left = "", right = "" },
