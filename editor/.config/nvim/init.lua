@@ -245,6 +245,7 @@ require("lazy").setup({
     priority = 1000,
     opts = {
       style = "dark",
+      -- style = "light",
       italic_comments = true,
       disable_nvimtree_bg = true,
     },
