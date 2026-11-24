@@ -266,7 +266,7 @@ require("lazy").setup({
       "MunifTanjim/nui.nvim",
     },
     keys = {
-      { "<leader>e", "<cmd>Neotree toggle<CR>", desc = "Toggle file explorer" },
+      { "<leader>e", "<cmd>Neotree toggle right<CR>", desc = "Toggle file explorer" },
     },
     opts = {
       popup_border_style = "single", -- Sharp borders for neo-tree popups
