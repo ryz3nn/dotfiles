@@ -412,69 +412,47 @@ require("lazy").setup({
 -- COMPLETION & EDITING
 -- --------------------------------------------------------------------------
   {
-    "hrsh7th/cmp-nvim-lsp",
-    lazy = false,
-    config = function()
-      vim.lsp.config("*", {
-        capabilities = require("cmp_nvim_lsp").default_capabilities(),
-      })
-    end,
-  },
-
-  {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-    },
-    config = function()
-      local cmp = require("cmp")
-
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            vim.snippet.expand(args.body)
-          end,
+    "saghen/blink.cmp",
+    version = "1.*",
+    opts = {
+      keymap = {
+        preset = "default",
+        ["<CR>"] = { "accept", "fallback" },
+        ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+      },
+      appearance = {
+        nerd_font_variant = "mono",
+      },
+      completion = {
+        menu = {
+          border = "single",
         },
+        documentation = {
+          auto_show = true,
+          auto_show_delay_ms = 200,
+          window = {
+            border = "single",
+          },
+        },
+      },
+      signature = {
+        enabled = true,
         window = {
-          completion = cmp.config.window.bordered({ border = "single" }),
-          documentation = cmp.config.window.bordered({ border = "single" }),
+          border = "single",
         },
-        mapping = cmp.mapping.preset.insert({
-          ["<C-n>"] = cmp.mapping.select_next_item(),
-          ["<C-p>"] = cmp.mapping.select_prev_item(),
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-Space>"] = cmp.mapping.complete(),
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif vim.snippet.active({ direction = 1 }) then
-              vim.snippet.jump(1)
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
-          ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif vim.snippet.active({ direction = -1 }) then
-              vim.snippet.jump(-1)
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
-        }),
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "path" },
-        }, {
-          { name = "buffer" },
-        }),
+      },
+      sources = {
+        default = { "lsp", "path", "snippets", "buffer" },
+      },
+      fuzzy = {
+        implementation = "prefer_rust_with_warning",
+      },
+    },
+    config = function(_, opts)
+      require("blink.cmp").setup(opts)
+      vim.lsp.config("*", {
+        capabilities = require("blink.cmp").get_lsp_capabilities(),
       })
     end,
   },
@@ -482,14 +460,7 @@ require("lazy").setup({
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
-    config = function()
-      require("nvim-autopairs").setup({})
-      local ok, cmp = pcall(require, "cmp")
-      if ok then
-        local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-        cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-      end
-    end,
+    opts = {},
   },
 
   {
