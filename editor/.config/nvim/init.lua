@@ -125,6 +125,7 @@ map("n", "<C-q>", "<cmd>q!<CR>", { desc = "Force quit" })
 
 -- Toggle fold with zo
 map({ "n", "x" }, "zo", "za", { desc = "Toggle fold" })
+map({ "n", "x" }, "<leader>ww", "<cmd>set wrap!<CR>", { desc = "Toggle fold" })
 
 -- Delete to blackhole register (keep clipboard intact)
 map({ "n", "v" }, "d", '"_d', { desc = "Delete without yanking" })
@@ -461,13 +462,7 @@ require("lazy").setup({
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     opts = {},
-  },
-
-  {
-    "numToStr/Comment.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
+  }, 
 
 -- --------------------------------------------------------------------------
 -- FORMATTING (CONFORM)
