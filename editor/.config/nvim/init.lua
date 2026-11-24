@@ -328,7 +328,72 @@ require("lazy").setup({
       window = {
         width = 32,
       },
+      event_handlers = {
+        {
+          event = "neo_tree_buffer_enter",
+          handler = function()
+            vim.opt_local.number = true
+            vim.opt_local.relativenumber = true
+          end,
+        },
+      },
     },
+  },
+
+-- --------------------------------------------------------------------------
+-- FILE PICKER (TELESCOPE)
+-- --------------------------------------------------------------------------
+  {
+    "nvim-telescope/telescope.nvim",
+    cmd = "Telescope",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      "nvim-telescope/telescope-ui-select.nvim",
+    },
+    keys = {
+      { "<leader>sf", "<cmd>Telescope find_files<CR>", desc = "Search files" },
+      { "<leader>sg", "<cmd>Telescope live_grep<CR>", desc = "Search by grep" },
+      { "<leader>sw", "<cmd>Telescope grep_string<CR>", desc = "Search word under cursor" },
+      { "<leader>sb", "<cmd>Telescope buffers<CR>", desc = "Search open buffers" },
+      { "<leader>sr", "<cmd>Telescope oldfiles<CR>", desc = "Search recent files" },
+      { "<leader>sd", "<cmd>Telescope diagnostics<CR>", desc = "Search diagnostics" },
+      { "<leader>ss", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Search document symbols" },
+      { "<leader>sh", "<cmd>Telescope help_tags<CR>", desc = "Search help" },
+    },
+    config = function()
+      local telescope = require("telescope")
+      local themes = require("telescope.themes")
+
+      telescope.setup({
+        defaults = {
+          prompt_prefix = "> ",
+          selection_caret = "> ",
+          sorting_strategy = "ascending",
+          layout_config = {
+            prompt_position = "top",
+          },
+          -- Sharp single-line borders (no rounded corners)
+          borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+          file_ignore_patterns = { "^.git/", "%.o$", "%.out$" },
+        },
+        extensions = {
+          ["ui-select"] = {
+            themes.get_dropdown({
+              borderchars = {
+                prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
+                results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
+                preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+              },
+            }),
+          },
+        },
+      })
+
+      pcall(telescope.load_extension, "fzf")
+      pcall(telescope.load_extension, "ui-select")
+    end,
   },
 }, {
   ui = {
