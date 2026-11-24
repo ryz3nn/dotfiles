@@ -55,6 +55,15 @@ opt.timeoutlen = 400
 opt.completeopt = { "menu", "menuone", "noselect" }
 opt.path:append("**") -- Allow :find and gf to search subdirectories
 
+-- Folding (first level only, no nested folds; files open unfolded)
+opt.foldenable = true
+opt.foldmethod = "indent"
+opt.foldnestmax = 1
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldtext = ""
+opt.fillchars:append({ fold = " " })
+
 -- ============================================================================
 -- 3. AUTOCOMMANDS
 -- ============================================================================
@@ -113,6 +122,9 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
 -- Force quit
 map("n", "<C-q>", "<cmd>q!<CR>", { desc = "Force quit" })
+
+-- Toggle fold with zo
+map({ "n", "x" }, "zo", "za", { desc = "Toggle fold" })
 
 -- Delete to blackhole register (keep clipboard intact)
 map({ "n", "v" }, "d", '"_d', { desc = "Delete without yanking" })
