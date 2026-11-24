@@ -61,8 +61,8 @@ opt.foldmethod = "indent"
 opt.foldnestmax = 1
 opt.foldlevel = 99
 opt.foldlevelstart = 99
-opt.foldtext = ""
-opt.fillchars:append({ fold = " " })
+-- opt.foldtext = ""
+-- opt.fillchars:append({ fold = " " })
 
 -- ============================================================================
 -- 3. AUTOCOMMANDS
