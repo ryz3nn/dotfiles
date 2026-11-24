@@ -21,7 +21,7 @@
     "webfetch": "allow",
     "websearch": "allow",
     "bash": "allow"
-  }
+  },
   "external_directory": {
     "~/": "allow"
   }
