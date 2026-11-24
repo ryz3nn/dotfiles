@@ -194,7 +194,7 @@ if vim.fn.executable("clangd") == 1 then
   vim.lsp.enable("clangd")
 end
 
--- Attach LSP keymaps & built-in completion when an LSP connects
+-- Attach LSP keymaps when an LSP connects
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
   callback = function(args)
@@ -209,23 +209,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     bufmap("n", "K", vim.lsp.buf.hover, "Hover documentation")
     bufmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename symbol")
     bufmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
-    bufmap("n", "<leader>f", function()
-      vim.lsp.buf.format({ async = true })
-    end, "Format buffer")
-
-    -- Trigger built-in LSP completion with <C-Space> in insert mode
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client and client:supports_method("textDocument/completion") then
-      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = false })
-      bufmap("i", "<C-Space>", function()
-        vim.lsp.completion.get()
-      end, "Trigger LSP completion")
-    end
   end,
 })
 
 -- ============================================================================
--- 6. PLUGINS (BOOTSTRAP, THEME, UI)
+-- 6. PLUGINS
 -- ============================================================================
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -392,6 +380,235 @@ require("lazy").setup({
       local fzf = require("fzf-lua")
       fzf.setup(opts)
       fzf.register_ui_select()
+    end,
+  },
+
+-- --------------------------------------------------------------------------
+-- TREESITTER
+-- --------------------------------------------------------------------------
+  {
+    "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ":TSUpdate",
+    config = function()
+      local ts = require("nvim-treesitter")
+      ts.setup()
+
+      -- Install C/IDE parsers automatically only when CLI + compiler exist
+      if vim.fn.executable("tree-sitter") == 1 and (vim.fn.executable("cc") == 1 or vim.fn.executable("gcc") == 1) then
+        ts.install({ "c", "cpp", "lua", "bash", "cmake", "make", "markdown" })
+      end
+
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("UserTreesitter", { clear = true }),
+        callback = function(args)
+          pcall(vim.treesitter.start, args.buf)
+        end,
+      })
+    end,
+  },
+
+-- --------------------------------------------------------------------------
+-- COMPLETION & EDITING
+-- --------------------------------------------------------------------------
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    lazy = false,
+    config = function()
+      vim.lsp.config("*", {
+        capabilities = require("cmp_nvim_lsp").default_capabilities(),
+      })
+    end,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+    },
+    config = function()
+      local cmp = require("cmp")
+
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            vim.snippet.expand(args.body)
+          end,
+        },
+        window = {
+          completion = cmp.config.window.bordered({ border = "single" }),
+          documentation = cmp.config.window.bordered({ border = "single" }),
+        },
+        mapping = cmp.mapping.preset.insert({
+          ["<C-n>"] = cmp.mapping.select_next_item(),
+          ["<C-p>"] = cmp.mapping.select_prev_item(),
+          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+          ["<C-f>"] = cmp.mapping.scroll_docs(4),
+          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<C-e>"] = cmp.mapping.abort(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif vim.snippet.active({ direction = 1 }) then
+              vim.snippet.jump(1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif vim.snippet.active({ direction = -1 }) then
+              vim.snippet.jump(-1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+        }),
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "path" },
+        }, {
+          { name = "buffer" },
+        }),
+      })
+    end,
+  },
+
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-autopairs").setup({})
+      local ok, cmp = pcall(require, "cmp")
+      if ok then
+        local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+        cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+      end
+    end,
+  },
+
+  {
+    "numToStr/Comment.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+
+-- --------------------------------------------------------------------------
+-- FORMATTING (CONFORM)
+-- --------------------------------------------------------------------------
+  {
+    "stevearc/conform.nvim",
+    cmd = "ConformInfo",
+    keys = {
+      {
+        "<leader>f",
+        function()
+          require("conform").format({ async = true, lsp_format = "fallback" })
+        end,
+        mode = { "n", "v" },
+        desc = "Format buffer or selection",
+      },
+    },
+    opts = {
+      formatters_by_ft = {
+        c = { "clang_format" },
+        cpp = { "clang_format" },
+      },
+      default_format_opts = {
+        lsp_format = "fallback",
+      },
+    },
+  },
+
+-- --------------------------------------------------------------------------
+-- DEBUGGING (DAP + DAP-VIEW)
+-- --------------------------------------------------------------------------
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      {
+        "igorlfs/nvim-dap-view",
+        cmd = { "DapViewOpen", "DapViewClose", "DapViewToggle", "DapViewWatch" },
+        opts = {
+          winbar = {
+            show = true,
+            controls = { enabled = true },
+          },
+          windows = {
+            size = 0.25,
+            position = "below",
+          },
+          help = { border = "single" },
+          hover = { border = "single" },
+          virtual_text = { enabled = true },
+          auto_toggle = true,
+        },
+      },
+    },
+    keys = {
+      { "<F5>", function() require("dap").continue() end, desc = "Debug: Start/Continue" },
+      { "<F9>", function() require("dap").toggle_breakpoint() end, desc = "Debug: Toggle breakpoint" },
+      { "<F10>", function() require("dap").step_over() end, desc = "Debug: Step over" },
+      { "<F11>", function() require("dap").step_into() end, desc = "Debug: Step into" },
+      { "<F12>", function() require("dap").step_out() end, desc = "Debug: Step out" },
+      { "<leader>Db", function() require("dap").toggle_breakpoint() end, desc = "Toggle breakpoint" },
+      { "<leader>DB", function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, desc = "Conditional breakpoint" },
+      { "<leader>Dc", function() require("dap").continue() end, desc = "Continue / Start debug" },
+      { "<leader>Dt", function() require("dap").terminate() end, desc = "Terminate debug" },
+      { "<leader>Dr", function() require("dap").repl.toggle() end, desc = "Toggle debug REPL" },
+      { "<leader>Dv", "<cmd>DapViewToggle<CR>", desc = "Toggle DAP view" },
+      { "<leader>Dw", "<cmd>DapViewWatch<CR>", desc = "Add expression to DAP watch" },
+    },
+    config = function()
+      local dap = require("dap")
+
+      vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DiagnosticError" })
+      vim.fn.sign_define("DapBreakpointCondition", { text = "◆", texthl = "DiagnosticWarn" })
+      vim.fn.sign_define("DapBreakpointRejected", { text = "○", texthl = "DiagnosticHint" })
+      vim.fn.sign_define("DapStopped", { text = "▶", texthl = "DiagnosticInfo", linehl = "CursorLine" })
+
+      if vim.fn.executable("gdb") == 1 then
+        dap.adapters.gdb = {
+          type = "executable",
+          command = "gdb",
+          args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
+        }
+      end
+
+      if vim.fn.executable("lldb-dap") == 1 then
+        dap.adapters.lldb = {
+          type = "executable",
+          command = "lldb-dap",
+          name = "lldb",
+        }
+      end
+
+      local adapter = (vim.fn.executable("lldb-dap") == 1 and vim.fn.executable("gdb") == 0) and "lldb" or "gdb"
+      dap.configurations.c = {
+        {
+          name = "Launch executable",
+          type = adapter,
+          request = "launch",
+          program = function()
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+          end,
+          cwd = "${workspaceFolder}",
+          stopAtBeginningOfMainSubprogram = false,
+        },
+        {
+          name = "Attach to process",
+          type = adapter,
+          request = "attach",
+          pid = require("dap.utils").pick_process,
+          cwd = "${workspaceFolder}",
+        },
+      }
+      dap.configurations.cpp = dap.configurations.c
     end,
   },
 }, {
