@@ -341,58 +341,44 @@ require("lazy").setup({
   },
 
 -- --------------------------------------------------------------------------
--- FILE PICKER (TELESCOPE)
+-- FILE PICKER (FZF-LUA)
 -- --------------------------------------------------------------------------
   {
-    "nvim-telescope/telescope.nvim",
-    cmd = "Telescope",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-      "nvim-telescope/telescope-ui-select.nvim",
-    },
+    "ibhagwan/fzf-lua",
+    cmd = "FzfLua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-      { "<leader>sf", "<cmd>Telescope find_files<CR>", desc = "Search files" },
-      { "<leader>sg", "<cmd>Telescope live_grep<CR>", desc = "Search by grep" },
-      { "<leader>sw", "<cmd>Telescope grep_string<CR>", desc = "Search word under cursor" },
-      { "<leader>sb", "<cmd>Telescope buffers<CR>", desc = "Search open buffers" },
-      { "<leader>sr", "<cmd>Telescope oldfiles<CR>", desc = "Search recent files" },
-      { "<leader>sd", "<cmd>Telescope diagnostics<CR>", desc = "Search diagnostics" },
-      { "<leader>ss", "<cmd>Telescope lsp_document_symbols<CR>", desc = "Search document symbols" },
-      { "<leader>sh", "<cmd>Telescope help_tags<CR>", desc = "Search help" },
+      { "<leader>sf", "<cmd>FzfLua files<CR>", desc = "Search files" },
+      { "<leader>sg", "<cmd>FzfLua live_grep<CR>", desc = "Search by grep" },
+      { "<leader>sw", "<cmd>FzfLua grep_cword<CR>", desc = "Search word under cursor" },
+      { "<leader>sb", "<cmd>FzfLua buffers<CR>", desc = "Search open buffers" },
+      { "<leader>sr", "<cmd>FzfLua oldfiles<CR>", desc = "Search recent files" },
+      { "<leader>sd", "<cmd>FzfLua diagnostics_document<CR>", desc = "Search diagnostics" },
+      { "<leader>ss", "<cmd>FzfLua lsp_document_symbols<CR>", desc = "Search document symbols" },
+      { "<leader>sh", "<cmd>FzfLua helptags<CR>", desc = "Search help" },
     },
-    config = function()
-      local telescope = require("telescope")
-      local themes = require("telescope.themes")
-
-      telescope.setup({
-        defaults = {
-          prompt_prefix = "> ",
-          selection_caret = "> ",
-          sorting_strategy = "ascending",
-          layout_config = {
-            prompt_position = "top",
-          },
-          -- Sharp single-line borders (no rounded corners)
-          borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-          file_ignore_patterns = { "^.git/", "%.o$", "%.out$" },
+    opts = {
+      winopts = {
+        border = "single", -- Sharp outer border
+        preview = {
+          border = "single", -- Sharp preview border
+          layout = "horizontal",
         },
-        extensions = {
-          ["ui-select"] = {
-            themes.get_dropdown({
-              borderchars = {
-                prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
-                results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
-                preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-              },
-            }),
-          },
-        },
-      })
-
-      pcall(telescope.load_extension, "fzf")
-      pcall(telescope.load_extension, "ui-select")
+      },
+      fzf_opts = {
+        ["--layout"] = "reverse",
+      },
+      files = {
+        fd_opts = "--color=never --type f --hidden --follow --exclude .git --exclude '*.o' --exclude '*.out'",
+      },
+      grep = {
+        rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -g '!.git' -g '!*.o' -g '!*.out' -e",
+      },
+    },
+    config = function(_, opts)
+      local fzf = require("fzf-lua")
+      fzf.setup(opts)
+      fzf.register_ui_select()
     end,
   },
 }, {
