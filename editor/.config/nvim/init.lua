@@ -153,7 +153,67 @@ map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostic"
 map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- ============================================================================
--- 5. PLUGINS (BOOTSTRAP, THEME, UI)
+-- 5. DIAGNOSTICS & LSP (CLANGD)
+-- ============================================================================
+vim.diagnostic.config({
+  virtual_text = true,
+  severity_sort = true,
+  float = { border = "single" },
+})
+
+if vim.fn.executable("clangd") == 1 then
+  vim.lsp.config("clangd", {
+    cmd = {
+      "clangd",
+      "--background-index",
+      "--clang-tidy",
+      "--header-insertion=never",
+    },
+    filetypes = { "c", "cpp", "objc", "objcpp" },
+    root_markers = {
+      "compile_commands.json",
+      "compile_flags.txt",
+      ".clangd",
+      "Makefile",
+      "CMakeLists.txt",
+      ".git",
+    },
+  })
+  vim.lsp.enable("clangd")
+end
+
+-- Attach LSP keymaps & built-in completion when an LSP connects
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
+  callback = function(args)
+    local bufmap = function(mode, lhs, rhs, desc)
+      vim.keymap.set(mode, lhs, rhs, { buffer = args.buf, desc = desc })
+    end
+
+    bufmap("n", "gd", vim.lsp.buf.definition, "Go to definition")
+    bufmap("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
+    bufmap("n", "gr", vim.lsp.buf.references, "List references")
+    bufmap("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
+    bufmap("n", "K", vim.lsp.buf.hover, "Hover documentation")
+    bufmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename symbol")
+    bufmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
+    bufmap("n", "<leader>f", function()
+      vim.lsp.buf.format({ async = true })
+    end, "Format buffer")
+
+    -- Trigger built-in LSP completion with <C-Space> in insert mode
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client:supports_method("textDocument/completion") then
+      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = false })
+      bufmap("i", "<C-Space>", function()
+        vim.lsp.completion.get()
+      end, "Trigger LSP completion")
+    end
+  end,
+})
+
+-- ============================================================================
+-- 6. PLUGINS (BOOTSTRAP, THEME, UI)
 -- ============================================================================
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -286,64 +346,4 @@ require("lazy").setup({
   change_detection = {
     notify = false,
   },
-})
-
--- ============================================================================
--- 6. DIAGNOSTICS & LSP (CLANGD)
--- ============================================================================
-vim.diagnostic.config({
-  virtual_text = true,
-  severity_sort = true,
-  float = { border = "single" },
-})
-
-if vim.fn.executable("clangd") == 1 then
-  vim.lsp.config("clangd", {
-    cmd = {
-      "clangd",
-      "--background-index",
-      "--clang-tidy",
-      "--header-insertion=never",
-    },
-    filetypes = { "c", "cpp", "objc", "objcpp" },
-    root_markers = {
-      "compile_commands.json",
-      "compile_flags.txt",
-      ".clangd",
-      "Makefile",
-      "CMakeLists.txt",
-      ".git",
-    },
-  })
-  vim.lsp.enable("clangd")
-end
-
--- Attach LSP keymaps & built-in completion when an LSP connects
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
-  callback = function(args)
-    local bufmap = function(mode, lhs, rhs, desc)
-      vim.keymap.set(mode, lhs, rhs, { buffer = args.buf, desc = desc })
-    end
-
-    bufmap("n", "gd", vim.lsp.buf.definition, "Go to definition")
-    bufmap("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
-    bufmap("n", "gr", vim.lsp.buf.references, "List references")
-    bufmap("n", "gi", vim.lsp.buf.implementation, "Go to implementation")
-    bufmap("n", "K", vim.lsp.buf.hover, "Hover documentation")
-    bufmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename symbol")
-    bufmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
-    bufmap("n", "<leader>f", function()
-      vim.lsp.buf.format({ async = true })
-    end, "Format buffer")
-
-    -- Trigger built-in LSP completion with <C-Space> in insert mode
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client and client:supports_method("textDocument/completion") then
-      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = false })
-      bufmap("i", "<C-Space>", function()
-        vim.lsp.completion.get()
-      end, "Trigger LSP completion")
-    end
-  end,
 })
