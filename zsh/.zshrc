@@ -171,7 +171,7 @@ alias pc-test='git -C ~/dotfiles add -A && sudo nixos-rebuild test --flake /home
 alias lap='git -C ~/dotfiles add -A && sudo nixos-rebuild switch --flake /home/derek/dotfiles/nixos#laptop'
 
 alias clean='sudo nix-collect-garbage --delete-older-than 2d'
-alias home='nvim ~/dotfiles/nixos/modules/home.nix'
+alias home='$EDITOR ~/dotfiles/nixos/modules/home.nix'
 alias nixs="nix-search"
 alias dev="nix develop -c zsh"
 alias zed="steam-run ~/.local/opt/zed.app/bin/zed"
