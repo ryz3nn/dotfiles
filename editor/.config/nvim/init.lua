@@ -61,8 +61,6 @@ opt.foldmethod = "indent"
 opt.foldnestmax = 1
 opt.foldlevel = 99
 opt.foldlevelstart = 99
--- opt.foldtext = ""
--- opt.fillchars:append({ fold = " " })
 
 -- ============================================================================
 -- 3. AUTOCOMMANDS
@@ -245,8 +243,8 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     opts = {
-      style = "dark",
-      -- style = "light",
+      -- style = "dark",
+      style = "light",
       italic_comments = true,
       disable_nvimtree_bg = true,
     },
