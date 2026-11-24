@@ -14,9 +14,9 @@ opt.number = true
 opt.relativenumber = true
 
 -- Indentation (4 spaces by default; Makefiles keep real tabs via ftplugin)
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 opt.smartindent = true
 
@@ -54,12 +54,55 @@ opt.completeopt = { "menu", "menuone", "noselect" }
 opt.path:append("**") -- Allow :find and gf to search subdirectories
 
 -- ============================================================================
--- 3. COLORSCHEME
+-- 3. AUTOCOMMANDS
 -- ============================================================================
-pcall(vim.cmd.colorscheme, "habamax")
+local augroup = vim.api.nvim_create_augroup("UserConfig", { clear = true })
+
+-- Highlight yanked text briefly
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = augroup,
+  callback = function()
+    vim.hl.on_yank({ timeout = 150 })
+  end,
+})
+
+-- Return to last edit position when opening a file
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = augroup,
+  callback = function(args)
+    local mark = vim.api.nvim_buf_get_mark(args.buf, '"')
+    local line_count = vim.api.nvim_buf_line_count(args.buf)
+    if mark[1] > 0 and mark[1] <= line_count then
+      pcall(vim.api.nvim_win_set_cursor, 0, mark)
+    end
+  end,
+})
+
+-- C/C++ buffer helpers
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup,
+  pattern = { "c", "cpp" },
+  callback = function(args)
+    -- If there is no Makefile in the current directory, compile single file with cc
+    if vim.fn.filereadable("Makefile") == 0 and vim.fn.filereadable("makefile") == 0 then
+      vim.bo[args.buf].makeprg = "cc -Wall -Wextra -g % -o %<"
+    end
+
+    -- Quick switch between .c and .h with the same base name
+    vim.keymap.set("n", "<leader>ch", function()
+      local ext = vim.fn.expand("%:e")
+      local target = vim.fn.expand("%:r") .. (ext == "h" and ".c" or ".h")
+      if vim.fn.filereadable(target) == 1 then
+        vim.cmd.edit(target)
+      else
+        vim.notify("Not found: " .. target, vim.log.levels.WARN)
+      end
+    end, { buffer = args.buf, desc = "Switch between .c and .h" })
+  end,
+})
 
 -- ============================================================================
--- 4. GENERAL KEYMAPS
+-- 4. KEYMAPS
 -- ============================================================================
 local map = vim.keymap.set
 
@@ -67,7 +110,7 @@ local map = vim.keymap.set
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
 -- Built-in file explorer (Netrw)
-map("n", "<leader>fe", "<cmd>Explore<CR>", { desc = "Open file explorer" })
+map("n", "<leader>e", "<cmd>Explore<CR>", { desc = "Open file explorer" })
 
 -- Better window navigation
 map("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
@@ -94,20 +137,23 @@ map("n", "<leader>m", "<cmd>write | make<CR>", { desc = "Save and run :make" })
 map("n", "<leader>co", "<cmd>copen<CR>", { desc = "Open quickfix list" })
 map("n", "<leader>cc", "<cmd>cclose<CR>", { desc = "Close quickfix list" })
 
+-- Diagnostics
+map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostic" })
+map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+
 -- ============================================================================
--- 5. DIAGNOSTICS
+-- 5. THEME & UI
 -- ============================================================================
+pcall(vim.cmd.colorscheme, "habamax")
+
 vim.diagnostic.config({
   virtual_text = true,
   severity_sort = true,
   float = { border = "rounded" },
 })
 
-map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostic" })
-map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-
 -- ============================================================================
--- 6. NATIVE LSP (CLANGD)
+-- 6. LSP (CLANGD)
 -- ============================================================================
 if vim.fn.executable("clangd") == 1 then
   vim.lsp.config("clangd", {
@@ -157,53 +203,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.lsp.completion.get()
       end, "Trigger LSP completion")
     end
-  end,
-})
-
--- ============================================================================
--- 7. AUTOCOMMANDS (GENERAL & C-SPECIFIC)
--- ============================================================================
-local augroup = vim.api.nvim_create_augroup("UserConfig", { clear = true })
-
--- Highlight yanked text briefly
-vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup,
-  callback = function()
-    vim.hl.on_yank({ timeout = 150 })
-  end,
-})
-
--- Return to last edit position when opening a file
-vim.api.nvim_create_autocmd("BufReadPost", {
-  group = augroup,
-  callback = function(args)
-    local mark = vim.api.nvim_buf_get_mark(args.buf, '"')
-    local line_count = vim.api.nvim_buf_line_count(args.buf)
-    if mark[1] > 0 and mark[1] <= line_count then
-      pcall(vim.api.nvim_win_set_cursor, 0, mark)
-    end
-  end,
-})
-
--- C/C++ buffer helpers
-vim.api.nvim_create_autocmd("FileType", {
-  group = augroup,
-  pattern = { "c", "cpp" },
-  callback = function(args)
-    -- If there is no Makefile in the current directory, compile single file with cc/gcc
-    if vim.fn.filereadable("Makefile") == 0 and vim.fn.filereadable("makefile") == 0 then
-      vim.bo[args.buf].makeprg = "cc -Wall -Wextra -g % -o %<"
-    end
-
-    -- Quick switch between .c and .h with the same base name
-    vim.keymap.set("n", "<leader>ch", function()
-      local ext = vim.fn.expand("%:e")
-      local target = vim.fn.expand("%:r") .. (ext == "h" and ".c" or ".h")
-      if vim.fn.filereadable(target) == 1 then
-        vim.cmd.edit(target)
-      else
-        vim.notify("Not found: " .. target, vim.log.levels.WARN)
-      end
-    end, { buffer = args.buf, desc = "Switch between .c and .h" })
   end,
 })
