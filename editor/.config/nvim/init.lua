@@ -240,26 +240,17 @@ require("lazy").setup({
 -- UI
 -- --------------------------------------------------------------------------
   {
-    "projekt0n/github-nvim-theme",
-    name = "github-theme",
+    "Mofiqul/vscode.nvim",
     lazy = false,
     priority = 1000,
-    config = function()
-      require("github-theme").setup({
-        options = {
-          styles = {
-            comments = "italic",
-          },
-          darken = {
-            floats = true,
-            sidebars = {
-              enable = true,
-              list = { "qf", "neo-tree" },
-            },
-          },
-        },
-      })
-      vim.cmd.colorscheme("github_dark_default")
+    opts = {
+      style = "dark",
+      italic_comments = true,
+      disable_nvimtree_bg = true,
+    },
+    config = function(_, opts)
+      require("vscode").setup(opts)
+      vim.cmd.colorscheme("vscode")
     end,
   },
 
