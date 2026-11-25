@@ -119,6 +119,12 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
+-- When started with a directory (e.g. `nvim path/to/folder`), cd into it
+local start_arg = vim.fn.argv(0)
+if type(start_arg) == "string" and start_arg ~= "" and vim.fn.isdirectory(start_arg) == 1 then
+  pcall(vim.api.nvim_set_current_dir, start_arg)
+end
+
 -- C/C++ buffer helpers
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup,
