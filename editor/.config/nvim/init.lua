@@ -602,37 +602,27 @@ require("lazy").setup({
       vim.fn.sign_define("DapBreakpointRejected", { text = "○", texthl = "DiagnosticHint" })
       vim.fn.sign_define("DapStopped", { text = "▶", texthl = "DiagnosticInfo", linehl = "CursorLine" })
 
-      if vim.fn.executable("gdb") == 1 then
-        dap.adapters.gdb = {
-          type = "executable",
-          command = "gdb",
-          args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
-        }
-      end
+      dap.adapters.lldb = {
+        type = "executable",
+        command = "lldb-dap",
+        name = "lldb",
+      }
 
-      if vim.fn.executable("lldb-dap") == 1 then
-        dap.adapters.lldb = {
-          type = "executable",
-          command = "lldb-dap",
-          name = "lldb",
-        }
-      end
-
-      local adapter = (vim.fn.executable("lldb-dap") == 1 and vim.fn.executable("gdb") == 0) and "lldb" or "gdb"
       dap.configurations.c = {
         {
-          name = "Launch executable",
-          type = adapter,
+          name = "Launch executable (lldb-dap)",
+          type = "lldb",
           request = "launch",
           program = function()
             return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
           end,
           cwd = "${workspaceFolder}",
-          stopAtBeginningOfMainSubprogram = false,
+          stopOnEntry = false,
+          args = {},
         },
         {
-          name = "Attach to process",
-          type = adapter,
+          name = "Attach to process (lldb-dap)",
+          type = "lldb",
           request = "attach",
           pid = require("dap.utils").pick_process,
           cwd = "${workspaceFolder}",
