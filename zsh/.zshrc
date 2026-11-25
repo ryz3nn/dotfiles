@@ -173,7 +173,7 @@ alias lap='git -C ~/dotfiles add -A && sudo nixos-rebuild switch --flake /home/d
 alias clean='sudo nix-collect-garbage --delete-older-than 2d'
 alias home='$EDITOR ~/dotfiles/nixos/modules/home.nix'
 alias nixs="nix-search"
-alias dev="nix develop -c zsh"
+alias dev="nix develop ./dev-profile -c zsh"
 alias zed="steam-run ~/.local/opt/zed.app/bin/zed"
 alias ecode="SDL_VIDEODRIVER=wayland steam-run ~/.local/opt/ecode/ecode"
 
