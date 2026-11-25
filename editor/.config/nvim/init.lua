@@ -182,7 +182,6 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window w
 -- Buffers
 map("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 map("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
-map("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Close buffer" })
 
 -- Keep visual selection when indenting
 map("v", "<", "<gv", { desc = "Indent left" })
@@ -325,7 +324,7 @@ require("lazy").setup({
         show_close_icon = false,
         offsets = {
           {
-            filetype = "neo-tree",
+            filetype = "snacks_layout_box",
             text = "FILES",
             text_align = "left",
             separator = true,
@@ -335,89 +334,118 @@ require("lazy").setup({
     },
   },
 
+-- --------------------------------------------------------------------------
+-- SNACKS (EXPLORER, PICKER, INDENT, UTILS)
+-- --------------------------------------------------------------------------
   {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
-      indent = { char = "│" },
-      scope = { enabled = true, show_start = false, show_end = false },
-    },
-  },
-
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    cmd = "Neotree",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-    },
-    keys = {
-      { "<leader>e", "<cmd>Neotree toggle right<CR>", desc = "Toggle file explorer" },
-    },
-    opts = {
-      popup_border_style = "single", -- Sharp borders for neo-tree popups
-      filesystem = {
-        follow_current_file = { enabled = true },
-        hijack_netrw_behavior = "open_default",
+      bigfile = { enabled = true },
+      quickfile = { enabled = true },
+      explorer = {
+        enabled = true,
+        replace_netrw = true,
       },
-      window = {
-        width = 32,
+      indent = {
+        enabled = true,
+        indent = { char = "│" },
+        scope = { enabled = true },
+        animate = { enabled = false },
       },
-      event_handlers = {
-        {
-          event = "neo_tree_buffer_enter",
-          handler = function()
-            vim.opt_local.number = true
-            vim.opt_local.relativenumber = true
+      input = { enabled = true },
+      notifier = {
+        enabled = true,
+        timeout = 3000,
+      },
+      terminal = { enabled = true },
+      words = { enabled = true },
+      styles = {
+        blame_line = { border = "single" },
+        float = { border = "single" },
+        input = { border = "single" },
+        notification = { border = "single" },
+        notification_history = { border = "single" },
+      },
+      picker = {
+        ui_select = true,
+        layout = {
+          cycle = true,
+          hidden = { "preview" }, -- Preview off by default (toggle with <F4> or <M-p>)
+          preset = function()
+            return vim.o.columns >= 120 and "default" or "vertical"
           end,
         },
-      },
-    },
-  },
-
--- --------------------------------------------------------------------------
--- FILE PICKER (FZF-LUA)
--- --------------------------------------------------------------------------
-  {
-    "ibhagwan/fzf-lua",
-    cmd = "FzfLua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    keys = {
-      { "<leader>sf", "<cmd>FzfLua files<CR>", desc = "Search files" },
-      { "<leader>sg", "<cmd>FzfLua live_grep<CR>", desc = "Search by grep" },
-      { "<leader>sw", "<cmd>FzfLua grep_cword<CR>", desc = "Search word under cursor" },
-      { "<leader>sb", "<cmd>FzfLua buffers<CR>", desc = "Search open buffers" },
-      { "<leader>sr", "<cmd>FzfLua oldfiles<CR>", desc = "Search recent files" },
-      { "<leader>sd", "<cmd>FzfLua diagnostics_document<CR>", desc = "Search diagnostics" },
-      { "<leader>ss", "<cmd>FzfLua lsp_document_symbols<CR>", desc = "Search document symbols" },
-      { "<leader>sh", "<cmd>FzfLua helptags<CR>", desc = "Search help" },
-    },
-    opts = {
-      winopts = {
-        border = "single", -- Sharp outer border
-        preview = {
-          hidden = true, -- Preview off by default (toggle with <F4>)
-          border = "single", -- Sharp preview border
-          layout = "horizontal",
+        win = {
+          input = {
+            keys = {
+              ["<F4>"] = { "toggle_preview", mode = { "n", "i" } },
+            },
+          },
+          list = {
+            keys = {
+              ["<F4>"] = "toggle_preview",
+            },
+          },
+        },
+        sources = {
+          files = {
+            hidden = true,
+            follow = true,
+            exclude = { "*.o", "*.out" },
+          },
+          grep = {
+            hidden = true,
+            follow = true,
+            exclude = { "*.o", "*.out" },
+          },
+          explorer = {
+            layout = {
+              layout = {
+                position = "right",
+                width = 32,
+              },
+            },
+            win = {
+              list = {
+                wo = {
+                  number = true,
+                  relativenumber = true,
+                },
+              },
+            },
+          },
         },
       },
-      fzf_opts = {
-        ["--layout"] = "reverse",
-      },
-      files = {
-        fd_opts = "--color=never --type f --hidden --follow --exclude .git --exclude '*.o' --exclude '*.out'",
-      },
-      grep = {
-        rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -g '!.git' -g '!*.o' -g '!*.out' -e",
-      },
     },
-    config = function(_, opts)
-      local fzf = require("fzf-lua")
-      fzf.setup(opts)
-      fzf.register_ui_select()
-    end,
+    keys = {
+      -- Explorer & pickers
+      { "<leader>e", function() Snacks.explorer() end, desc = "Toggle file explorer" },
+      { "<leader>sf", function() Snacks.picker.files() end, desc = "Search files" },
+      { "<leader>sg", function() Snacks.picker.grep() end, desc = "Search by grep" },
+      { "<leader>sw", function() Snacks.picker.grep_word() end, mode = { "n", "x" }, desc = "Search word or selection" },
+      { "<leader>sb", function() Snacks.picker.buffers() end, desc = "Search open buffers" },
+      { "<leader>sr", function() Snacks.picker.recent() end, desc = "Search recent files" },
+      { "<leader>sd", function() Snacks.picker.diagnostics_buffer() end, desc = "Search buffer diagnostics" },
+      { "<leader>sD", function() Snacks.picker.diagnostics() end, desc = "Search workspace diagnostics" },
+      { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "Search document symbols" },
+      { "<leader>sh", function() Snacks.picker.help() end, desc = "Search help" },
+      { "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume last picker" },
+      { "<leader>sn", function() Snacks.notifier.show_history() end, desc = "Notification history" },
+
+      -- Helpful utils
+      { "<leader>bd", function() Snacks.bufdelete() end, desc = "Close buffer (keep layout)" },
+      { "<leader>bo", function() Snacks.bufdelete.other() end, desc = "Close other buffers" },
+      { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git blame line" },
+      { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename file (LSP)" },
+      { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss notifications" },
+      { "<C-/>", function() Snacks.terminal() end, mode = { "n", "t" }, desc = "Toggle terminal" },
+      { "<C-_>", function() Snacks.terminal() end, mode = { "n", "t" }, desc = "Toggle terminal" },
+      { "]]", function() Snacks.words.jump(vim.v.count1) end, mode = { "n", "t" }, desc = "Next reference" },
+      { "[[", function() Snacks.words.jump(-vim.v.count1) end, mode = { "n", "t" }, desc = "Prev reference" },
+    },
   },
 
 -- --------------------------------------------------------------------------
